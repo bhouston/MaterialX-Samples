@@ -1,0 +1,17 @@
+{
+  "rendererName": "blender-new",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-new-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/transformmatrix/blender-new-temp.png\"}"
+    }
+  ]
+}

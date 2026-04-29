@@ -1,0 +1,1122 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node dist_square with NodeDef ND_dotproduct_vector2. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node dist_comp with NodeDef ND_ifgreater_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_mask_bool with NodeDef ND_ifgreater_boolean. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_true_bool with NodeDef ND_constant_boolean. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_logic_and with NodeDef ND_logical_and. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_logic_or with NodeDef ND_logical_or. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node not_in1 with NodeDef ND_logical_not. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node not_in2 with NodeDef ND_logical_not. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node in1_and_not_in2 with NodeDef ND_logical_and. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node in2_and_not_in1 with NodeDef ND_logical_and. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node or with NodeDef ND_logical_or. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_base_a with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_base_b with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_minus_color with NodeDef ND_minus_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_difference_color with NodeDef ND_difference_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_burn_color with NodeDef ND_burn_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_dodge_color with NodeDef ND_dodge_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_exposure with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_sub_color3FA with NodeDef ND_subtract_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_mul_color3FA with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_add_color3FA with NodeDef ND_add_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_exposurepwr with NodeDef ND_power_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_gain with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_liftadd with NodeDef ND_add_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_liftmult with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap1_color3FA with NodeDef ND_remap_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_recip_color3FA with NodeDef ND_divide_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_abs_color3FA with NodeDef ND_absval_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_pow_color3FA with NodeDef ND_power_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_sign_color3FA with NodeDef ND_sign_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap2_color3FA with NodeDef ND_remap_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_clamp_color3FA with NodeDef ND_clamp_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_liftsubtract with NodeDef ND_subtract_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_gray_color3 with NodeDef ND_luminance_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_inhsv_color3 with NodeDef ND_rgbtohsv_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_4 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_5 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_6 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node combine with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_svchans_color3 with NodeDef ND_add_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_tmp2_color3 with NodeDef ND_add_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_torgb_color3 with NodeDef ND_hsvtorgb_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_parm2hue with NodeDef ND_combine3_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_premult_src with NodeDef ND_combine4_color4. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_unpremult_color with NodeDef ND_unpremult_color4. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_unpremult_rgb with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node dist_square not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node dist_comp not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_mask_bool not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_true_bool not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_logic_and not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_logic_or not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node not_in1 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node not_in2 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node in1_and_not_in2 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node in2_and_not_in1 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node or not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_base_a not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_base_b not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_minus_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_difference_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_burn_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_dodge_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_exposure not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sub_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_mul_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_add_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_exposurepwr not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_gain not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_liftadd not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_liftmult not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap1_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_recip_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_abs_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_liftsubtract not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_gray_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_gray_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_torgb_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_inhsv_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_4 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_5 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_6 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node combine not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node combine not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node combine not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_svchans_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_tmp2_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_tmp2_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_svchans_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_torgb_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_parm2hue not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_premult_src not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_rgb not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_exposure not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_rgb not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node or not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node dist_square with NodeDef ND_dotproduct_vector2. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node dist_comp with NodeDef ND_ifgreater_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_mask_bool with NodeDef ND_ifgreater_boolean. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_true_bool with NodeDef ND_constant_boolean. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_logic_and with NodeDef ND_logical_and. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_logic_or with NodeDef ND_logical_or. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node not_in1 with NodeDef ND_logical_not. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node not_in2 with NodeDef ND_logical_not. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node in1_and_not_in2 with NodeDef ND_logical_and. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node in2_and_not_in1 with NodeDef ND_logical_and. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node or with NodeDef ND_logical_or. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_base_a with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_base_b with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_minus_color with NodeDef ND_minus_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_difference_color with NodeDef ND_difference_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_burn_color with NodeDef ND_burn_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_dodge_color with NodeDef ND_dodge_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_exposure with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_sub_color3FA with NodeDef ND_subtract_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_mul_color3FA with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_add_color3FA with NodeDef ND_add_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_exposurepwr with NodeDef ND_power_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_gain with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_liftadd with NodeDef ND_add_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_liftmult with NodeDef ND_multiply_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap1_color3FA with NodeDef ND_remap_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_recip_color3FA with NodeDef ND_divide_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_abs_color3FA with NodeDef ND_absval_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_pow_color3FA with NodeDef ND_power_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_sign_color3FA with NodeDef ND_sign_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap2_color3FA with NodeDef ND_remap_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_clamp_color3FA with NodeDef ND_clamp_color3FA. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_liftsubtract with NodeDef ND_subtract_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_gray_color3 with NodeDef ND_luminance_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_inhsv_color3 with NodeDef ND_rgbtohsv_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_4 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_5 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_6 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node combine with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_svchans_color3 with NodeDef ND_add_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_tmp2_color3 with NodeDef ND_add_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_torgb_color3 with NodeDef ND_hsvtorgb_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_parm2hue with NodeDef ND_combine3_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_premult_src with NodeDef ND_combine4_color4. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_unpremult_color with NodeDef ND_unpremult_color4. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_logic_composite_nodes_unpremult_rgb with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node dist_square not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node dist_comp not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_mask_bool not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_true_bool not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_logic_and not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_logic_or not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node not_in1 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node not_in2 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node in1_and_not_in2 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node in2_and_not_in1 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node or not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_base_a not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_base_b not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_minus_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_difference_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_burn_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_dodge_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_exposure not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sub_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_mul_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_add_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_exposurepwr not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_gain not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_liftadd not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_liftmult not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap1_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_recip_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_abs_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_color3FA not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_liftsubtract not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_gray_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_gray_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_torgb_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_inhsv_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_4 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_5 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_6 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node combine not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node combine not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node combine not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_svchans_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_tmp2_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_tmp2_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_svchans_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_torgb_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_parm2hue not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_premult_src not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_rgb not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_exposure not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_logic_composite_nodes_unpremult_rgb not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node or not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.002, \"json\": 0.001, \"math\": 0.003, \"sys\": 0.001, \"collections_abc\": 0.003, \"pathlib\": 0.003, \"typing\": 0.005, \"bpy\": 0.001, \"mathutils\": 0.002, \"script_path_setup\": 0.07, \"materialx_importer\": 63.915, \"total_before_main\": 64.021}, \"timings_ms\": {\"configure_render\": 0.587, \"find_normalized_root\": 0.012, \"load_materialx_io_blender_mtlx\": 771.834, \"apply_material\": 0.173, \"cycles_render\": 2585.565, \"total\": 3358.228}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/logic_composite_nodes/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/logic_composite_nodes/logic_composite_nodes.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/logic_composite_nodes/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_gltf_anisotropy_image">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <multiply name="brush_freq_u" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="380.0" />
+    </multiply>
+    <sin name="brush_wave" type="float">
+      <input name="in" type="float" nodename="brush_freq_u" />
+    </sin>
+    <absval name="brush_wave_abs" type="float">
+      <input name="in" type="float" nodename="brush_wave" />
+    </absval>
+    <multiply name="strength_mod" type="float">
+      <input name="in1" type="float" nodename="brush_wave_abs" />
+      <input name="in2" type="float" value="0.22" />
+    </multiply>
+    <subtract name="anisotropy_strength_proc" type="float">
+      <input name="in1" type="float" value="0.95" />
+      <input name="in2" type="float" nodename="strength_mod" />
+    </subtract>
+    <multiply name="rotation_from_v" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="6.283185" />
+    </multiply>
+    <multiply name="rotation_brush_mod" type="float">
+      <input name="in1" type="float" nodename="brush_wave" />
+      <input name="in2" type="float" value="0.35" />
+    </multiply>
+    <add name="anisotropy_rotation_proc" type="float">
+      <input name="in1" type="float" nodename="rotation_from_v" />
+      <input name="in2" type="float" nodename="rotation_brush_mod" />
+    </add>
+    <output name="out_anisotropy_strength" type="float" nodename="anisotropy_strength_proc" />
+    <output name="out_anisotropy_rotation" type="float" nodename="anisotropy_rotation_proc" />
+  </nodegraph>
+  <gltf_pbr name="SR_gltf_anisotropy_image" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.16, 0.20, 0.26" />
+    <input name="metallic" type="float" value="1.0" />
+    <input name="roughness" type="float" value="0.2" />
+    <input name="specular" type="float" value="1.0" />
+    <input name="anisotropy_strength" type="float" nodegraph="NG_gltf_anisotropy_image" output="out_anisotropy_strength" />
+    <input name="anisotropy_rotation" type="float" nodegraph="NG_gltf_anisotropy_image" output="out_anisotropy_rotation" />
+  </gltf_pbr>
+  <surfacematerial name="M_gltf_anisotropy_image" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_gltf_anisotropy_image" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_position_object_rgb">
+    <position name="pos0" type="vector3" />
+    <range name="position_rgb" type="vector3">
+      <input name="in" type="vector3" nodename="pos0" />
+      <input name="inlow" type="vector3" value="-2.0, -2.0, -2.0" />
+      <input name="inhigh" type="vector3" value="2.0, 2.0, 2.0" />
+      <input name="outlow" type="vector3" value="0.0, 0.0, 0.0" />
+      <input name="outhigh" type="vector3" value="1.0, 1.0, 1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <convert name="base_color" type="color3">
+      <input name="in" type="vector3" nodename="position_rgb" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_position_object_rgb" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_position_object_rgb" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_position_object_rgb" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_position_object_rgb" />
+  </surfacematerial>
+</materialx>

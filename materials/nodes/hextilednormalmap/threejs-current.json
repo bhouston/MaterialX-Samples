@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <hextilednormalmap name=\"node_under_test\" type=\"vector3\" nodedef=\"ND_hextilednormalmap_vector3\">\n      <input name=\"file\" type=\"filename\" value=\"../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg\" colorspace=\"none\"/>\n      <input name=\"default\" type=\"vector3\" nodename=\"uv_vec3\"/>\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"uv0\"/>\n      <input name=\"tiling\" type=\"vector2\" nodename=\"uv0\"/>\n      <input name=\"rotation\" type=\"float\" nodename=\"uv_rotate\"/>\n      <input name=\"rotationrange\" type=\"vector2\" nodename=\"uv0\"/>\n      <input name=\"scale\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"scalerange\" type=\"vector2\" nodename=\"uv_scale\"/>\n      <input name=\"offset\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"offsetrange\" type=\"vector2\" nodename=\"uv_offset\"/>\n      <input name=\"falloff\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"strength\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"flip_g\" type=\"boolean\" nodename=\"uv_bool\"/>\n      <input name=\"normal\" type=\"vector3\" nodename=\"uv_normal\"/>\n      <input name=\"tangent\" type=\"vector3\" value=\"1.0, 0.0, 0.0\"/>\n      <input name=\"bitangent\" type=\"vector3\" value=\"1.0, 0.0, 0.0\"/>\n    </hextilednormalmap>."
+    }
+  ]
+}

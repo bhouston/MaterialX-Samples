@@ -1,0 +1,126 @@
+{
+  "rendererName": "materialxview",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.004382 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.004382 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:266:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for invertmatrix.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No output found for port connection: <input name=\"in1\" type=\"float\" nodename=\"source_vec\" output=\"outx\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No output found for port connection: <input name=\"in2\" type=\"float\" nodename=\"source_vec\" output=\"outy\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No output found for port connection: <input name=\"in3\" type=\"float\" nodename=\"source_vec\" output=\"outz\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No output found for port connection: <input name=\"in1\" type=\"float\" nodename=\"roundtrip\" output=\"outx\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No output found for port connection: <input name=\"in2\" type=\"float\" nodename=\"roundtrip\" output=\"outy\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No output found for port connection: <input name=\"in3\" type=\"float\" nodename=\"roundtrip\" output=\"outz\">"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Compilation Errors:program_source:579:13: warning: 'M_PI' macro redefined [-Wmacro-redefined]"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI 3.1415926535897932"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:433:13: note: previous definition is here"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI M_PI_F"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:2029:16: warning: unused variable 'V' [-Wunused-variable]"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "float3 V = closureData.V;"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:2658:49: error: excess elements in vector initializer"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "float3 color_out_out = { source_vec_out,source_vec_out,source_vec_out };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^~~~~~~~~~~~~~"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:2660:54: error: excess elements in vector initializer"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "float3 roundtrip_color_out = { roundtrip_out,roundtrip_out,roundtrip_out };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^~~~~~~~~~~~~"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Cannot parse for uniforms without a valid program"
+    }
+  ]
+}

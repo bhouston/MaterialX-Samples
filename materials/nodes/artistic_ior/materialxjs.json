@@ -1,0 +1,10 @@
+{
+  "rendererName": "materialxjs",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Unsupported MaterialX node categories in materialxjs renderer: artistic_ior",
+    "stack": "Error: Unsupported MaterialX node categories in materialxjs renderer: artistic_ior\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxjs/dist/index.js:53:19)\n    at MaterialXJsRenderer.generateImage (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxjs/dist/index.js:245:23)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:260:38"
+  },
+  "logs": []
+}

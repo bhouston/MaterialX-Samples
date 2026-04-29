@@ -1,0 +1,62 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_hextiledimage_lumacoeffs_rec709_node_under_test with NodeDef ND_hextiledimage_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_hextiledimage_lumacoeffs_rec709_node_under_test not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_hextiledimage_lumacoeffs_rec709_node_under_test not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_hextiledimage_lumacoeffs_rec709_node_under_test with NodeDef ND_hextiledimage_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_hextiledimage_lumacoeffs_rec709_node_under_test not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_hextiledimage_lumacoeffs_rec709_node_under_test not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.005, \"json\": 0.001, \"math\": 0.001, \"sys\": 0.001, \"collections_abc\": 0.002, \"pathlib\": 0.003, \"typing\": 0.009, \"bpy\": 0.001, \"mathutils\": 0.003, \"script_path_setup\": 0.121, \"materialx_importer\": 26.287, \"total_before_main\": 26.46}, \"timings_ms\": {\"configure_render\": 0.594, \"find_normalized_root\": 0.013, \"load_materialx_io_blender_mtlx\": 616.796, \"apply_material\": 1.173, \"cycles_render\": 2389.194, \"total\": 3007.836}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/hextiledimage_lumacoeffs_rec709/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/hextiledimage_lumacoeffs_rec709/material.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/hextiledimage_lumacoeffs_rec709/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

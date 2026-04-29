@@ -1,0 +1,182 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_obj_pos with NodeDef ND_position_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_wave_driver with NodeDef ND_dotproduct_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_wave with NodeDef ND_sin_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_wave_to_zero_one with NodeDef ND_add_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_opacity_mask with NodeDef ND_ifgreater_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_opacity_mask_color3 with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input opacity of node SR_opacity_mask not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_obj_pos not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave_driver not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave_driver not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave_to_zero_one not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_opacity_mask not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_opacity_mask_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_obj_pos with NodeDef ND_position_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_wave_driver with NodeDef ND_dotproduct_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_wave with NodeDef ND_sin_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_wave_to_zero_one with NodeDef ND_add_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_opacity_mask with NodeDef ND_ifgreater_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_opacity_mask_opacity_mask_color3 with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input opacity of node SR_opacity_mask not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_obj_pos not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave_driver not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave_driver not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_wave_to_zero_one not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_opacity_mask not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_opacity_mask_opacity_mask_color3 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.004, \"json\": 0.001, \"math\": 0.001, \"sys\": 0.001, \"collections_abc\": 0.002, \"pathlib\": 0.003, \"typing\": 0.006, \"bpy\": 0.001, \"mathutils\": 0.003, \"script_path_setup\": 0.085, \"materialx_importer\": 88.898, \"total_before_main\": 89.031}, \"timings_ms\": {\"configure_render\": 0.509, \"find_normalized_root\": 0.009, \"load_materialx_io_blender_mtlx\": 1189.144, \"apply_material\": 0.107, \"cycles_render\": 2576.784, \"total\": 3766.592}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/opacity_mask/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/opacity_mask/opacity_mask.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/opacity_mask/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

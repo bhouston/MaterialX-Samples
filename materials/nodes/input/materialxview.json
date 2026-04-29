@@ -1,0 +1,31 @@
+{
+  "rendererName": "materialxview",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.004382 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.004382 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:266:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for input.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Interface name not found in referenced declaration: <input name=\"node_under_test\" type=\"color3\" interfacename=\"in_color\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Invalid port connection: <input name=\"fg\" type=\"color3\" nodename=\"node_under_test\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node interface error: Input 'in_color' doesn't match declaration: <standard_surface name=\"SR_input\" type=\"surfaceshader\">"
+    }
+  ]
+}

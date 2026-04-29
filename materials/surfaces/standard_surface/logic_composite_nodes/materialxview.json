@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialxview",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for logic_composite_nodes.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Mismatched types in port connection: <input name=\"mix\" type=\"float\" nodename=\"logic_xor\">"
+    }
+  ]
+}

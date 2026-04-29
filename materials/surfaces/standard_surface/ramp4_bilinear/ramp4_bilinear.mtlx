@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_ramp4_bilinear_test">
+    <texcoord name="uv0" type="vector2" />
+    <ramp4 name="bilinear_ramp" type="color3" nodedef="ND_ramp4_color3">
+      <input name="valuetl" type="color3" value="1.0, 0.0, 0.0" />
+      <input name="valuetr" type="color3" value="0.0, 1.0, 0.0" />
+      <input name="valuebl" type="color3" value="0.0, 0.0, 1.0" />
+      <input name="valuebr" type="color3" value="1.0, 1.0, 0.0" />
+      <input name="texcoord" type="vector2" nodename="uv0" />
+    </ramp4>
+    <output name="out_color" type="color3" nodename="bilinear_ramp" />
+  </nodegraph>
+  <standard_surface name="SR_ramp4_bilinear_test" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_ramp4_bilinear_test" output="out_color" />
+    <input name="specular_roughness" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_ramp4_bilinear_test" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_ramp4_bilinear_test" />
+  </surfacematerial>
+</materialx>

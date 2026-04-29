@@ -1,0 +1,62 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node surface_normal with NodeDef ND_normal_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node surface_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node surface_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node surface_normal with NodeDef ND_normal_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node surface_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node surface_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.001, \"json\": 0.0, \"math\": 0.001, \"sys\": 0.0, \"collections_abc\": 0.001, \"pathlib\": 0.001, \"typing\": 0.003, \"bpy\": 0.0, \"mathutils\": 0.001, \"script_path_setup\": 0.038, \"materialx_importer\": 15.959, \"total_before_main\": 16.018}, \"timings_ms\": {\"configure_render\": 0.364, \"find_normalized_root\": 0.008, \"load_materialx_io_blender_mtlx\": 320.738, \"apply_material\": 0.063, \"cycles_render\": 1458.657, \"total\": 1779.853}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/feature_normal_space_world/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/feature_normal_space_world/feature_normal_space_world.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/feature_normal_space_world/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

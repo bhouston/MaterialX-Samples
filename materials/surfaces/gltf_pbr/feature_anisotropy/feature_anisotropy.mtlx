@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <gltf_pbr name="surface_shader1" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.30, 0.85, 0.80" />
+    <input name="anisotropy_strength" type="float" value="1.0" />
+  </gltf_pbr>
+  <surfacematerial name="M_feature_anisotropy" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="surface_shader1" />
+  </surfacematerial>
+</materialx>

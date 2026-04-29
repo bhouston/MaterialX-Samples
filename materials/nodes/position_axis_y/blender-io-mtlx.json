@@ -1,0 +1,342 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_position_axis_y_pos0 with NodeDef ND_position_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_0 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_1 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_2 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap1_float with NodeDef ND_remap_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_recip_float with NodeDef ND_divide_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_abs_float with NodeDef ND_absval_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_pow_float with NodeDef ND_power_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_sign_float with NodeDef ND_sign_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap2_float with NodeDef ND_remap_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_clamp_float with NodeDef ND_clamp_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_position_axis_y_inverse_axis_value with NodeDef ND_subtract_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_position_axis_y_base_color with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_pos0 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_0 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_1 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_2 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap1_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_recip_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_abs_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_inverse_axis_value not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_position_axis_y_pos0 with NodeDef ND_position_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_0 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_1 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_extract_2 with NodeDef ND_extract_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap1_float with NodeDef ND_remap_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_recip_float with NodeDef ND_divide_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_abs_float with NodeDef ND_absval_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_pow_float with NodeDef ND_power_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_sign_float with NodeDef ND_sign_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_remap2_float with NodeDef ND_remap_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node N_clamp_float with NodeDef ND_clamp_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_position_axis_y_inverse_axis_value with NodeDef ND_subtract_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_position_axis_y_base_color with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_pos0 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_0 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_1 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_extract_2 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap1_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_recip_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_abs_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_pow_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_sign_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_clamp_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node N_remap2_float not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_inverse_axis_value not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_position_axis_y_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.002, \"json\": 0.001, \"math\": 0.002, \"sys\": 0.001, \"collections_abc\": 0.002, \"pathlib\": 0.002, \"typing\": 0.005, \"bpy\": 0.001, \"mathutils\": 0.003, \"script_path_setup\": 0.059, \"materialx_importer\": 58.993, \"total_before_main\": 59.089}, \"timings_ms\": {\"configure_render\": 0.466, \"find_normalized_root\": 0.01, \"load_materialx_io_blender_mtlx\": 1488.033, \"apply_material\": 0.171, \"cycles_render\": 3056.897, \"total\": 4545.626}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/position_axis_y/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/position_axis_y/position_axis_y.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/position_axis_y/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

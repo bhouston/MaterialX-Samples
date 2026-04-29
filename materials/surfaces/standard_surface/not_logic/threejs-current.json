@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <not name=\"inverted\" type=\"boolean\">\n      <input name=\"in\" type=\"boolean\" nodename=\"mask_bool\"/>\n    </not>."
+    }
+  ]
+}

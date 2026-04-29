@@ -1,0 +1,12 @@
+{
+  "rendererName": "materialxjs",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "MaterialX JS compile warnings: open_pbr_surface input \"transmission_scatter\" is currently ignored in the MaterialX to Three.js TSL translation | open_pbr_surface input \"transmission_scatter_anisotropy\" is currently ignored in the MaterialX to Three.js TSL translation"
+    }
+  ]
+}

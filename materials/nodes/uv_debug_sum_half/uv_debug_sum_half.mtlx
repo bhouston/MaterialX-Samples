@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_uv_debug_sum_half">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <add name="uv_sum" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </add>
+    <multiply name="uv_sum_half" type="float">
+      <input name="in1" type="float" nodename="uv_sum" />
+      <input name="in2" type="float" value="0.5" />
+    </multiply>
+    <combine3 name="sum_grayscale" type="color3">
+      <input name="in1" type="float" nodename="uv_sum_half" />
+      <input name="in2" type="float" nodename="uv_sum_half" />
+      <input name="in3" type="float" nodename="uv_sum_half" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="sum_grayscale" />
+  </nodegraph>
+  <standard_surface name="SR_uv_debug_sum_half" type="surfaceshader">
+    <input name="base_color" type="color3" value="0, 0, 0" />
+    <input name="emission_color" type="color3" nodegraph="NG_uv_debug_sum_half" output="out_base_color" />
+    <input name="emission" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.0" />
+  </standard_surface>
+  <surfacematerial name="M_uv_debug_sum_half" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_uv_debug_sum_half" />
+  </surfacematerial>
+</materialx>

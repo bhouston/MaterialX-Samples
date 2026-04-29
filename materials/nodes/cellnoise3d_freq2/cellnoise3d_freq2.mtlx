@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_cellnoise3d_freq2">
+    <position name="pos0" type="vector3" />
+    <multiply name="pos_scaled" type="vector3">
+      <input name="in1" type="vector3" nodename="pos0" />
+      <input name="in2" type="vector3" value="2.0, 2.0, 2.0" />
+    </multiply>
+    <cellnoise3d name="node_under_test" type="float" nodedef="ND_cellnoise3d_float">
+      <input name="position" type="vector3" nodename="pos_scaled" />
+    </cellnoise3d>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="node_under_test" />
+      <input name="in2" type="float" nodename="node_under_test" />
+      <input name="in3" type="float" nodename="node_under_test" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_cellnoise3d_freq2" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_cellnoise3d_freq2" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_cellnoise3d_freq2" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_cellnoise3d_freq2" />
+  </surfacematerial>
+</materialx>

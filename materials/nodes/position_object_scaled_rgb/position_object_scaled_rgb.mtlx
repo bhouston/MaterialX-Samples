@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_position_object_scaled_rgb">
+    <position name="pos0" type="vector3" />
+    <multiply name="pos_scaled" type="vector3">
+      <input name="in1" type="vector3" nodename="pos0" />
+      <input name="in2" type="vector3" value="3.0, 3.0, 3.0" />
+    </multiply>
+    <fract name="position_rgb" type="vector3">
+      <input name="in" type="vector3" nodename="pos_scaled" />
+    </fract>
+    <convert name="base_color" type="color3">
+      <input name="in" type="vector3" nodename="position_rgb" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_position_object_scaled_rgb" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_position_object_scaled_rgb" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_position_object_scaled_rgb" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_position_object_scaled_rgb" />
+  </surfacematerial>
+</materialx>

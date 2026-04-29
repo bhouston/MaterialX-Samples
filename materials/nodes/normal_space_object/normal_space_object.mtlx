@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39">
+  <nodegraph name="NG_normal_space_object">
+    <image name="normal_sample_object" type="vector3">
+      <input name="file" type="filename" value="../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg" colorspace="none" />
+      <input name="default" type="vector3" value="0.5, 0.5, 1.0" />
+    </image>
+    <multiply name="normal_object_scale" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_sample_object" />
+      <input name="in2" type="vector3" value="2.0, 2.0, 2.0" />
+    </multiply>
+    <subtract name="normal_object_signed" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_object_scale" />
+      <input name="in2" type="vector3" value="1.0, 1.0, 1.0" />
+    </subtract>
+    <normalize name="normal_object_unit" type="vector3">
+      <input name="in" type="vector3" nodename="normal_object_signed" />
+    </normalize>
+    <transformnormal name="normal_object_to_world" type="vector3">
+      <input name="in" type="vector3" nodename="normal_object_unit" />
+      <input name="fromspace" type="string" value="object" />
+      <input name="tospace" type="string" value="world" />
+    </transformnormal>
+    <multiply name="normal_half" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_object_to_world" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </multiply>
+    <add name="normal_01" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_half" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </add>
+    <convert name="normal_color" type="color3">
+      <input name="in" type="vector3" nodename="normal_01" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="normal_color" />
+  </nodegraph>
+  <surfacematerial name="M_normal_space_object" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_normal_space_object" />
+  </surfacematerial>
+  <standard_surface name="SR_normal_space_object" type="surfaceshader">
+    <input name="base" type="float" value="1.0" />
+    <input name="base_color" type="color3" nodegraph="NG_normal_space_object" output="out_base_color" />
+    <input name="specular" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.2" />
+  </standard_surface>
+</materialx>

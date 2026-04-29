@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialxview",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for gltf_normalmap.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node interface error: Input 'scale' doesn't match declaration: <gltf_normalmap name=\"node_under_test\" type=\"vector3\" nodedef=\"ND_gltf_normalmap_vector3_1_0\">"
+    }
+  ]
+}

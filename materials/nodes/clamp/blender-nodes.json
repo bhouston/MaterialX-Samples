@@ -1,0 +1,17 @@
+{
+  "rendererName": "blender-nodes",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.2.0 Alpha (hash d9c16a560849 built 2026-04-29 00:31:54)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-nodes-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/clamp/blender-nodes-temp.png\"}"
+    }
+  ]
+}

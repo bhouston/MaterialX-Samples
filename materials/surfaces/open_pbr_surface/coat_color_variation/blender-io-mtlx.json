@@ -1,0 +1,32 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.001, \"json\": 0.001, \"math\": 0.001, \"sys\": 0.0, \"collections_abc\": 0.002, \"pathlib\": 0.002, \"typing\": 0.004, \"bpy\": 0.0, \"mathutils\": 0.002, \"script_path_setup\": 0.053, \"materialx_importer\": 67.3, \"total_before_main\": 67.383}, \"timings_ms\": {\"configure_render\": 0.611, \"find_normalized_root\": 0.012, \"load_materialx_io_blender_mtlx\": 1146.299, \"apply_material\": 0.118, \"cycles_render\": 3030.939, \"total\": 4178.023}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/coat_color_variation/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/coat_color_variation/coat_color_variation.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/coat_color_variation/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

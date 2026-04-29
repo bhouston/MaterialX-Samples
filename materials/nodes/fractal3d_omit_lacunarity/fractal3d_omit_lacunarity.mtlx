@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_fractal3d_omit_lacunarity">
+    <position name="pos0" type="vector3" />
+    <combine3 name="pos_scale" type="vector3"><input name="in1" type="float" value="5.5" /><input name="in2" type="float" value="5.5" /><input name="in3" type="float" value="5.5" /></combine3>
+    <multiply name="pos_scaled" type="vector3"><input name="in1" type="vector3" nodename="pos0" /><input name="in2" type="vector3" nodename="pos_scale" /></multiply>
+    <fractal3d name="node_under_test" type="float" nodedef="ND_fractal3d_float">
+      <input name="amplitude" type="float" value="1.4" />
+      <input name="octaves" type="integer" value="5" />
+      <input name="diminish" type="float" value="0.58" />
+      <input name="position" type="vector3" nodename="pos_scaled" />
+    </fractal3d>
+    <range name="noise_01" type="float">
+      <input name="in" type="float" nodename="node_under_test" />
+      <input name="inlow" type="float" value="-1.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="tint_r" type="float">
+      <input name="in" type="float" nodename="noise_01" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.00" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="tint_g" type="float">
+      <input name="in" type="float" nodename="noise_01" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="0.00" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="tint_b" type="float">
+      <input name="in" type="float" nodename="noise_01" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="0.62" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="tint_r" />
+      <input name="in2" type="float" nodename="tint_g" />
+      <input name="in3" type="float" nodename="tint_b" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_fractal3d_omit_lacunarity" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_fractal3d_omit_lacunarity" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_fractal3d_omit_lacunarity" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_fractal3d_omit_lacunarity" />
+  </surfacematerial>
+</materialx>

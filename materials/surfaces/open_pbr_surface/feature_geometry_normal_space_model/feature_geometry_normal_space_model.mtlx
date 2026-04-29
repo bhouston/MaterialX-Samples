@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <normal name="surface_normal" type="vector3">
+    <input name="space" type="string" value="model" />
+  </normal>
+  <open_pbr_surface name="surface_shader1" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.65, 0.45, 0.95" />
+    <input name="geometry_normal" type="vector3" nodename="surface_normal" />
+  </open_pbr_surface>
+  <surfacematerial name="M_feature_geometry_normal_space_model" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="surface_shader1" />
+  </surfacematerial>
+</materialx>

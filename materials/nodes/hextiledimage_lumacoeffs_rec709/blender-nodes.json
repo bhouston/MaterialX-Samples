@@ -1,0 +1,21 @@
+{
+  "rendererName": "blender-nodes",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Unsupported MaterialX node category: hextiledimage",
+    "stack": "Error: Unsupported MaterialX node category: hextiledimage\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:180:19)\n    at file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:393:33\n    at settle (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:372:13)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:393:13)\n    at ChildProcess.emit (node:events:508:28)\n    at maybeClose (node:internal/child_process:1101:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
+  },
+  "logs": [
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.2.0 Alpha (hash d9c16a560849 built 2026-04-29 00:31:54)"
+    },
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/hextiledimage_lumacoeffs_rec709/material.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/hextiledimage_lumacoeffs_rec709/blender-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: hextiledimage\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.82, \"find_normalized_root\": 0.016, \"load_materialx\": 62.009, \"total\": 62.867}}"
+    }
+  ]
+}

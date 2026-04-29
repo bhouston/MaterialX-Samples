@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39">
+  <nodegraph name="NG_normal_space_tangent">
+    <image name="normal_sample_tangent" type="vector3">
+      <input name="file" type="filename" value="textures/grid.png" />
+      <input name="default" type="vector3" value="0.5, 0.5, 1.0" />
+    </image>
+    <normalmap name="normal_tangent_to_world" type="vector3">
+      <input name="in" type="vector3" nodename="normal_sample_tangent" />
+      <input name="scale" type="float" value="1.0" />
+    </normalmap>
+    <output name="out_normal" type="vector3" nodename="normal_tangent_to_world" />
+  </nodegraph>
+  <surfacematerial name="M_normal_space_tangent" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_normal_space_tangent" />
+  </surfacematerial>
+  <standard_surface name="SR_normal_space_tangent" type="surfaceshader">
+    <input name="base" type="float" value="1.0" />
+    <input name="base_color" type="color3" value="0.5, 0.5, 0.5" />
+    <input name="specular" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.2" />
+    <input name="normal" type="vector3" nodegraph="NG_normal_space_tangent" output="out_normal" />
+  </standard_surface>
+</materialx>

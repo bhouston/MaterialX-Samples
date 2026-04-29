@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "Three.js MaterialX compile warnings: gltf_pbr input \"tangent\" is currently ignored in MaterialX translation."
+    }
+  ]
+}

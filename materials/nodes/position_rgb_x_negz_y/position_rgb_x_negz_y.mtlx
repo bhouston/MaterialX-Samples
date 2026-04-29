@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_position_rgb_x_negz_y">
+    <position name="pos0" type="vector3" />
+    <separate3 name="split" type="multioutput">
+      <input name="in" type="vector3" nodename="pos0" />
+    </separate3>
+    <multiply name="neg_z" type="float">
+      <input name="in1" type="float" nodename="split" output="outz" />
+      <input name="in2" type="float" value="-1.0" />
+    </multiply>
+    <combine3 name="swizzled" type="vector3">
+      <input name="in1" type="float" nodename="split" output="outx" />
+      <input name="in2" type="float" nodename="neg_z" />
+      <input name="in3" type="float" nodename="split" output="outy" />
+    </combine3>
+    <range name="position_rgb" type="vector3">
+      <input name="in" type="vector3" nodename="swizzled" />
+      <input name="inlow" type="vector3" value="-2.0, -2.0, -2.0" />
+      <input name="inhigh" type="vector3" value="2.0, 2.0, 2.0" />
+      <input name="outlow" type="vector3" value="0.0, 0.0, 0.0" />
+      <input name="outhigh" type="vector3" value="1.0, 1.0, 1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <convert name="base_color" type="color3">
+      <input name="in" type="vector3" nodename="position_rgb" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_position_rgb_x_negz_y" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_position_rgb_x_negz_y" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_position_rgb_x_negz_y" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_position_rgb_x_negz_y" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,92 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node height_to_normal_normal_height_image with NodeDef ND_image_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node height_to_normal_normal_height_to_normal with NodeDef ND_heighttonormal_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Error setting default value for in: bpy_struct: item.attr = val: sequences of dimension 0 should contain 4 items, not 3"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node height_to_normal_normal_height_image not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node height_to_normal_normal_height_to_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node height_to_normal_normal_height_to_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node height_to_normal_normal_height_image with NodeDef ND_image_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node height_to_normal_normal_height_to_normal with NodeDef ND_heighttonormal_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Error setting default value for in: bpy_struct: item.attr = val: sequences of dimension 0 should contain 4 items, not 3"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node height_to_normal_normal_height_image not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node height_to_normal_normal_height_to_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node height_to_normal_normal_height_to_normal not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.001, \"json\": 0.0, \"math\": 0.001, \"sys\": 0.0, \"collections_abc\": 0.001, \"pathlib\": 0.001, \"typing\": 0.002, \"bpy\": 0.0, \"mathutils\": 0.001, \"script_path_setup\": 0.038, \"materialx_importer\": 13.576, \"total_before_main\": 13.635}, \"timings_ms\": {\"configure_render\": 0.35, \"find_normalized_root\": 0.007, \"load_materialx_io_blender_mtlx\": 349.526, \"apply_material\": 0.068, \"cycles_render\": 1393.238, \"total\": 1743.218}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/heighttonormal_normal_input/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/heighttonormal_normal_input/heighttonormal_normal_input.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/heighttonormal_normal_input/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

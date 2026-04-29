@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_Textured">
+    <convert name="uv_scale" type="vector2">
+      <input name="in" type="float" value="8.0" />
+    </convert>
+    <tiledimage name="base_tex" type="color3">
+      <input name="file" type="filename" value="textures/checker.png" />
+      <input name="uvtiling" type="vector2" nodename="uv_scale" />
+    </tiledimage>
+    <tiledimage name="roughness_tex" type="float">
+      <input name="file" type="filename" value="textures/roughness.png" />
+      <input name="uvtiling" type="vector2" nodename="uv_scale" />
+    </tiledimage>
+    <output name="base_color_out" type="color3" nodename="base_tex" />
+    <output name="roughness_out" type="float" nodename="roughness_tex" />
+  </nodegraph>
+  <standard_surface name="SR_Textured" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_Textured" output="base_color_out" />
+    <input name="specular_roughness" type="float" nodegraph="NG_Textured" output="roughness_out" />
+  </standard_surface>
+  <surfacematerial name="M_Textured" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_Textured" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,22 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <unpremult name=\"unpremult_color\" type=\"color4\">\n      <input name=\"in\" type=\"color4\" nodename=\"premult_src\"/>\n    </unpremult>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <colorcorrect name=\"corrected\" type=\"color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"dodge_color\"/>\n      <input name=\"hue\" type=\"float\" value=\"0.08\"/>\n      <input name=\"saturation\" type=\"float\" value=\"1.25\"/>\n      <input name=\"gamma\" type=\"float\" value=\"0.95\"/>\n      <input name=\"lift\" type=\"float\" value=\"0.02\"/>\n      <input name=\"gain\" type=\"float\" value=\"1.1\"/>\n      <input name=\"contrast\" type=\"float\" value=\"1.2\"/>\n      <input name=\"contrastpivot\" type=\"float\" value=\"0.5\"/>\n      <input name=\"exposure\" type=\"float\" value=\"0.15\"/>\n    </colorcorrect>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <xor name=\"logic_xor\" type=\"boolean\">\n      <input name=\"in1\" type=\"boolean\" nodename=\"logic_and\"/>\n      <input name=\"in2\" type=\"boolean\" nodename=\"logic_or\"/>\n    </xor>."
+    }
+  ]
+}

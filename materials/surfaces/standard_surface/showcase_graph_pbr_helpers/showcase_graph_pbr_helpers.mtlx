@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_pbr_helper_nodes">
+    <blackbody name="bb_color" type="color3">
+      <input name="temperature" type="float" value="4500" />
+    </blackbody>
+    <artistic_ior name="art_ior" type="multioutput">
+      <input name="reflectivity" type="color3" value="0.88, 0.74, 0.52" />
+      <input name="edge_color" type="color3" value="0.9, 0.95, 1.0" />
+    </artistic_ior>
+    <open_pbr_anisotropy name="aniso_pair" type="vector2">
+      <input name="roughness" type="float" value="0.3" />
+      <input name="anisotropy" type="float" value="0.55" />
+    </open_pbr_anisotropy>
+    <separate2 name="aniso_channels" type="multioutput">
+      <input name="in" type="vector2" nodename="aniso_pair" />
+    </separate2>
+    <tangent name="tan_ws" type="vector3" />
+    <viewdirection name="view_ws" type="vector3" />
+    <dotproduct name="facing" type="float">
+      <input name="in1" type="vector3" nodename="tan_ws" />
+      <input name="in2" type="vector3" nodename="view_ws" />
+    </dotproduct>
+    <bump name="bump_n" type="vector3">
+      <input name="height" type="float" nodename="facing" />
+      <input name="scale" type="float" value="0.2" />
+      <input name="tangent" type="vector3" nodename="tan_ws" />
+      <input name="bitangent" type="vector3" value="0.0, 1.0, 0.0" />
+    </bump>
+    <luminance name="ior_luma" type="float">
+      <input name="in" type="color3" nodename="art_ior" output="ior" />
+    </luminance>
+    <luminance name="ext_luma" type="float">
+      <input name="in" type="color3" nodename="art_ior" output="extinction" />
+    </luminance>
+    <combine3 name="ior_color" type="color3">
+      <input name="in1" type="float" nodename="ior_luma" />
+      <input name="in2" type="float" nodename="ext_luma" />
+      <input name="in3" type="float" nodename="aniso_channels" output="outx" />
+    </combine3>
+    <mix name="base_color_mix" type="color3">
+      <input name="fg" type="color3" nodename="bb_color" />
+      <input name="bg" type="color3" nodename="ior_color" />
+      <input name="mix" type="float" value="0.6" />
+    </mix>
+    <output name="out_color" type="color3" nodename="base_color_mix" />
+    <output name="out_roughness" type="float" nodename="aniso_channels" output="outy" />
+    <output name="out_normal" type="vector3" nodename="bump_n" />
+  </nodegraph>
+  <standard_surface name="SR_pbr_helper_nodes" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_pbr_helper_nodes" output="out_color" />
+    <input name="specular_roughness" type="float" nodegraph="NG_pbr_helper_nodes" output="out_roughness" />
+    <input name="normal" type="vector3" nodegraph="NG_pbr_helper_nodes" output="out_normal" />
+    <input name="specular" type="float" value="0.8" />
+  </standard_surface>
+  <surfacematerial name="showcase_graph_pbr_helpers" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_pbr_helper_nodes" />
+  </surfacematerial>
+</materialx>

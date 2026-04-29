@@ -1,0 +1,122 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_pos0 with NodeDef ND_position_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_pos_scaled with NodeDef ND_multiply_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_node_under_test with NodeDef ND_cellnoise3d_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_base_color with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_pos0 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_pos_scaled not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_node_under_test not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_pos0 with NodeDef ND_position_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_pos_scaled with NodeDef ND_multiply_vector3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_node_under_test with NodeDef ND_cellnoise3d_float. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "No mapping found for node NG_cellnoise3d_freq2_base_color with NodeDef ND_combine3_color3. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_pos0 not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_pos_scaled not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_node_under_test not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node NG_cellnoise3d_freq2_base_color not found in node mapping. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.006, \"json\": 0.001, \"math\": 0.001, \"sys\": 0.001, \"collections_abc\": 0.002, \"pathlib\": 0.006, \"typing\": 0.012, \"bpy\": 0.001, \"mathutils\": 0.002, \"script_path_setup\": 0.141, \"materialx_importer\": 35.004, \"total_before_main\": 35.2}, \"timings_ms\": {\"configure_render\": 0.366, \"find_normalized_root\": 0.008, \"load_materialx_io_blender_mtlx\": 503.949, \"apply_material\": 0.1, \"cycles_render\": 3182.911, \"total\": 3687.365}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/cellnoise3d_freq2/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/cellnoise3d_freq2/cellnoise3d_freq2.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/cellnoise3d_freq2/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

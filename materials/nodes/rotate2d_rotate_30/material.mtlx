@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <surfacematerial name="M_rotate2d_rotate_30" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_rotate2d_rotate_30" />
+  </surfacematerial>
+  <standard_surface name="SR_rotate2d_rotate_30" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_rotate2d_rotate_30" output="out" />
+    <input name="specular_roughness" type="float" value="0.4" />
+  </standard_surface>
+  <nodegraph name="NG_rotate2d_rotate_30">
+    <texcoord name="uv0" type="vector2" />
+    <rotate2d name="uv_transform" type="vector2">
+      <input name="in" type="vector2" nodename="uv0" />
+      <input name="amount" type="float" value="30.0" />
+    </rotate2d>
+    <image name="base_image" type="color3">
+      <input name="file" type="filename" value="../image_format_png/textures/texture.png" colorspace="srgb_texture" />
+      <input name="default" type="color3" value="1.0, 0.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="uv_transform" />
+    </image>
+    <output name="out" type="color3" nodename="base_image" />
+  </nodegraph>
+</materialx>

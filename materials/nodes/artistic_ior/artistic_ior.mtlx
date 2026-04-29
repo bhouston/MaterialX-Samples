@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_artistic_ior">
+    <combine3 name="aluminum_reflectivity" type="color3">
+      <input name="in1" type="float" value="0.913" />
+      <input name="in2" type="float" value="0.921" />
+      <input name="in3" type="float" value="0.925" />
+    </combine3>
+    <combine3 name="aluminum_edge_color" type="color3">
+      <input name="in1" type="float" value="0.985" />
+      <input name="in2" type="float" value="0.992" />
+      <input name="in3" type="float" value="1.000" />
+    </combine3>
+    <artistic_ior name="aluminum_ior_tint" type="color3" nodedef="ND_artistic_ior">
+      <input name="reflectivity" type="color3" nodename="aluminum_reflectivity" />
+      <input name="edge_color" type="color3" nodename="aluminum_edge_color" />
+    </artistic_ior>
+    <mix name="aluminum_base_color" type="color3">
+      <input name="fg" type="color3" nodename="aluminum_ior_tint" />
+      <input name="bg" type="color3" nodename="aluminum_reflectivity" />
+      <input name="mix" type="float" value="0.25" />
+    </mix>
+    <output name="out_base_color" type="color3" nodename="aluminum_base_color" />
+    <output name="out_specular_color" type="color3" nodename="aluminum_edge_color" />
+  </nodegraph>
+  <standard_surface name="SR_artistic_ior" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_artistic_ior" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.18" />
+    <input name="specular" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="M_artistic_ior" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_artistic_ior" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <artistic_ior name=\"aluminum_ior_tint\" type=\"color3\" nodedef=\"ND_artistic_ior\">\n      <input name=\"reflectivity\" type=\"color3\" nodename=\"aluminum_reflectivity\"/>\n      <input name=\"edge_color\" type=\"color3\" nodename=\"aluminum_edge_color\"/>\n    </artistic_ior>."
+    }
+  ]
+}

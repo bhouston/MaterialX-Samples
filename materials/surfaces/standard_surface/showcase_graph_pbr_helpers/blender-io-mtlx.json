@@ -1,0 +1,42 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Failed to flatten MaterialX document: 'NoneType' object has no attribute 'getName'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Failed to flatten MaterialX document: 'NoneType' object has no attribute 'getName'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.008, \"json\": 0.001, \"math\": 0.001, \"sys\": 0.001, \"collections_abc\": 0.002, \"pathlib\": 0.004, \"typing\": 0.014, \"bpy\": 0.001, \"mathutils\": 0.003, \"script_path_setup\": 0.22, \"materialx_importer\": 16.043, \"total_before_main\": 16.331}, \"timings_ms\": {\"configure_render\": 0.408, \"find_normalized_root\": 0.007, \"load_materialx_io_blender_mtlx\": 399.585, \"apply_material\": 0.217, \"cycles_render\": 2186.397, \"total\": 2586.722}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/showcase_graph_pbr_helpers.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

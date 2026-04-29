@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"position_rgb\" type=\"vector3\">\n      <input name=\"in\" type=\"vector3\" nodename=\"swizzled\"/>\n      <input name=\"inlow\" type=\"vector3\" value=\"-2.0, -2.0, -2.0\"/>\n      <input name=\"inhigh\" type=\"vector3\" value=\"2.0, 2.0, 2.0\"/>\n      <input name=\"outlow\" type=\"vector3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"outhigh\" type=\"vector3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
+    }
+  ]
+}

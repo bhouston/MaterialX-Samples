@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <normal name="surface_normal" type="vector3">
+    <input name="space" type="string" value="world" />
+  </normal>
+  <standard_surface name="surface_shader1" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.85, 0.40, 0.90" />
+    <input name="normal" type="vector3" nodename="surface_normal" />
+  </standard_surface>
+  <surfacematerial name="M_feature_normal_space_world" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="surface_shader1" />
+  </surfacematerial>
+</materialx>

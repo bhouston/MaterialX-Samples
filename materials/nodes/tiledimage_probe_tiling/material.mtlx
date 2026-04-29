@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <surfacematerial name="M_tiledimage_probe_tiling" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_tiledimage_probe_tiling" />
+  </surfacematerial>
+  <standard_surface name="SR_tiledimage_probe_tiling" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_tiledimage_probe_tiling" output="out" />
+    <input name="specular_roughness" type="float" value="0.4" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <nodegraph name="NG_tiledimage_probe_tiling">
+    <texcoord name="uv0" type="vector2" />
+    <tiledimage name="out_node" type="color3" nodedef="ND_tiledimage_color3">
+      <input name="file" type="filename" value="../image_format_png/textures/texture.png" colorspace="srgb_texture" />
+      <input name="default" type="color3" value="1.0, 0.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="uvtiling" type="vector2" value="2.0, 1.5" />
+      <input name="uvoffset" type="vector2" value="0.0, 0.0" />
+    </tiledimage>
+    <output name="out" type="color3" nodename="out_node" />
+  </nodegraph>
+</materialx>

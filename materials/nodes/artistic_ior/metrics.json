@@ -1,0 +1,20 @@
+{
+  "blender-io-mtlx": {
+    "ssim": 0.207497,
+    "psnr": 8.399438,
+    "normalizedRgbRms": 0.380214,
+    "vmaf": 34.418117
+  },
+  "materialxview": {
+    "ssim": 1,
+    "psnr": null,
+    "normalizedRgbRms": 0,
+    "vmaf": 100
+  },
+  "threejs-current": {
+    "ssim": 0.91129,
+    "psnr": 18.345585,
+    "normalizedRgbRms": 0.120982,
+    "vmaf": 36.661824
+  }
+}

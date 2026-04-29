@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_not_logic_test">
+    <texcoord name="uv0" type="vector2" />
+    <circle name="circle_mask" type="float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="vector2" value="0.5, 0.5" />
+      <input name="radius" type="float" value="0.35" />
+    </circle>
+    <ifgreater name="mask_bool" type="boolean">
+      <input name="value1" type="float" nodename="circle_mask" />
+      <input name="value2" type="float" value="0.5" />
+      <input name="in1" type="boolean" value="true" />
+      <input name="in2" type="boolean" value="false" />
+    </ifgreater>
+    <not name="inverted" type="boolean">
+      <input name="in" type="boolean" nodename="mask_bool" />
+    </not>
+    <combine3 name="inner_color" type="color3">
+      <input name="in1" type="float" value="0.1" />
+      <input name="in2" type="float" value="0.6" />
+      <input name="in3" type="float" value="0.9" />
+    </combine3>
+    <combine3 name="outer_color" type="color3">
+      <input name="in1" type="float" value="0.9" />
+      <input name="in2" type="float" value="0.2" />
+      <input name="in3" type="float" value="0.1" />
+    </combine3>
+    <mix name="base_color" type="color3">
+      <input name="fg" type="color3" nodename="inner_color" />
+      <input name="bg" type="color3" nodename="outer_color" />
+      <input name="mix" type="float" nodename="inverted" />
+    </mix>
+    <output name="out_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_not_logic_test" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_not_logic_test" output="out_color" />
+    <input name="specular_roughness" type="float" value="0.3" />
+  </standard_surface>
+  <surfacematerial name="M_not_logic_test" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_not_logic_test" />
+  </surfacematerial>
+</materialx>

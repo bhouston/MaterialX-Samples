@@ -1,0 +1,52 @@
+{
+  "rendererName": "blender-nodes",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "00:01.723  cycles           | ERROR Image file /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg failed to load."
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "00:01.723  cycles           | ERROR Image file /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg failed to load."
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "00:01.723  cycles           | WARNING Colorspace  can't be converted to scene_linear: ColorSpaceTransform: empty source color space name."
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "00:01.724  cycles           | WARNING Colorspace  not found, using scene linear instead"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.2.0 Alpha (hash d9c16a560849 built 2026-04-29 00:31:54)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "OpenImageIO exited with a pending error message that was never"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "retrieved via OIIO::geterror(). This was the error message:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "OpenImageIO could not find a format reader for \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg\". Is it a file format that OpenImageIO doesn't know about?"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-nodes-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/blender-nodes-temp.png\"}"
+    }
+  ]
+}

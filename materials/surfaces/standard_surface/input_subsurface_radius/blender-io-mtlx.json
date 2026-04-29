@@ -1,0 +1,172 @@
+{
+  "rendererName": "blender-io-mtlx",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_color of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_depth of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_scatter of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_scatter_anisotropy of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_dispersion of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_extra_roughness of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input subsurface_color of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input thin_walled of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_anisotropy of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_rotation of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_IOR of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_affect_color of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_affect_roughness of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input opacity of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_color of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_depth of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_scatter of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_scatter_anisotropy of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_dispersion of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input transmission_extra_roughness of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input subsurface_color of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input thin_walled of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_anisotropy of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_rotation of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_IOR of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_affect_color of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input coat_affect_roughness of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Input opacity of node SR_default not found in inputs. Skipping."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/blender/render_materialx_io_blender_mtlx.py:164: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "if not material.use_nodes or material.node_tree is None:"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:46:23)"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-timing\", \"initialization_ms\": {\"argparse\": 0.002, \"json\": 0.001, \"math\": 0.001, \"sys\": 0.001, \"collections_abc\": 0.003, \"pathlib\": 0.002, \"typing\": 0.006, \"bpy\": 0.001, \"mathutils\": 0.003, \"script_path_setup\": 0.086, \"materialx_importer\": 71.294, \"total_before_main\": 71.421}, \"timings_ms\": {\"configure_render\": 0.538, \"find_normalized_root\": 0.01, \"load_materialx_io_blender_mtlx\": 1608.994, \"apply_material\": 0.143, \"cycles_render\": 5482.177, \"total\": 7091.907}, \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/input_subsurface_radius/blender-io-mtlx-temp.png\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/input_subsurface_radius/input_subsurface_radius.mtlx\", \"warnings\": []}"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-io-mtlx-render-finish\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/input_subsurface_radius/blender-io-mtlx-temp.png\", \"warnings\": []}"
+    }
+  ]
+}

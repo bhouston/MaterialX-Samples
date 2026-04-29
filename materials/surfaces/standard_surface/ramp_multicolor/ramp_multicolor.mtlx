@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_ramp_multicolor_test">
+    <texcoord name="uv0" type="vector2" />
+    <ramp name="multicolor_ramp" type="color4" nodedef="ND_ramp">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="type" type="integer" value="0" />
+      <input name="interpolation" type="integer" value="1" />
+      <input name="num_intervals" type="integer" value="5" />
+      <input name="interval1" type="float" value="0.0" />
+      <input name="interval2" type="float" value="0.2" />
+      <input name="interval3" type="float" value="0.4" />
+      <input name="interval4" type="float" value="0.6" />
+      <input name="interval5" type="float" value="0.8" />
+      <input name="interval6" type="float" value="1.0" />
+      <input name="interval7" type="float" value="1.0" />
+      <input name="interval8" type="float" value="1.0" />
+      <input name="interval9" type="float" value="1.0" />
+      <input name="interval10" type="float" value="1.0" />
+      <input name="color1" type="color4" value="0.9, 0.1, 0.1, 1.0" />
+      <input name="color2" type="color4" value="0.9, 0.6, 0.1, 1.0" />
+      <input name="color3" type="color4" value="0.1, 0.9, 0.1, 1.0" />
+      <input name="color4" type="color4" value="0.1, 0.4, 0.9, 1.0" />
+      <input name="color5" type="color4" value="0.6, 0.1, 0.9, 1.0" />
+      <input name="color6" type="color4" value="0.9, 0.1, 0.5, 1.0" />
+      <input name="color7" type="color4" value="1.0, 1.0, 1.0, 1.0" />
+      <input name="color8" type="color4" value="1.0, 1.0, 1.0, 1.0" />
+      <input name="color9" type="color4" value="1.0, 1.0, 1.0, 1.0" />
+      <input name="color10" type="color4" value="1.0, 1.0, 1.0, 1.0" />
+    </ramp>
+    <separate4 name="ramp_split" type="multioutput">
+      <input name="in" type="color4" nodename="multicolor_ramp" />
+    </separate4>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="ramp_split" output="outr" />
+      <input name="in2" type="float" nodename="ramp_split" output="outg" />
+      <input name="in3" type="float" nodename="ramp_split" output="outb" />
+    </combine3>
+    <output name="out_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_ramp_multicolor_test" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_ramp_multicolor_test" output="out_color" />
+    <input name="specular_roughness" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_ramp_multicolor_test" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_ramp_multicolor_test" />
+  </surfacematerial>
+</materialx>

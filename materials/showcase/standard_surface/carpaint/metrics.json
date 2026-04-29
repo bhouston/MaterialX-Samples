@@ -1,0 +1,44 @@
+{
+  "blender-new": {
+    "ssim": 0.989084,
+    "psnr": 26.941735,
+    "normalizedRgbRms": 0.044969,
+    "vmaf": 73.274787
+  },
+  "blender-nodes": {
+    "ssim": 0.989148,
+    "psnr": 26.973277,
+    "normalizedRgbRms": 0.044806,
+    "vmaf": 73.046701
+  },
+  "blender-io-mtlx": {
+    "ssim": 0.957833,
+    "psnr": 23.33438,
+    "normalizedRgbRms": 0.068121,
+    "vmaf": 69.964403
+  },
+  "materialxjs": {
+    "ssim": 0.921578,
+    "psnr": 19.977879,
+    "normalizedRgbRms": 0.100255,
+    "vmaf": 47.832954
+  },
+  "materialxview": {
+    "ssim": 1,
+    "psnr": null,
+    "normalizedRgbRms": 0,
+    "vmaf": 100
+  },
+  "threejs-new": {
+    "ssim": 0.921579,
+    "psnr": 19.977879,
+    "normalizedRgbRms": 0.100255,
+    "vmaf": 47.833193
+  },
+  "threejs-current": {
+    "ssim": 0.906335,
+    "psnr": 19.06604,
+    "normalizedRgbRms": 0.111352,
+    "vmaf": 47.706401
+  }
+}
