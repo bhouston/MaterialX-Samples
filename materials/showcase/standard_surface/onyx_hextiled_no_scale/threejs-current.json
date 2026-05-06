@@ -1,0 +1,17 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <hextiledimage name=\"image_color\" type=\"color3\">\n      <input name=\"file\" type=\"filename\" value=\"textures/onyx_color.jpg\" colorspace=\"srgb_texture\"/>\n      <input name=\"tiling\" type=\"vector2\" nodename=\"tiling_vector2\"/>\n      <input name=\"rotation\" type=\"float\" interfacename=\"rotation\"/>\n      <input name=\"scale\" type=\"float\" interfacename=\"scale\"/>\n      <input name=\"offset\" type=\"float\" interfacename=\"offset\"/>\n      <input name=\"falloff\" type=\"float\" interfacename=\"falloff\"/>\n    </hextiledimage>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <hextiledimage name=\"image_roughness\" type=\"color3\">\n      <input name=\"file\" type=\"filename\" value=\"textures/onyx_roughness.jpg\" colorspace=\"none\"/>\n      <input name=\"tiling\" type=\"vector2\" nodename=\"tiling_vector2\"/>\n      <input name=\"rotation\" type=\"float\" interfacename=\"rotation\"/>\n      <input name=\"scale\" type=\"float\" interfacename=\"scale\"/>\n      <input name=\"offset\" type=\"float\" interfacename=\"offset\"/>\n      <input name=\"falloff\" type=\"float\" interfacename=\"falloff\"/>\n    </hextiledimage>."
+    }
+  ]
+}

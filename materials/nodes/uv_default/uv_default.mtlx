@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_uv_default">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="split" output="outx" />
+      <input name="in2" type="float" nodename="split" output="outy" />
+      <input name="in3" type="float" value="0.0" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_uv_default" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_uv_default" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_uv_default" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_uv_default" />
+  </surfacematerial>
+</materialx>
