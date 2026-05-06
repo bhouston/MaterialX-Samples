@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_binormal_model_axis_y">
+    <bitangent name="bitangent0" type="vector3" nodedef="ND_bitangent_vector3">
+      <input name="space" type="string" value="model" />
+      <input name="index" type="integer" value="0" />
+    </bitangent>
+    <separate3 name="split" type="multioutput">
+      <input name="in" type="vector3" nodename="bitangent0" />
+    </separate3>
+    <range name="axis_value" type="float">
+      <input name="in" type="float" nodename="split" output="outy" />
+      <input name="inlow" type="float" value="-1.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <subtract name="inverse_axis_value" type="float">
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" nodename="axis_value" />
+    </subtract>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="axis_value" />
+      <input name="in2" type="float" value="0.0" />
+      <input name="in3" type="float" nodename="inverse_axis_value" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_binormal_model_axis_y" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_binormal_model_axis_y" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_binormal_model_axis_y" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_binormal_model_axis_y" />
+  </surfacematerial>
+</materialx>
