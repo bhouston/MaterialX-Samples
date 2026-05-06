@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for artistic_ior.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node type is not 'multioutput' for node with multiple outputs: <artistic_ior name=\"aluminum_ior_tint\" type=\"color3\" nodedef=\"ND_artistic_ior\">"
+    }
+  ]
+}

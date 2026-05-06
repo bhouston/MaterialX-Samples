@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_cos">
+    <texcoord name="uv0" type="vector2" />
+    <position name="pos0" type="vector3" />
+    <separate2 name="uv_split" type="multioutput"><input name="in" type="vector2" nodename="uv0" /></separate2>
+    <add name="uv_sum" type="float"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /></add>
+    <multiply name="uv_mul" type="float"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /></multiply>
+    <fract name="uv_mix" type="float"><input name="in" type="float" nodename="uv_sum" /></fract>
+    <multiply name="uv_times4" type="float"><input name="in1" type="float" nodename="uv_mix" /><input name="in2" type="float" value="4.0" /></multiply>
+    <floor name="uv_i_float" type="float"><input name="in" type="float" nodename="uv_times4" /></floor>
+    <constant name="uv_i" type="integer"><input name="value" type="integer" value="0" /></constant>
+    <ifgreater name="uv_bool" type="boolean"><input name="value1" type="float" nodename="uv_mix" /><input name="value2" type="float" value="0.5" /></ifgreater>
+    <combine2 name="uv_scale" type="vector2"><input name="in1" type="float" value="1.0" /><input name="in2" type="float" nodename="uv_mix" /></combine2>
+    <combine2 name="uv_offset" type="vector2"><input name="in1" type="float" nodename="uv_mul" /><input name="in2" type="float" nodename="uv_mix" /></combine2>
+    <combine3 name="uv_vec3" type="vector3"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /><input name="in3" type="float" nodename="uv_mix" /></combine3>
+    <normalize name="uv_normal" type="vector3"><input name="in" type="vector3" nodename="uv_vec3" /></normalize>
+    <combine4 name="uv_vec4" type="vector4"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /><input name="in3" type="float" nodename="uv_mix" /><input name="in4" type="float" value="1.0" /></combine4>
+    <combine4 name="uv_color4" type="color4"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /><input name="in3" type="float" nodename="uv_mix" /><input name="in4" type="float" value="1.0" /></combine4>
+    <combine3 name="uv_color" type="color3"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /><input name="in3" type="float" nodename="uv_mix" /></combine3>
+    <combine3 name="uv_color_hot" type="color3"><input name="in1" type="float" value="0.95" /><input name="in2" type="float" nodename="uv_split" output="outx" /><input name="in3" type="float" value="0.2" /></combine3>
+    <combine3 name="uv_color_cool" type="color3"><input name="in1" type="float" value="0.1" /><input name="in2" type="float" nodename="uv_split" output="outy" /><input name="in3" type="float" value="0.8" /></combine3>
+    <add name="temp_driver" type="float"><input name="in1" type="float" value="2500" /><input name="in2" type="float" value="4000" /></add>
+    <add name="ior_driver" type="float"><input name="in1" type="float" value="1.1" /><input name="in2" type="float" nodename="uv_mul" /></add>
+    <multiply name="uv_rotate" type="float"><input name="in1" type="float" nodename="uv_mix" /><input name="in2" type="float" value="0.785398" /></multiply>
+    <cos name="node_under_test" type="float" nodedef="ND_cos_float">
+      <input name="in" type="float" nodename="uv_mix" />
+    </cos>
+    <absval name="factor_abs" type="float">
+      <input name="in" type="float" nodename="node_under_test" />
+    </absval>
+    <fract name="factor_01" type="float">
+      <input name="in" type="float" nodename="factor_abs" />
+    </fract>
+    <mix name="final_color" type="color3">
+      <input name="fg" type="color3" nodename="uv_color_hot" />
+      <input name="bg" type="color3" nodename="uv_color_cool" />
+      <input name="mix" type="float" nodename="factor_01" />
+    </mix>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+    <standard_surface name="SR_cos" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_cos" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_cos" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_cos" />
+  </surfacematerial>
+</materialx>

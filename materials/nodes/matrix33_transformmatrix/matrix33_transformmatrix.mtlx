@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_matrix33_transformmatrix">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <add name="uv_sum" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </add>
+    <fract name="uv_wave" type="float">
+      <input name="in" type="float" nodename="uv_sum" />
+    </fract>
+    <combine3 name="source_vec3" type="vector3">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" nodename="uv_wave" />
+    </combine3>
+    <combine3 name="row1" type="vector3">
+      <input name="in1" type="float" value="1.1" />
+      <input name="in2" type="float" nodename="uv_wave" />
+      <input name="in3" type="float" value="0.0" />
+    </combine3>
+    <combine3 name="row2" type="vector3">
+      <input name="in1" type="float" value="0.0" />
+      <input name="in2" type="float" value="0.8" />
+      <input name="in3" type="float" nodename="uv_split" output="outx" />
+    </combine3>
+    <combine3 name="row3" type="vector3">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="0.0" />
+      <input name="in3" type="float" value="1.0" />
+    </combine3>
+    <creatematrix name="source_matrix" type="matrix33" nodedef="ND_creatematrix_vector3_matrix33">
+      <input name="in1" type="vector3" nodename="row1" />
+      <input name="in2" type="vector3" nodename="row2" />
+      <input name="in3" type="vector3" nodename="row3" />
+    </creatematrix>
+    <transformmatrix name="node_under_test" type="vector3" nodedef="ND_transformmatrix_vector3">
+      <input name="in" type="vector3" nodename="source_vec3" />
+      <input name="mat" type="matrix33" nodename="source_matrix" />
+    </transformmatrix>
+    <convert name="final_color" type="color3" nodedef="ND_convert_vector3_color3">
+      <input name="in" type="vector3" nodename="node_under_test" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_matrix33_transformmatrix" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_matrix33_transformmatrix" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_matrix33_transformmatrix" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_matrix33_transformmatrix" />
+  </surfacematerial>
+</materialx>

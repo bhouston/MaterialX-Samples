@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <standard_surface name="surface_shader1" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.80, 0.90, 0.30" />
+    <input name="coat" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="M_feature_coat" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="surface_shader1" />
+  </surfacematerial>
+</materialx>

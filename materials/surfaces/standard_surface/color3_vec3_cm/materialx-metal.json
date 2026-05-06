@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for color3_vec3_cm.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Mismatched types in port connection: <input name=\"base_color\" type=\"color3\" output=\"out\" nodegraph=\"normalmap_cm\">"
+    }
+  ]
+}

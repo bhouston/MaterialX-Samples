@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <ramp name=\"multicolor_ramp\" type=\"color4\" nodedef=\"ND_ramp\">\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"uv0\"/>\n      <input name=\"type\" type=\"integer\" value=\"0\"/>\n      <input name=\"interpolation\" type=\"integer\" value=\"1\"/>\n      <input name=\"num_intervals\" type=\"integer\" value=\"5\"/>\n      <input name=\"interval1\" type=\"float\" value=\"0.0\"/>\n      <input name=\"interval2\" type=\"float\" value=\"0.2\"/>\n      <input name=\"interval3\" type=\"float\" value=\"0.4\"/>\n      <input name=\"interval4\" type=\"float\" value=\"0.6\"/>\n      <input name=\"interval5\" type=\"float\" value=\"0.8\"/>\n      <input name=\"interval6\" type=\"float\" value=\"1.0\"/>\n      <input name=\"interval7\" type=\"float\" value=\"1.0\"/>\n      <input name=\"interval8\" type=\"float\" value=\"1.0\"/>\n      <input name=\"interval9\" type=\"float\" value=\"1.0\"/>\n      <input name=\"interval10\" type=\"float\" value=\"1.0\"/>\n      <input name=\"color1\" type=\"color4\" value=\"0.9, 0.1, 0.1, 1.0\"/>\n      <input name=\"color2\" type=\"color4\" value=\"0.9, 0.6, 0.1, 1.0\"/>\n      <input name=\"color3\" type=\"color4\" value=\"0.1, 0.9, 0.1, 1.0\"/>\n      <input name=\"color4\" type=\"color4\" value=\"0.1, 0.4, 0.9, 1.0\"/>\n      <input name=\"color5\" type=\"color4\" value=\"0.6, 0.1, 0.9, 1.0\"/>\n      <input name=\"color6\" type=\"color4\" value=\"0.9, 0.1, 0.5, 1.0\"/>\n      <input name=\"color7\" type=\"color4\" value=\"1.0, 1.0, 1.0, 1.0\"/>\n      <input name=\"color8\" type=\"color4\" value=\"1.0, 1.0, 1.0, 1.0\"/>\n      <input name=\"color9\" type=\"color4\" value=\"1.0, 1.0, 1.0, 1.0\"/>\n      <input name=\"color10\" type=\"color4\" value=\"1.0, 1.0, 1.0, 1.0\"/>\n    </ramp>."
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "createdAt": "2026-04-22T13:50:35.308Z",
+  "sourceType": "gltf_pbr",
+  "targetType": "standard_surface",
+  "mode": "strict",
+  "requestedCount": 112,
+  "generatedCount": 108,
+  "skippedCount": 4,
+  "generated": [
+    {
+      "material": "absval",
+      "path": "third_party/materialx-samples/materials/standard_surface/absval/material.mtlx"
+    },
+    {
+      "material": "acos",
+      "path": "third_party/materialx-samples/materials/standard_surface/acos/material.mtlx"
+    },
+    {
+      "material": "add",
+      "path": "third_party/materialx-samples/materials/standard_surface/add/material.mtlx"
+    },
+    {
+      "material": "and",
+      "path": "third_party/materialx-samples/materials/standard_surface/and/material.mtlx"
+    },
+    {
+      "material": "artistic_ior",
+      "path": "third_party/materialx-samples/materials/standard_surface/artistic_ior/material.mtlx"
+    },
+    {
+      "material": "asin",
+      "path": "third_party/materialx-samples/materials/standard_surface/asin/material.mtlx"
+    },
+    {
+      "material": "atan2",
+      "path": "third_party/materialx-samples/materials/standard_surface/atan2/material.mtlx"
+    },
+    {
+      "material": "blackbody",
+      "path": "third_party/materialx-samples/materials/standard_surface/blackbody/material.mtlx"
+    },
+    {
+      "material": "bump",
+      "path": "third_party/materialx-samples/materials/standard_surface/bump/material.mtlx"
+    },
+    {
+      "material": "burn",
+      "path": "third_party/materialx-samples/materials/standard_surface/burn/material.mtlx"
+    },
+    {
+      "material": "ceil",
+      "path": "third_party/materialx-samples/materials/standard_surface/ceil/material.mtlx"
+    },
+    {
+      "material": "cellnoise2d",
+      "path": "third_party/materialx-samples/materials/standard_surface/cellnoise2d/material.mtlx"
+    },
+    {
+      "material": "cellnoise3d",
+      "path": "third_party/materialx-samples/materials/standard_surface/cellnoise3d/material.mtlx"
+    },
+    {
+      "material": "checkerboard",
+      "path": "third_party/materialx-samples/materials/standard_surface/checkerboard/material.mtlx"
+    },
+    {
+      "material": "circle",
+      "path": "third_party/materialx-samples/materials/standard_surface/circle/material.mtlx"
+    },
+    {
+      "material": "clamp",
+      "path": "third_party/materialx-samples/materials/standard_surface/clamp/material.mtlx"
+    },
+    {
+      "material": "colorcorrect",
+      "path": "third_party/materialx-samples/materials/standard_surface/colorcorrect/material.mtlx"
+    },
+    {
+      "material": "combine2",
+      "path": "third_party/materialx-samples/materials/standard_surface/combine2/material.mtlx"
+    },
+    {
+      "material": "combine3",
+      "path": "third_party/materialx-samples/materials/standard_surface/combine3/material.mtlx"
+    },
+    {
+      "material": "combine4",
+      "path": "third_party/materialx-samples/materials/standard_surface/combine4/material.mtlx"
+    },
+    {
+      "material": "constant",
+      "path": "third_party/materialx-samples/materials/standard_surface/constant/material.mtlx"
+    },
+    {
+      "material": "contrast",
+      "path": "third_party/materialx-samples/materials/standard_surface/contrast/material.mtlx"
+    },
+    {
+      "material": "convert",
+      "path": "third_party/materialx-samples/materials/standard_surface/convert/material.mtlx"
+    },
+    {
+      "material": "cos",
+      "path": "third_party/materialx-samples/materials/standard_surface/cos/material.mtlx"
+    },
+    {
+      "material": "creatematrix",
+      "path": "third_party/materialx-samples/materials/standard_surface/creatematrix/material.mtlx"
+    },
+    {
+      "material": "crossproduct",
+      "path": "third_party/materialx-samples/materials/standard_surface/crossproduct/material.mtlx"
+    },
+    {
+      "material": "determinant",
+      "path": "third_party/materialx-samples/materials/standard_surface/determinant/material.mtlx"
+    },
+    {
+      "material": "difference",
+      "path": "third_party/materialx-samples/materials/standard_surface/difference/material.mtlx"
+    },
+    {
+      "material": "distance",
+      "path": "third_party/materialx-samples/materials/standard_surface/distance/material.mtlx"
+    },
+    {
+      "material": "divide",
+      "path": "third_party/materialx-samples/materials/standard_surface/divide/material.mtlx"
+    },
+    {
+      "material": "dodge",
+      "path": "third_party/materialx-samples/materials/standard_surface/dodge/material.mtlx"
+    },
+    {
+      "material": "dot",
+      "path": "third_party/materialx-samples/materials/standard_surface/dot/material.mtlx"
+    },
+    {
+      "material": "dotproduct",
+      "path": "third_party/materialx-samples/materials/standard_surface/dotproduct/material.mtlx"
+    },
+    {
+      "material": "exp",
+      "path": "third_party/materialx-samples/materials/standard_surface/exp/material.mtlx"
+    },
+    {
+      "material": "extract",
+      "path": "third_party/materialx-samples/materials/standard_surface/extract/material.mtlx"
+    },
+    {
+      "material": "floor",
+      "path": "third_party/materialx-samples/materials/standard_surface/floor/material.mtlx"
+    },
+    {
+      "material": "fract",
+      "path": "third_party/materialx-samples/materials/standard_surface/fract/material.mtlx"
+    },
+    {
+      "material": "fractal3d",
+      "path": "third_party/materialx-samples/materials/standard_surface/fractal3d/material.mtlx"
+    },
+    {
+      "material": "frame",
+      "path": "third_party/materialx-samples/materials/standard_surface/frame/material.mtlx"
+    },
+    {
+      "material": "heighttonormal",
+      "path": "third_party/materialx-samples/materials/standard_surface/heighttonormal/material.mtlx"
+    },
+    {
+      "material": "hextiledimage",
+      "path": "third_party/materialx-samples/materials/standard_surface/hextiledimage/material.mtlx"
+    },
+    {
+      "material": "hextilednormalmap",
+      "path": "third_party/materialx-samples/materials/standard_surface/hextilednormalmap/material.mtlx"
+    },
+    {
+      "material": "hsvtorgb",
+      "path": "third_party/materialx-samples/materials/standard_surface/hsvtorgb/material.mtlx"
+    },
+    {
+      "material": "ifequal",
+      "path": "third_party/materialx-samples/materials/standard_surface/ifequal/material.mtlx"
+    },
+    {
+      "material": "ifgreater",
+      "path": "third_party/materialx-samples/materials/standard_surface/ifgreater/material.mtlx"
+    },
+    {
+      "material": "ifgreatereq",
+      "path": "third_party/materialx-samples/materials/standard_surface/ifgreatereq/material.mtlx"
+    },
+    {
+      "material": "image",
+      "path": "third_party/materialx-samples/materials/standard_surface/image/material.mtlx"
+    },
+    {
+      "material": "invert",
+      "path": "third_party/materialx-samples/materials/standard_surface/invert/material.mtlx"
+    },
+    {
+      "material": "ln",
+      "path": "third_party/materialx-samples/materials/standard_surface/ln/material.mtlx"
+    },
+    {
+      "material": "luminance",
+      "path": "third_party/materialx-samples/materials/standard_surface/luminance/material.mtlx"
+    },
+    {
+      "material": "magnitude",
+      "path": "third_party/materialx-samples/materials/standard_surface/magnitude/material.mtlx"
+    },
+    {
+      "material": "max",
+      "path": "third_party/materialx-samples/materials/standard_surface/max/material.mtlx"
+    },
+    {
+      "material": "min",
+      "path": "third_party/materialx-samples/materials/standard_surface/min/material.mtlx"
+    },
+    {
+      "material": "minus",
+      "path": "third_party/materialx-samples/materials/standard_surface/minus/material.mtlx"
+    },
+    {
+      "material": "mix",
+      "path": "third_party/materialx-samples/materials/standard_surface/mix/material.mtlx"
+    },
+    {
+      "material": "modulo",
+      "path": "third_party/materialx-samples/materials/standard_surface/modulo/material.mtlx"
+    },
+    {
+      "material": "multiply",
+      "path": "third_party/materialx-samples/materials/standard_surface/multiply/material.mtlx"
+    },
+    {
+      "material": "noise2d",
+      "path": "third_party/materialx-samples/materials/standard_surface/noise2d/material.mtlx"
+    },
+    {
+      "material": "noise3d",
+      "path": "third_party/materialx-samples/materials/standard_surface/noise3d/material.mtlx"
+    },
+    {
+      "material": "normal",
+      "path": "third_party/materialx-samples/materials/standard_surface/normal/material.mtlx"
+    },
+    {
+      "material": "normalize",
+      "path": "third_party/materialx-samples/materials/standard_surface/normalize/material.mtlx"
+    },
+    {
+      "material": "normalmap",
+      "path": "third_party/materialx-samples/materials/standard_surface/normalmap/material.mtlx"
+    },
+    {
+      "material": "not",
+      "path": "third_party/materialx-samples/materials/standard_surface/not/material.mtlx"
+    },
+    {
+      "material": "or",
+      "path": "third_party/materialx-samples/materials/standard_surface/or/material.mtlx"
+    },
+    {
+      "material": "overlay",
+      "path": "third_party/materialx-samples/materials/standard_surface/overlay/material.mtlx"
+    },
+    {
+      "material": "place2d",
+      "path": "third_party/materialx-samples/materials/standard_surface/place2d/material.mtlx"
+    },
+    {
+      "material": "position",
+      "path": "third_party/materialx-samples/materials/standard_surface/position/material.mtlx"
+    },
+    {
+      "material": "power",
+      "path": "third_party/materialx-samples/materials/standard_surface/power/material.mtlx"
+    },
+    {
+      "material": "ramp",
+      "path": "third_party/materialx-samples/materials/standard_surface/ramp/material.mtlx"
+    },
+    {
+      "material": "ramp4",
+      "path": "third_party/materialx-samples/materials/standard_surface/ramp4/material.mtlx"
+    },
+    {
+      "material": "ramplr",
+      "path": "third_party/materialx-samples/materials/standard_surface/ramplr/material.mtlx"
+    },
+    {
+      "material": "ramptb",
+      "path": "third_party/materialx-samples/materials/standard_surface/ramptb/material.mtlx"
+    },
+    {
+      "material": "range",
+      "path": "third_party/materialx-samples/materials/standard_surface/range/material.mtlx"
+    },
+    {
+      "material": "reflect",
+      "path": "third_party/materialx-samples/materials/standard_surface/reflect/material.mtlx"
+    },
+    {
+      "material": "refract",
+      "path": "third_party/materialx-samples/materials/standard_surface/refract/material.mtlx"
+    },
+    {
+      "material": "remap",
+      "path": "third_party/materialx-samples/materials/standard_surface/remap/material.mtlx"
+    },
+    {
+      "material": "rgbtohsv",
+      "path": "third_party/materialx-samples/materials/standard_surface/rgbtohsv/material.mtlx"
+    },
+    {
+      "material": "round",
+      "path": "third_party/materialx-samples/materials/standard_surface/round/material.mtlx"
+    },
+    {
+      "material": "safepower",
+      "path": "third_party/materialx-samples/materials/standard_surface/safepower/material.mtlx"
+    },
+    {
+      "material": "saturate",
+      "path": "third_party/materialx-samples/materials/standard_surface/saturate/material.mtlx"
+    },
+    {
+      "material": "screen",
+      "path": "third_party/materialx-samples/materials/standard_surface/screen/material.mtlx"
+    },
+    {
+      "material": "separate2",
+      "path": "third_party/materialx-samples/materials/standard_surface/separate2/material.mtlx"
+    },
+    {
+      "material": "separate3",
+      "path": "third_party/materialx-samples/materials/standard_surface/separate3/material.mtlx"
+    },
+    {
+      "material": "separate4",
+      "path": "third_party/materialx-samples/materials/standard_surface/separate4/material.mtlx"
+    },
+    {
+      "material": "sign",
+      "path": "third_party/materialx-samples/materials/standard_surface/sign/material.mtlx"
+    },
+    {
+      "material": "sin",
+      "path": "third_party/materialx-samples/materials/standard_surface/sin/material.mtlx"
+    },
+    {
+      "material": "smoothstep",
+      "path": "third_party/materialx-samples/materials/standard_surface/smoothstep/material.mtlx"
+    },
+    {
+      "material": "splitlr",
+      "path": "third_party/materialx-samples/materials/standard_surface/splitlr/material.mtlx"
+    },
+    {
+      "material": "splittb",
+      "path": "third_party/materialx-samples/materials/standard_surface/splittb/material.mtlx"
+    },
+    {
+      "material": "sqrt",
+      "path": "third_party/materialx-samples/materials/standard_surface/sqrt/material.mtlx"
+    },
+    {
+      "material": "subtract",
+      "path": "third_party/materialx-samples/materials/standard_surface/subtract/material.mtlx"
+    },
+    {
+      "material": "tan",
+      "path": "third_party/materialx-samples/materials/standard_surface/tan/material.mtlx"
+    },
+    {
+      "material": "tangent",
+      "path": "third_party/materialx-samples/materials/standard_surface/tangent/material.mtlx"
+    },
+    {
+      "material": "texcoord",
+      "path": "third_party/materialx-samples/materials/standard_surface/texcoord/material.mtlx"
+    },
+    {
+      "material": "tiledimage",
+      "path": "third_party/materialx-samples/materials/standard_surface/tiledimage/material.mtlx"
+    },
+    {
+      "material": "time",
+      "path": "third_party/materialx-samples/materials/standard_surface/time/material.mtlx"
+    },
+    {
+      "material": "transformmatrix",
+      "path": "third_party/materialx-samples/materials/standard_surface/transformmatrix/material.mtlx"
+    },
+    {
+      "material": "transformnormal",
+      "path": "third_party/materialx-samples/materials/standard_surface/transformnormal/material.mtlx"
+    },
+    {
+      "material": "transformpoint",
+      "path": "third_party/materialx-samples/materials/standard_surface/transformpoint/material.mtlx"
+    },
+    {
+      "material": "transformvector",
+      "path": "third_party/materialx-samples/materials/standard_surface/transformvector/material.mtlx"
+    },
+    {
+      "material": "transpose",
+      "path": "third_party/materialx-samples/materials/standard_surface/transpose/material.mtlx"
+    },
+    {
+      "material": "unifiednoise2d",
+      "path": "third_party/materialx-samples/materials/standard_surface/unifiednoise2d/material.mtlx"
+    },
+    {
+      "material": "unifiednoise3d",
+      "path": "third_party/materialx-samples/materials/standard_surface/unifiednoise3d/material.mtlx"
+    },
+    {
+      "material": "unpremult",
+      "path": "third_party/materialx-samples/materials/standard_surface/unpremult/material.mtlx"
+    },
+    {
+      "material": "viewdirection",
+      "path": "third_party/materialx-samples/materials/standard_surface/viewdirection/material.mtlx"
+    },
+    {
+      "material": "worleynoise2d",
+      "path": "third_party/materialx-samples/materials/standard_surface/worleynoise2d/material.mtlx"
+    },
+    {
+      "material": "worleynoise3d",
+      "path": "third_party/materialx-samples/materials/standard_surface/worleynoise3d/material.mtlx"
+    },
+    {
+      "material": "xor",
+      "path": "third_party/materialx-samples/materials/standard_surface/xor/material.mtlx"
+    }
+  ],
+  "skipped": [
+    {
+      "material": "invertmatrix",
+      "reason": "target material.mtlx already exists"
+    },
+    {
+      "material": "ramp_gradient",
+      "reason": "target material.mtlx already exists"
+    },
+    {
+      "material": "rotate2d",
+      "reason": "target material.mtlx already exists"
+    },
+    {
+      "material": "rotate3d",
+      "reason": "target material.mtlx already exists"
+    }
+  ]
+}

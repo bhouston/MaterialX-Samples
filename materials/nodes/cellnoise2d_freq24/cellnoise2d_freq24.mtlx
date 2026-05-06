@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_cellnoise2d_freq24">
+    <texcoord name="texcoord0" type="vector2" />
+    <multiply name="uv_scaled" type="vector2">
+      <input name="in1" type="vector2" nodename="texcoord0" />
+      <input name="in2" type="vector2" value="24.0, 24.0" />
+    </multiply>
+    <cellnoise2d name="node_under_test" type="float" nodedef="ND_cellnoise2d_float">
+      <input name="texcoord" type="vector2" nodename="uv_scaled" />
+    </cellnoise2d>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="node_under_test" />
+      <input name="in2" type="float" nodename="node_under_test" />
+      <input name="in3" type="float" nodename="node_under_test" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_cellnoise2d_freq24" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_cellnoise2d_freq24" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_cellnoise2d_freq24" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_cellnoise2d_freq24" />
+  </surfacematerial>
+</materialx>

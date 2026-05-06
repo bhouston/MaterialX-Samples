@@ -1,0 +1,22 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"tint_r\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"noise_01\"/>\n      <input name=\"inlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"inhigh\" type=\"float\" value=\"1.0\"/>\n      <input name=\"outlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"outhigh\" type=\"float\" value=\"0.59\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"tint_g\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"noise_01\"/>\n      <input name=\"inlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"inhigh\" type=\"float\" value=\"1.0\"/>\n      <input name=\"outlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"outhigh\" type=\"float\" value=\"0.00\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"tint_b\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"noise_01\"/>\n      <input name=\"inlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"inhigh\" type=\"float\" value=\"1.0\"/>\n      <input name=\"outlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"outhigh\" type=\"float\" value=\"1.00\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
+    }
+  ]
+}

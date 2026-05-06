@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_matrix44_invertmatrix">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <add name="uv_sum" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </add>
+    <fract name="uv_wave" type="float">
+      <input name="in" type="float" nodename="uv_sum" />
+    </fract>
+    <combine4 name="row1" type="vector4">
+      <input name="in1" type="float" value="1.1" />
+      <input name="in2" type="float" nodename="uv_wave" />
+      <input name="in3" type="float" value="0.0" />
+      <input name="in4" type="float" value="0.0" />
+    </combine4>
+    <combine4 name="row2" type="vector4">
+      <input name="in1" type="float" value="0.0" />
+      <input name="in2" type="float" value="0.9" />
+      <input name="in3" type="float" nodename="uv_split" output="outx" />
+      <input name="in4" type="float" value="0.0" />
+    </combine4>
+    <combine4 name="row3" type="vector4">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="0.0" />
+      <input name="in3" type="float" value="1.2" />
+      <input name="in4" type="float" value="0.0" />
+    </combine4>
+    <combine4 name="row4" type="vector4">
+      <input name="in1" type="float" value="0.15" />
+      <input name="in2" type="float" value="0.2" />
+      <input name="in3" type="float" value="0.05" />
+      <input name="in4" type="float" value="1.0" />
+    </combine4>
+    <creatematrix name="source_matrix" type="matrix44" nodedef="ND_creatematrix_vector4_matrix44">
+      <input name="in1" type="vector4" nodename="row1" />
+      <input name="in2" type="vector4" nodename="row2" />
+      <input name="in3" type="vector4" nodename="row3" />
+      <input name="in4" type="vector4" nodename="row4" />
+    </creatematrix>
+    <invertmatrix name="node_under_test" type="matrix44" nodedef="ND_invertmatrix_matrix44">
+      <input name="in" type="matrix44" nodename="source_matrix" />
+    </invertmatrix>
+    <extract name="inverse_row" type="vector4" nodedef="ND_extract_matrix44">
+      <input name="in" type="matrix44" nodename="node_under_test" />
+      <input name="index" type="integer" value="0" />
+    </extract>
+    <separate4 name="inverse_channels" type="multioutput" nodedef="ND_separate4_vector4">
+      <input name="in" type="vector4" nodename="inverse_row" />
+    </separate4>
+    <multiply name="red_channel" type="float">
+      <input name="in1" type="float" nodename="inverse_channels" output="outx" />
+      <input name="in2" type="float" value="0.5" />
+    </multiply>
+    <add name="red_01" type="float">
+      <input name="in1" type="float" nodename="red_channel" />
+      <input name="in2" type="float" value="0.5" />
+    </add>
+    <combine3 name="final_color" type="color3">
+      <input name="in1" type="float" nodename="red_01" />
+      <input name="in2" type="float" nodename="inverse_channels" output="outy" />
+      <input name="in3" type="float" nodename="inverse_channels" output="outz" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_matrix44_invertmatrix" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_matrix44_invertmatrix" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_matrix44_invertmatrix" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_matrix44_invertmatrix" />
+  </surfacematerial>
+</materialx>

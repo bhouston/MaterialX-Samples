@@ -1,0 +1,22 @@
+{
+  "rendererName": "materialx-glsl",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for ior.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node interface error: Input 'ior' doesn't match declaration: <standard_surface name=\"surface_shader1\" type=\"surfaceshader\" nodedef=\"ND_standard_surface_surfaceshader\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_worleynoise3d_vector2">
+    <position name="pos0" type="vector3" />
+    <multiply name="coords_under_test" type="vector3">
+      <input name="in1" type="vector3" nodename="pos0" />
+      <input name="in2" type="vector3" value="5.0, 6.0, 7.0" />
+    </multiply>
+    <worleynoise3d name="node_under_test" type="vector2" nodedef="ND_worleynoise3d_vector2">
+      <input name="position" type="vector3" nodename="coords_under_test" />
+      <input name="jitter" type="float" value="0.65" />
+      <input name="style" type="integer" value="1" />
+    </worleynoise3d>
+    <convert name="base_color" type="color3" nodedef="ND_convert_vector2_color3">
+      <input name="in" type="vector2" nodename="node_under_test" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_worleynoise3d_vector2" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_worleynoise3d_vector2" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_worleynoise3d_vector2" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_worleynoise3d_vector2" />
+  </surfacematerial>
+</materialx>

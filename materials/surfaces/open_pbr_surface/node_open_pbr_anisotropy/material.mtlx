@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <texcoord name="uv0" type="vector2" />
+  <separate2 name="uv_split" type="multioutput">
+    <input name="in" type="vector2" nodename="uv0" />
+  </separate2>
+
+  <multiply name="brush_freq_u" type="float">
+    <input name="in1" type="float" nodename="uv_split" output="outx" />
+    <input name="in2" type="float" value="420.0" />
+  </multiply>
+  <sin name="brush_wave" type="float">
+    <input name="in" type="float" nodename="brush_freq_u" />
+  </sin>
+  <absval name="brush_wave_abs" type="float">
+    <input name="in" type="float" nodename="brush_wave" />
+  </absval>
+  <multiply name="roughness_span" type="float">
+    <input name="in1" type="float" nodename="brush_wave_abs" />
+    <input name="in2" type="float" value="0.22" />
+  </multiply>
+  <add name="roughness_brushed" type="float">
+    <input name="in1" type="float" value="0.07" />
+    <input name="in2" type="float" nodename="roughness_span" />
+  </add>
+  <multiply name="aniso_mod" type="float">
+    <input name="in1" type="float" nodename="brush_wave_abs" />
+    <input name="in2" type="float" value="0.18" />
+  </multiply>
+  <subtract name="anisotropy_brushed" type="float">
+    <input name="in1" type="float" value="0.95" />
+    <input name="in2" type="float" nodename="aniso_mod" />
+  </subtract>
+
+  <open_pbr_anisotropy name="node_under_test" type="vector2" nodedef="ND_open_pbr_anisotropy">
+    <input name="roughness" type="float" nodename="roughness_brushed" />
+    <input name="anisotropy" type="float" nodename="anisotropy_brushed" />
+  </open_pbr_anisotropy>
+  <separate2 name="aniso_split" type="multioutput">
+    <input name="in" type="vector2" nodename="node_under_test" />
+  </separate2>
+
+  <open_pbr_surface name="SR_open_pbr_anisotropy" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.955, 0.637, 0.538" />
+    <input name="base_metalness" type="float" value="1.0" />
+    <input name="specular_weight" type="float" value="1.0" />
+    <input name="specular_color" type="color3" value="1.0, 0.88, 0.8" />
+    <input name="specular_roughness" type="float" nodename="aniso_split" output="outx" />
+    <input name="specular_roughness_anisotropy" type="float" nodename="aniso_split" output="outy" />
+  </open_pbr_surface>
+  <surfacematerial name="node_open_pbr_anisotropy" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_open_pbr_anisotropy" />
+  </surfacematerial>
+</materialx>

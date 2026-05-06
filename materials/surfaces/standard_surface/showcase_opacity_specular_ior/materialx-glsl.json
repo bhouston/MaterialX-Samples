@@ -1,0 +1,26 @@
+{
+  "rendererName": "materialx-glsl",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003058 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003058 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for showcase_opacity_specular_ior.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node interface error: Input 'opacity' doesn't match declaration: <standard_surface name=\"surface_shader1\" type=\"surfaceshader\" nodedef=\"ND_standard_surface_surfaceshader\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable"
+    }
+  ]
+}

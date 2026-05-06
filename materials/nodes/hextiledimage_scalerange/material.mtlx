@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <surfacematerial name="M_hextiledimage_scalerange" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_hextiledimage_scalerange" />
+  </surfacematerial>
+  <standard_surface name="SR_hextiledimage_scalerange" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_hextiledimage_scalerange" output="out" />
+    <input name="specular_roughness" type="float" value="0.4" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <nodegraph name="NG_hextiledimage_scalerange">
+    <texcoord name="uv0" type="vector2" />
+    <hextiledimage name="node_under_test" type="color3" nodedef="ND_hextiledimage_color3">
+      <input name="file" type="filename" value="../image_format_png/textures/texture.png" colorspace="srgb_texture" />
+      <input name="default" type="color3" value="1.0, 0.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="tiling" type="vector2" value="1.0, 1.0" />
+      <input name="rotation" type="float" value="1.0" />
+      <input name="rotationrange" type="vector2" value="0.0, 360.0" />
+      <input name="scale" type="float" value="1.0" />
+      <input name="scalerange" type="vector2" value="0.25, 1.75" />
+      <input name="offset" type="float" value="1.0" />
+      <input name="offsetrange" type="vector2" value="0.0, 1.0" />
+      <input name="falloff" type="float" value="0.5" />
+      <input name="falloffcontrast" type="float" value="0.5" />
+      <input name="lumacoeffs" type="color3" value="0.2722287, 0.6740818, 0.0536895" />
+    </hextiledimage>
+    <output name="out" type="color3" nodename="node_under_test" />
+  </nodegraph>
+</materialx>

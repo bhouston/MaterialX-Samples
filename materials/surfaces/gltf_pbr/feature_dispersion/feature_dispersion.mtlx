@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <gltf_pbr name="surface_shader1" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.45, 0.55, 0.95" />
+    <input name="transmission" type="float" value="1.0" />
+    <input name="dispersion" type="float" value="1.0" />
+  </gltf_pbr>
+  <surfacematerial name="M_feature_dispersion" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="surface_shader1" />
+  </surfacematerial>
+</materialx>

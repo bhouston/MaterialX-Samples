@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <gltf_pbr name="SR_gltf_sheen" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.2, 0.4, 0.8" />
+    <input name="metallic" type="float" value="0.0" />
+    <input name="roughness" type="float" value="0.8" />
+    <input name="sheen_color" type="color3" value="1.0, 0.9, 0.7" />
+    <input name="sheen_roughness" type="float" value="0.3" />
+    <input name="alpha" type="float" value="1.0" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+  </gltf_pbr>
+  <surfacematerial name="M_gltf_sheen" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_gltf_sheen" />
+  </surfacematerial>
+</materialx>

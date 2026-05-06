@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_matrix33_transformmatrix_2d_translate_row">
+    <texcoord name="uv0" type="vector2" />
+    <transformmatrix name="uv_transform" type="vector2" nodedef="ND_transformmatrix_vector2M3">
+      <input name="in" type="vector2" nodename="uv0" />
+      <input name="mat" type="matrix33" value="1.0,0.0,0.0,0.0,1.0,0.0,0.20,-0.10,1.0" />
+    </transformmatrix>
+    <image name="base_image" type="color3">
+      <input name="file" type="filename" value="../image_format_png/textures/texture.png" colorspace="srgb_texture" />
+      <input name="default" type="color3" value="1.0, 0.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="uv_transform" />
+    </image>
+    <output name="out_base_color" type="color3" nodename="base_image" />
+  </nodegraph>
+  <standard_surface name="SR_matrix33_transformmatrix_2d_translate_row" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_matrix33_transformmatrix_2d_translate_row" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.4" />
+  </standard_surface>
+  <surfacematerial name="M_matrix33_transformmatrix_2d_translate_row" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_matrix33_transformmatrix_2d_translate_row" />
+  </surfacematerial>
+</materialx>

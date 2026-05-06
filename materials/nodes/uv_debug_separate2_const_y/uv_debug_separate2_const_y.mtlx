@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_uv_debug_separate2_const_y">
+    <constant name="const_uv" type="vector2">
+      <input name="value" type="vector2" value="0.2, 0.8" />
+    </constant>
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="const_uv" />
+    </separate2>
+    <combine3 name="y_grayscale" type="color3">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" nodename="uv_split" output="outy" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="y_grayscale" />
+  </nodegraph>
+  <standard_surface name="SR_uv_debug_separate2_const_y" type="surfaceshader">
+    <input name="base_color" type="color3" value="0, 0, 0" />
+    <input name="emission_color" type="color3" nodegraph="NG_uv_debug_separate2_const_y" output="out_base_color" />
+    <input name="emission" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.0" />
+  </standard_surface>
+  <surfacematerial name="M_uv_debug_separate2_const_y" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_uv_debug_separate2_const_y" />
+  </surfacematerial>
+</materialx>

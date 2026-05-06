@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <blackbody name=\"node_under_test\" type=\"color3\" nodedef=\"ND_blackbody\">\n      <input name=\"temperature\" type=\"float\" nodename=\"temperature_selection\"/>\n    </blackbody>."
+    }
+  ]
+}

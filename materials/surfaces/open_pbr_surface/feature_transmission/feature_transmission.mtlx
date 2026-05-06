@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <open_pbr_surface name="surface_shader1" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.80, 0.90, 0.30" />
+    <input name="transmission_weight" type="float" value="1.0" />
+  </open_pbr_surface>
+  <surfacematerial name="M_feature_transmission" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="surface_shader1" />
+  </surfacematerial>
+</materialx>

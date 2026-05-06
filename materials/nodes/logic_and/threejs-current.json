@@ -1,0 +1,31 @@
+{
+  "rendererName": "threejs-current",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Browser console error: THREE.TSL: TypeError: Cannot read properties of undefined (reading 'getNodeType') \"MathNode.getInputType()\" at \"three_webgpu.js:4320\"\n    at MathNode.getInputType (three_webgpu.js:4320:28)\n    at MathNode.generateNodeType (three_webgpu.js:4343:20)\n    at MathNode.getNodeType (three_webgpu.js:1263:17)\n    at VarNode.generateNodeType (three_webgpu.js:5620:20)\n    at VarNode.getNodeType (three_webgpu.js:1263:17)\n    at ConvertNode.generateNodeType (three_webgpu.js:1666:33)\n    at ConvertNode.getNodeType (three_webgpu.js:1263:17)\n    at VarNode.generateNodeType (three_webgpu.js:5620:20)\n    at VarNode.getNodeType (three_webgpu.js:1263:17)\n    at ConvertNode.generateNodeType (three_webgpu.js:1666:33)",
+    "stack": "Error: Browser console error: THREE.TSL: TypeError: Cannot read properties of undefined (reading 'getNodeType') \"MathNode.getInputType()\" at \"three_webgpu.js:4320\"\n    at MathNode.getInputType (three_webgpu.js:4320:28)\n    at MathNode.generateNodeType (three_webgpu.js:4343:20)\n    at MathNode.getNodeType (three_webgpu.js:1263:17)\n    at VarNode.generateNodeType (three_webgpu.js:5620:20)\n    at VarNode.getNodeType (three_webgpu.js:1263:17)\n    at ConvertNode.generateNodeType (three_webgpu.js:1666:33)\n    at ConvertNode.getNodeType (three_webgpu.js:1263:17)\n    at VarNode.generateNodeType (three_webgpu.js:5620:20)\n    at VarNode.getNodeType (three_webgpu.js:1263:17)\n    at ConvertNode.generateNodeType (three_webgpu.js:1666:33)\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:76:19)\n    at recordBrowserError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:231:28)\n    at Page.onConsole (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:242:17)\n    at Page._callHandler (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:66:29)\n    at Page.emit (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:56:12)\n    at Proxy.<anonymous> (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/browserContext.js:99:13)\n    at Proxy._callHandler (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:66:29)\n    at Proxy.emit (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:56:12)\n    at Connection.dispatch (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/connection.js:177:21)\n    at Immediate.<anonymous> (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/inProcessFactory.js:46:85)"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <checkerboard name=\"checker_a\" type=\"color3\" nodedef=\"ND_checkerboard_color3\">\n      <input name=\"color1\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"color2\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"checker_a_uv\"/>\n    </checkerboard>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <checkerboard name=\"checker_b\" type=\"color3\" nodedef=\"ND_checkerboard_color3\">\n      <input name=\"color1\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"color2\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"checker_b_uv\"/>\n    </checkerboard>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <and name=\"node_under_test\" type=\"boolean\" nodedef=\"ND_logical_and\">\n      <input name=\"in1\" type=\"boolean\" nodename=\"checker_a_bool\"/>\n      <input name=\"in2\" type=\"boolean\" nodename=\"checker_b_bool\"/>\n    </and>."
+    },
+    {
+      "level": "error",
+      "source": "browser",
+      "message": "THREE.TSL: TypeError: Cannot read properties of undefined (reading 'getNodeType') \"MathNode.getInputType()\" at \"three_webgpu.js:4320\"\n    at MathNode.getInputType (three_webgpu.js:4320:28)\n    at MathNode.generateNodeType (three_webgpu.js:4343:20)\n    at MathNode.getNodeType (three_webgpu.js:1263:17)\n    at VarNode.generateNodeType (three_webgpu.js:5620:20)\n    at VarNode.getNodeType (three_webgpu.js:1263:17)\n    at ConvertNode.generateNodeType (three_webgpu.js:1666:33)\n    at ConvertNode.getNodeType (three_webgpu.js:1263:17)\n    at VarNode.generateNodeType (three_webgpu.js:5620:20)\n    at VarNode.getNodeType (three_webgpu.js:1263:17)\n    at ConvertNode.generateNodeType (three_webgpu.js:1666:33)"
+    }
+  ]
+}

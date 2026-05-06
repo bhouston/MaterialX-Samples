@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <checkerboard name=\"node_under_test\" type=\"color3\" nodedef=\"ND_checkerboard_color3\">\n      <input name=\"color1\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"color2\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"checker_uv\"/>\n    </checkerboard>."
+    }
+  ]
+}

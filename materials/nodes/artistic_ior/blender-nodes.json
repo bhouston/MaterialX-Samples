@@ -1,0 +1,16 @@
+{
+  "rendererName": "blender-nodes",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Unsupported MaterialX node category: artistic_ior",
+    "stack": "Error: Unsupported MaterialX node category: artistic_ior\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:190:19)\n    at file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:408:33\n    at settle (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:387:13)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:408:13)\n    at ChildProcess.emit (node:events:508:28)\n    at maybeClose (node:internal/child_process:1101:16)\n    at Socket.<anonymous> (node:internal/child_process:457:11)\n    at Socket.emit (node:events:508:28)\n    at Pipe.<anonymous> (node:net:346:12)"
+  },
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/artistic_ior/artistic_ior.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/artistic_ior/blender-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: artistic_ior\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 14.968, \"find_normalized_root\": 0.016, \"load_materialx\": 77.8, \"total\": 92.801}}"
+    }
+  ]
+}

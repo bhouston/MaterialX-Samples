@@ -1,0 +1,17 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <burn name=\"node_under_test\" type=\"color3\" nodedef=\"ND_burn_color3\">\n      <input name=\"fg\" type=\"color3\" nodename=\"uv_color_hot\"/>\n      <input name=\"bg\" type=\"color3\" nodename=\"uv_color_cool\"/>\n      <input name=\"mix\" type=\"float\" nodename=\"uv_mix\"/>\n    </burn>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"uv_mix\" type=\"float\"><input name=\"in\" type=\"float\" nodename=\"uv_sum\"/></fract>."
+    }
+  ]
+}

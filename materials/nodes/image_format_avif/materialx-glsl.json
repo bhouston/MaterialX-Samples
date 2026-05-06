@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialx-glsl",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Image loader failed to parse image: /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_avif/textures/texture.avif"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable"
+    }
+  ]
+}

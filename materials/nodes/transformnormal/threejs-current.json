@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <transformnormal name=\"node_under_test\" type=\"vector3\" nodedef=\"ND_transformnormal_vector3\">\n      <input name=\"in\" type=\"vector3\" nodename=\"uv_vec3\"/>\n      <input name=\"fromspace\" type=\"string\" value=\"world\"/>\n      <input name=\"tospace\" type=\"string\" value=\"object\"/>\n    </transformnormal>."
+    }
+  ]
+}

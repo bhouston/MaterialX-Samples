@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for texture_opacity.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node interface error: Input 'opacity' doesn't match declaration: <standard_surface name=\"surface_shader1\" type=\"surfaceshader\" nodedef=\"ND_standard_surface_surfaceshader\">"
+    }
+  ]
+}

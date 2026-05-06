@@ -1,0 +1,37 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <artistic_ior name=\"art_ior\" type=\"multioutput\">\n      <input name=\"reflectivity\" type=\"color3\" value=\"0.88, 0.74, 0.52\"/>\n      <input name=\"edge_color\" type=\"color3\" value=\"0.9, 0.95, 1.0\"/>\n    </artistic_ior>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <artistic_ior name=\"art_ior\" type=\"multioutput\">\n      <input name=\"reflectivity\" type=\"color3\" value=\"0.88, 0.74, 0.52\"/>\n      <input name=\"edge_color\" type=\"color3\" value=\"0.9, 0.95, 1.0\"/>\n    </artistic_ior>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <artistic_ior name=\"art_ior\" type=\"multioutput\">\n      <input name=\"reflectivity\" type=\"color3\" value=\"0.88, 0.74, 0.52\"/>\n      <input name=\"edge_color\" type=\"color3\" value=\"0.9, 0.95, 1.0\"/>\n    </artistic_ior>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <open_pbr_anisotropy name=\"aniso_pair\" type=\"vector2\">\n      <input name=\"roughness\" type=\"float\" value=\"0.3\"/>\n      <input name=\"anisotropy\" type=\"float\" value=\"0.55\"/>\n    </open_pbr_anisotropy>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <blackbody name=\"bb_color\" type=\"color3\">\n      <input name=\"temperature\" type=\"float\" value=\"4500\"/>\n    </blackbody>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <bump name=\"bump_n\" type=\"vector3\">\n      <input name=\"height\" type=\"float\" nodename=\"facing\"/>\n      <input name=\"scale\" type=\"float\" value=\"0.2\"/>\n      <input name=\"tangent\" type=\"vector3\" nodename=\"tan_ws\"/>\n      <input name=\"bitangent\" type=\"vector3\" value=\"0.0, 1.0, 0.0\"/>\n    </bump>."
+    }
+  ]
+}

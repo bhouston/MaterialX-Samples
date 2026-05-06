@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <ramp_gradient name=\"grad3\" type=\"color4\">\n      <input name=\"x\" type=\"float\" nodename=\"uv_split\" output=\"outx\"/>\n      <input name=\"interval1\" type=\"float\" value=\"0.66\"/>\n      <input name=\"interval2\" type=\"float\" value=\"1.0\"/>\n      <input name=\"color1\" type=\"color4\" value=\"0.1, 0.1, 0.9, 1.0\"/>\n      <input name=\"color2\" type=\"color4\" value=\"0.9, 0.9, 0.1, 1.0\"/>\n      <input name=\"interpolation\" type=\"integer\" value=\"1\"/>\n      <input name=\"prev_color\" type=\"color4\" nodename=\"grad2\"/>\n      <input name=\"interval_num\" type=\"integer\" value=\"3\"/>\n      <input name=\"num_intervals\" type=\"integer\" value=\"3\"/>\n    </ramp_gradient>."
+    }
+  ]
+}

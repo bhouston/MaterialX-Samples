@@ -1,0 +1,17 @@
+{
+  "materialx-glsl": {
+    "psnr": null
+  },
+  "materialx-metal": {
+    "psnr": 33.965
+  },
+  "materialx-osl": {
+    "psnr": 17.051
+  },
+  "threejs-new": {
+    "psnr": 20.209
+  },
+  "threejs-current": {
+    "psnr": 18.606
+  }
+}

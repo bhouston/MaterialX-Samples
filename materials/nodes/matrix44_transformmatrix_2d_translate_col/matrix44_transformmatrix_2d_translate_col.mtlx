@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_matrix44_transformmatrix_2d_translate_col">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <combine3 name="uv_vec3" type="vector3">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" value="0.0" />
+    </combine3>
+    <transformmatrix name="uv_transform_vec3" type="vector3" nodedef="ND_transformmatrix_vector3M4">
+      <input name="in" type="vector3" nodename="uv_vec3" />
+      <input name="mat" type="matrix44" value="1.0,0.0,0.0,0.20,0.0,1.0,0.0,-0.10,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0" />
+    </transformmatrix>
+    <separate3 name="uv_transform_split" type="multioutput" nodedef="ND_separate3_vector3">
+      <input name="in" type="vector3" nodename="uv_transform_vec3" />
+    </separate3>
+    <combine2 name="uv_transform" type="vector2">
+      <input name="in1" type="float" nodename="uv_transform_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_transform_split" output="outy" />
+    </combine2>
+    <image name="base_image" type="color3">
+      <input name="file" type="filename" value="../image_format_png/textures/texture.png" colorspace="srgb_texture" />
+      <input name="default" type="color3" value="1.0, 0.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="uv_transform" />
+    </image>
+    <output name="out_base_color" type="color3" nodename="base_image" />
+  </nodegraph>
+  <standard_surface name="SR_matrix44_transformmatrix_2d_translate_col" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_matrix44_transformmatrix_2d_translate_col" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.4" />
+  </standard_surface>
+  <surfacematerial name="M_matrix44_transformmatrix_2d_translate_col" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_matrix44_transformmatrix_2d_translate_col" />
+  </surfacematerial>
+</materialx>

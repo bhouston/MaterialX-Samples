@@ -1,0 +1,12 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Image loader failed to parse image: /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg"
+    }
+  ]
+}

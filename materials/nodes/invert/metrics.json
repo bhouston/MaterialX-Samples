@@ -1,0 +1,26 @@
+{
+  "blender-new": {
+    "psnr": 33.235
+  },
+  "blender-nodes": {
+    "psnr": 33.316
+  },
+  "blender-eevee-nodes": {
+    "psnr": 32.342
+  },
+  "materialx-glsl": {
+    "psnr": null
+  },
+  "materialx-metal": {
+    "psnr": 61.258
+  },
+  "materialx-osl": {
+    "psnr": 16.407
+  },
+  "threejs-new": {
+    "psnr": 32.522
+  },
+  "threejs-current": {
+    "psnr": 14.838
+  }
+}

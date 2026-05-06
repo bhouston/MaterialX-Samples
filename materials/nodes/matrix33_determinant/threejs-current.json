@@ -1,0 +1,26 @@
+{
+  "rendererName": "threejs-current",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <creatematrix name=\"source_matrix\" type=\"matrix33\" nodedef=\"ND_creatematrix_vector3_matrix33\">\n      <input name=\"in1\" type=\"vector3\" nodename=\"row1\"/>\n      <input name=\"in2\" type=\"vector3\" nodename=\"row2\"/>\n      <input name=\"in3\" type=\"vector3\" nodename=\"row3\"/>\n    </creatematrix>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <input name=\"in\" type=\"matrix33\" nodename=\"source_matrix\"/>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "Error while parsing WGSL: :605:39 error: no matching call to 'determinant(abstract-float)'\n\n1 candidate function:\n • 'determinant(matNxN<T>  ✗ ) -> T' where:\n      ✗  'T' is 'abstract-float', 'f32' or 'f16'\n\n  DiffuseColor = vec4<f32>( vec3<f32>( determinant( 0.0 ), nodeVarying8[ 0u ], nodeVarying8[ 1u ] ), 1.0 );\n                                       ^^^^^^^^^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_matrix33_determinant\"\"]).\n"
+    }
+  ]
+}

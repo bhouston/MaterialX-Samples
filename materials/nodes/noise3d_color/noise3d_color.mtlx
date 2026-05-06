@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_noise3d_color">
+    <position name="pos0" type="vector3" />
+    <multiply name="coords_under_test" type="vector3">
+      <input name="in1" type="vector3" nodename="pos0" />
+      <input name="in2" type="vector3" value="5.0, 6.0, 7.0" />
+    </multiply>
+    <noise3d name="node_under_test" type="color3" nodedef="ND_noise3d_color3">
+      <input name="amplitude" type="vector3" value="1.0, 0.85, 0.7" />
+      <input name="pivot" type="float" value="0.0" />
+      <input name="position" type="vector3" nodename="coords_under_test" />
+    </noise3d>
+    <range name="color_01" type="color3">
+      <input name="in" type="color3" nodename="node_under_test" />
+      <input name="inlow" type="color3" value="-1.0, -1.0, -1.0" />
+      <input name="inhigh" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="outlow" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="outhigh" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <output name="out_base_color" type="color3" nodename="color_01" />
+  </nodegraph>
+  <standard_surface name="SR_noise3d_color" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_noise3d_color" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_noise3d_color" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_noise3d_color" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,16 @@
+{
+  "rendererName": "blender-nodes",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Unsupported MaterialX node category: viewdirection",
+    "stack": "Error: Unsupported MaterialX node category: viewdirection\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:190:19)\n    at file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:408:33\n    at settle (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:387:13)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:408:13)\n    at ChildProcess.emit (node:events:508:28)\n    at maybeClose (node:internal/child_process:1101:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
+  },
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "{\"event\": \"blender-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/viewdirection/viewdirection.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/viewdirection/blender-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: viewdirection\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.748, \"find_normalized_root\": 0.014, \"load_materialx\": 73.274, \"total\": 74.052}}"
+    }
+  ]
+}

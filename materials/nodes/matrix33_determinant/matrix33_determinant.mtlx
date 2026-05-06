@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_matrix33_determinant">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <multiply name="scale_x" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="0.25" />
+    </multiply>
+    <add name="diag_x" type="float">
+      <input name="in1" type="float" value="0.85" />
+      <input name="in2" type="float" nodename="scale_x" />
+    </add>
+    <multiply name="scale_y" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="0.25" />
+    </multiply>
+    <add name="diag_y" type="float">
+      <input name="in1" type="float" value="0.85" />
+      <input name="in2" type="float" nodename="scale_y" />
+    </add>
+    <combine3 name="row1" type="vector3">
+      <input name="in1" type="float" nodename="diag_x" />
+      <input name="in2" type="float" value="0.1" />
+      <input name="in3" type="float" value="0.0" />
+    </combine3>
+    <combine3 name="row2" type="vector3">
+      <input name="in1" type="float" value="0.0" />
+      <input name="in2" type="float" nodename="diag_y" />
+      <input name="in3" type="float" value="0.1" />
+    </combine3>
+    <combine3 name="row3" type="vector3">
+      <input name="in1" type="float" value="0.1" />
+      <input name="in2" type="float" value="0.0" />
+      <input name="in3" type="float" value="1.0" />
+    </combine3>
+    <creatematrix name="source_matrix" type="matrix33" nodedef="ND_creatematrix_vector3_matrix33">
+      <input name="in1" type="vector3" nodename="row1" />
+      <input name="in2" type="vector3" nodename="row2" />
+      <input name="in3" type="vector3" nodename="row3" />
+    </creatematrix>
+    <determinant name="node_under_test" type="float" nodedef="ND_determinant_matrix33">
+      <input name="in" type="matrix33" nodename="source_matrix" />
+    </determinant>
+    <combine3 name="final_color" type="color3">
+      <input name="in1" type="float" nodename="node_under_test" />
+      <input name="in2" type="float" nodename="uv_split" output="outx" />
+      <input name="in3" type="float" nodename="uv_split" output="outy" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_matrix33_determinant" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_matrix33_determinant" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_matrix33_determinant" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_matrix33_determinant" />
+  </surfacematerial>
+</materialx>

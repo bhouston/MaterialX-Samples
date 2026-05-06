@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_noise2d">
+    <texcoord name="uv0" type="vector2" />
+    <combine2 name="uv_scale" type="vector2"><input name="in1" type="float" value="24.0" /><input name="in2" type="float" value="24.0" /></combine2>
+    <multiply name="uv_scaled" type="vector2"><input name="in1" type="vector2" nodename="uv0" /><input name="in2" type="vector2" nodename="uv_scale" /></multiply>
+    <noise2d name="node_under_test" type="float" nodedef="ND_noise2d_float">
+      <input name="amplitude" type="float" value="1.7" />
+      <input name="pivot" type="float" value="0.25" />
+      <input name="texcoord" type="vector2" nodename="uv_scaled" />
+    </noise2d>
+    <range name="noise_01" type="float">
+      <input name="in" type="float" nodename="node_under_test" />
+      <input name="inlow" type="float" value="-1.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="tint_r" type="float">
+      <input name="in" type="float" nodename="noise_01" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="0.00" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="tint_g" type="float">
+      <input name="in" type="float" nodename="noise_01" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="0.54" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="tint_b" type="float">
+      <input name="in" type="float" nodename="noise_01" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="1.0" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.00" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <combine3 name="base_color" type="color3">
+      <input name="in1" type="float" nodename="tint_r" />
+      <input name="in2" type="float" nodename="tint_g" />
+      <input name="in3" type="float" nodename="tint_b" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="base_color" />
+  </nodegraph>
+  <standard_surface name="SR_noise2d" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_noise2d" output="out_base_color" />
+  </standard_surface>
+  <surfacematerial name="M_noise2d" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_noise2d" />
+  </surfacematerial>
+</materialx>

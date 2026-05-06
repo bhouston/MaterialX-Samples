@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_logic_xor">
+    <texcoord name="uv0" type="vector2" />
+    <multiply name="checker_a_uv" type="vector2">
+      <input name="in1" type="vector2" nodename="uv0" />
+      <input name="in2" type="vector2" value="2.0, 2.0" />
+    </multiply>
+    <multiply name="checker_b_scaled" type="vector2">
+      <input name="in1" type="vector2" nodename="uv0" />
+      <input name="in2" type="vector2" value="2.0, 2.0" />
+    </multiply>
+    <add name="checker_b_uv" type="vector2">
+      <input name="in1" type="vector2" nodename="checker_b_scaled" />
+      <input name="in2" type="vector2" value="0.5, 0.5" />
+    </add>
+    <checkerboard name="checker_a" type="color3" nodedef="ND_checkerboard_color3">
+      <input name="color1" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="color2" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="checker_a_uv" />
+    </checkerboard>
+    <checkerboard name="checker_b" type="color3" nodedef="ND_checkerboard_color3">
+      <input name="color1" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="color2" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="texcoord" type="vector2" nodename="checker_b_uv" />
+    </checkerboard>
+    <separate3 name="checker_a_channels" type="multioutput">
+      <input name="in" type="color3" nodename="checker_a" />
+    </separate3>
+    <separate3 name="checker_b_channels" type="multioutput">
+      <input name="in" type="color3" nodename="checker_b" />
+    </separate3>
+    <ifgreater name="checker_a_bool" type="boolean">
+      <input name="value1" type="float" nodename="checker_a_channels" output="outr" />
+      <input name="value2" type="float" value="0.5" />
+    </ifgreater>
+    <ifgreater name="checker_b_bool" type="boolean">
+      <input name="value1" type="float" nodename="checker_b_channels" output="outr" />
+      <input name="value2" type="float" value="0.5" />
+    </ifgreater>
+    <xor name="node_under_test" type="boolean" nodedef="ND_logical_xor">
+      <input name="in1" type="boolean" nodename="checker_a_bool" />
+      <input name="in2" type="boolean" nodename="checker_b_bool" />
+    </xor>
+    <ifequal name="checker_a_mask" type="float">
+      <input name="value1" type="boolean" nodename="checker_a_bool" />
+      <input name="value2" type="boolean" value="true" />
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" value="0.0" />
+    </ifequal>
+    <ifequal name="checker_b_mask" type="float">
+      <input name="value1" type="boolean" nodename="checker_b_bool" />
+      <input name="value2" type="boolean" value="true" />
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" value="0.0" />
+    </ifequal>
+    <ifequal name="result_mask" type="float">
+      <input name="value1" type="boolean" nodename="node_under_test" />
+      <input name="value2" type="boolean" value="true" />
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" value="0.0" />
+    </ifequal>
+    <combine3 name="input_preview" type="color3">
+      <input name="in1" type="float" nodename="checker_a_mask" />
+      <input name="in2" type="float" value="0.08" />
+      <input name="in3" type="float" nodename="checker_b_mask" />
+    </combine3>
+    <constant name="result_color" type="color3">
+      <input name="value" type="color3" value="1.0, 0.0, 1.0" />
+    </constant>
+    <mix name="final_color" type="color3">
+      <input name="fg" type="color3" nodename="result_color" />
+      <input name="bg" type="color3" nodename="input_preview" />
+      <input name="mix" type="float" nodename="result_mask" />
+    </mix>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+    <standard_surface name="SR_logic_xor" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_logic_xor" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_logic_xor" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_logic_xor" />
+  </surfacematerial>
+</materialx>

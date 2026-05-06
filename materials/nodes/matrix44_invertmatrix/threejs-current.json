@@ -1,0 +1,41 @@
+{
+  "rendererName": "threejs-current",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"uv_wave\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"uv_sum\"/>\n    </fract>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <creatematrix name=\"source_matrix\" type=\"matrix44\" nodedef=\"ND_creatematrix_vector4_matrix44\">\n      <input name=\"in1\" type=\"vector4\" nodename=\"row1\"/>\n      <input name=\"in2\" type=\"vector4\" nodename=\"row2\"/>\n      <input name=\"in3\" type=\"vector4\" nodename=\"row3\"/>\n      <input name=\"in4\" type=\"vector4\" nodename=\"row4\"/>\n    </creatematrix>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <input name=\"in\" type=\"matrix44\" nodename=\"source_matrix\"/>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <invertmatrix name=\"node_under_test\" type=\"matrix44\" nodedef=\"ND_invertmatrix_matrix44\">\n      <input name=\"in\" type=\"matrix44\" nodename=\"source_matrix\"/>\n    </invertmatrix>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <input name=\"in\" type=\"matrix44\" nodename=\"node_under_test\"/>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "Error while parsing WGSL: :604:54 error: cannot index type 'abstract-float'\n  DiffuseColor = vec4<f32>( vec3<f32>( ( ( vec4<f32>( 0.0[ 0 ] )[ 0u ] * 0.5 ) + 0.5 ), vec4<f32>( 0.0[ 0 ] )[ 1u ], vec4<f32>( 0.0[ 0 ] )[ 2u ] ), 1.0 );\n                                                      ^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_matrix44_invertmatrix\"\"]).\n"
+    }
+  ]
+}

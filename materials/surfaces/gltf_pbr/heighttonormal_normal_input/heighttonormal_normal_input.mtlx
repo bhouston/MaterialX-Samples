@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_heighttonormal_normal_input">
+    <image name="height_image" type="float">
+      <input name="file" type="filename" value="textures/grid.png" />
+      <input name="default" type="float" value="0.5" />
+    </image>
+    <heighttonormal name="height_to_normal" type="vector3">
+      <input name="in" type="float" nodename="height_image" />
+      <input name="scale" type="float" value="2.0" />
+    </heighttonormal>
+    <normalmap name="normal_from_height" type="vector3">
+      <input name="in" type="vector3" nodename="height_to_normal" />
+      <input name="scale" type="float" value="1.0" />
+    </normalmap>
+    <output name="out_normal" type="vector3" nodename="normal_from_height" />
+  </nodegraph>
+  <gltf_pbr name="SR_heighttonormal_normal_input" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.5, 0.5, 0.5" />
+    <input name="roughness" type="float" value="0.25" />
+    <input name="normal" type="vector3" nodegraph="NG_heighttonormal_normal_input" output="out_normal" />
+    <input name="specular" type="float" value="0.7" />
+  </gltf_pbr>
+  <surfacematerial name="M_heighttonormal_normal_input" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_heighttonormal_normal_input" />
+  </surfacematerial>
+</materialx>

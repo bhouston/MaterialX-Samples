@@ -1,0 +1,17 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"node_under_test\" type=\"color3\" nodedef=\"ND_range_color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"inlow\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"inhigh\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"gamma\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"outlow\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"outhigh\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"doclamp\" type=\"boolean\" nodename=\"uv_bool\"/>\n    </range>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"uv_mix\" type=\"float\"><input name=\"in\" type=\"float\" nodename=\"uv_sum\"/></fract>."
+    }
+  ]
+}

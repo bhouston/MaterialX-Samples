@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_image_format_bmp">
+    <texcoord name="uv0" type="vector2" />
+    <image name="format_tex" type="color3">
+      <input name="file" type="filename" value="textures/texture.bmp" colorspace="srgb_texture" />
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="uaddressmode" type="string" value="periodic" />
+      <input name="vaddressmode" type="string" value="periodic" />
+    </image>
+    <output name="base_color_out" type="color3" nodename="format_tex" />
+  </nodegraph>
+  <standard_surface name="SR_image_format_bmp" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_image_format_bmp" output="base_color_out" />
+    <input name="specular_roughness" type="float" value="0.35" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_image_format_bmp" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_image_format_bmp" />
+  </surfacematerial>
+</materialx>

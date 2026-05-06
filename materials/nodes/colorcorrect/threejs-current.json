@@ -1,0 +1,17 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <colorcorrect name=\"node_under_test\" type=\"color3\" nodedef=\"ND_colorcorrect_color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"hue\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"saturation\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"gamma\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"lift\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"gain\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"contrast\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"contrastpivot\" type=\"float\" nodename=\"uv_mix\"/>\n      <input name=\"exposure\" type=\"float\" nodename=\"uv_mix\"/>\n    </colorcorrect>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"uv_mix\" type=\"float\"><input name=\"in\" type=\"float\" nodename=\"uv_sum\"/></fract>."
+    }
+  ]
+}

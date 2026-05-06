@@ -1,0 +1,21 @@
+{
+  "rendererName": "threejs-current",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"uv_mix\" type=\"float\"><input name=\"in\" type=\"float\" nodename=\"uv_sum\"/></fract>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "Error while parsing WGSL: :605:76 error: unresolved call target 'mod'\n  DiffuseColor = vec4<f32>( mix( vec3<f32>( 0.1, nodeVarying8[ 1u ], 0.8 ), mod( vec3<f32>( nodeVarying8[ 0u ], nodeVarying8[ 1u ], 0.0 ), vec3<f32>( nodeVarying8[ 0u ], nodeVarying8[ 1u ], 0.0 ) ), 0.0 ), 1.0 );\n                                                                            ^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_modulo\"\"]).\n"
+    }
+  ]
+}

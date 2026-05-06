@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_gltf_alpha_mode_mask">
+    <texcoord name="uv0" type="vector2" />
+    <extract name="alpha_u" type="float">
+      <input name="in" type="vector2" nodename="uv0" />
+      <input name="index" type="integer" value="0" />
+    </extract>
+    <output name="out_alpha" type="float" nodename="alpha_u" />
+  </nodegraph>
+  <gltf_pbr name="SR_gltf_alpha_mode_mask" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.2, 0.9, 0.2" />
+    <input name="metallic" type="float" value="0.0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="alpha" type="float" nodegraph="NG_gltf_alpha_mode_mask" output="out_alpha" />
+    <input name="alpha_mode" type="integer" value="1" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+  </gltf_pbr>
+  <surfacematerial name="M_gltf_alpha_mode_mask" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_gltf_alpha_mode_mask" />
+  </surfacematerial>
+</materialx>

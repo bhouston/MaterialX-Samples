@@ -1,0 +1,10 @@
+{
+  "rendererName": "threejs",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "THREE.MaterialXLoader: MaterialX translation failed in error-core mode; unsupported node categories: artistic_ior (2).",
+    "stack": "Error: THREE.MaterialXLoader: MaterialX translation failed in error-core mode; unsupported node categories: artistic_ior (2).\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:67:19)\n    at ThreeJsRenderer.generateImage (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:253:23)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:236:38"
+  },
+  "logs": []
+}

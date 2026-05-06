@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"axis_value\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"split\" output=\"outy\"/>\n      <input name=\"inlow\" type=\"float\" value=\"-2.0\"/>\n      <input name=\"inhigh\" type=\"float\" value=\"2.0\"/>\n      <input name=\"outlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"outhigh\" type=\"float\" value=\"1.0\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
+    }
+  ]
+}

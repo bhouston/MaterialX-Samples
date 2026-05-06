@@ -1,0 +1,16 @@
+{
+  "rendererName": "threejs-current",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Browser console error: THREE.TSL: Length of parameters exceeds maximum length of function 'vec2()' type. Stack trace not available. Enable \"THREE.Node.captureStackTrace\" to capture stack traces.",
+    "stack": "Error: Browser console error: THREE.TSL: Length of parameters exceeds maximum length of function 'vec2()' type. Stack trace not available. Enable \"THREE.Node.captureStackTrace\" to capture stack traces.\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:76:19)\n    at recordBrowserError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:231:28)\n    at Page.onConsole (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:242:17)\n    at Page._callHandler (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:66:29)\n    at Page.emit (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:56:12)\n    at Proxy.<anonymous> (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/browserContext.js:99:13)\n    at Proxy._callHandler (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:66:29)\n    at Proxy.emit (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/eventEmitter.js:56:12)\n    at Connection.dispatch (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/client/connection.js:177:21)\n    at Immediate.<anonymous> (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/playwright-core/lib/inProcessFactory.js:46:85)"
+  },
+  "logs": [
+    {
+      "level": "error",
+      "source": "browser",
+      "message": "THREE.TSL: Length of parameters exceeds maximum length of function 'vec2()' type. Stack trace not available. Enable \"THREE.Node.captureStackTrace\" to capture stack traces."
+    }
+  ]
+}

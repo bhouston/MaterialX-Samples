@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_uv_debug_common_mix">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <add name="uv_sum" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </add>
+    <fract name="uv_mix" type="float">
+      <input name="in" type="float" nodename="uv_sum" />
+    </fract>
+    <combine3 name="uv_color_hot" type="color3">
+      <input name="in1" type="float" value="0.95" />
+      <input name="in2" type="float" nodename="uv_split" output="outx" />
+      <input name="in3" type="float" value="0.2" />
+    </combine3>
+    <combine3 name="uv_color_cool" type="color3">
+      <input name="in1" type="float" value="0.1" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" value="0.8" />
+    </combine3>
+    <mix name="final_color" type="color3">
+      <input name="fg" type="color3" nodename="uv_color_hot" />
+      <input name="bg" type="color3" nodename="uv_color_cool" />
+      <input name="mix" type="float" nodename="uv_mix" />
+    </mix>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_uv_debug_common_mix" type="surfaceshader">
+    <input name="base_color" type="color3" value="0, 0, 0" />
+    <input name="emission_color" type="color3" nodegraph="NG_uv_debug_common_mix" output="out_base_color" />
+    <input name="emission" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.0" />
+  </standard_surface>
+  <surfacematerial name="M_uv_debug_common_mix" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_uv_debug_common_mix" />
+  </surfacematerial>
+</materialx>
