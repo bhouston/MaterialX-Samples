@@ -25,11 +25,11 @@
     <multiply name="uv_rotate" type="float"><input name="in1" type="float" nodename="uv_mix" /><input name="in2" type="float" value="0.785398" /></multiply>
     <range name="node_under_test" type="color3" nodedef="ND_range_color3">
       <input name="in" type="color3" nodename="uv_color" />
-      <input name="inlow" type="color3" nodename="uv_color" />
-      <input name="inhigh" type="color3" nodename="uv_color" />
-      <input name="gamma" type="color3" nodename="uv_color" />
-      <input name="outlow" type="color3" nodename="uv_color" />
-      <input name="outhigh" type="color3" nodename="uv_color" />
+      <input name="inlow" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="inhigh" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="gamma" type="color3" value="1.25, 0.8, 1.5" />
+      <input name="outlow" type="color3" nodename="uv_color_cool" />
+      <input name="outhigh" type="color3" nodename="uv_color_hot" />
       <input name="doclamp" type="boolean" nodename="uv_bool" />
     </range>
     <mix name="final_color" type="color3">

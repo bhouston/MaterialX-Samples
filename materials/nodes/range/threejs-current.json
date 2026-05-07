@@ -6,7 +6,7 @@
     {
       "level": "warning",
       "source": "browser",
-      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"node_under_test\" type=\"color3\" nodedef=\"ND_range_color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"inlow\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"inhigh\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"gamma\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"outlow\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"outhigh\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"doclamp\" type=\"boolean\" nodename=\"uv_bool\"/>\n    </range>."
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"node_under_test\" type=\"color3\" nodedef=\"ND_range_color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"uv_color\"/>\n      <input name=\"inlow\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"inhigh\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"gamma\" type=\"color3\" value=\"1.25, 0.8, 1.5\"/>\n      <input name=\"outlow\" type=\"color3\" nodename=\"uv_color_cool\"/>\n      <input name=\"outhigh\" type=\"color3\" nodename=\"uv_color_hot\"/>\n      <input name=\"doclamp\" type=\"boolean\" nodename=\"uv_bool\"/>\n    </range>."
     },
     {
       "level": "warning",

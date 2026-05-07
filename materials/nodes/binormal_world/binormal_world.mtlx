@@ -30,17 +30,53 @@
     <magnitude name="mag_0" type="float">
       <input name="in" type="vector3" nodename="node_under_test" />
     </magnitude>
-    <absval name="factor_abs" type="float">
+    <normalize name="direction" type="vector3">
+      <input name="in" type="vector3" nodename="node_under_test" />
+    </normalize>
+    <separate3 name="direction_split" type="multioutput">
+      <input name="in" type="vector3" nodename="direction" />
+    </separate3>
+    <atan2 name="azimuth" type="float">
+      <input name="iny" type="float" nodename="direction_split" output="outy" />
+      <input name="inx" type="float" nodename="direction_split" output="outx" />
+    </atan2>
+    <range name="azimuth_r" type="float">
+      <input name="in" type="float" nodename="azimuth" />
+      <input name="inlow" type="float" value="-3.14159265" />
+      <input name="inhigh" type="float" value="3.14159265" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <clamp name="direction_z_clamped" type="float">
+      <input name="in" type="float" nodename="direction_split" output="outz" />
+      <input name="low" type="float" value="-1.0" />
+      <input name="high" type="float" value="1.0" />
+    </clamp>
+    <acos name="polar" type="float">
+      <input name="in" type="float" nodename="direction_z_clamped" />
+    </acos>
+    <range name="polar_g" type="float">
+      <input name="in" type="float" nodename="polar" />
+      <input name="inlow" type="float" value="0.0" />
+      <input name="inhigh" type="float" value="3.14159265" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <range name="magnitude_b" type="float">
       <input name="in" type="float" nodename="mag_0" />
-    </absval>
-    <fract name="factor_01" type="float">
-      <input name="in" type="float" nodename="factor_abs" />
-    </fract>
-    <mix name="final_color" type="color3">
-      <input name="fg" type="color3" nodename="uv_color_hot" />
-      <input name="bg" type="color3" nodename="uv_color_cool" />
-      <input name="mix" type="float" nodename="factor_01" />
-    </mix>
+      <input name="inlow" type="float" value="0.9" />
+      <input name="inhigh" type="float" value="1.1" />
+      <input name="outlow" type="float" value="0.0" />
+      <input name="outhigh" type="float" value="1.0" />
+      <input name="doclamp" type="boolean" value="true" />
+    </range>
+    <combine3 name="final_color" type="color3">
+      <input name="in1" type="float" nodename="azimuth_r" />
+      <input name="in2" type="float" nodename="polar_g" />
+      <input name="in3" type="float" nodename="magnitude_b" />
+    </combine3>
     <output name="out_base_color" type="color3" nodename="final_color" />
   </nodegraph>
     <standard_surface name="SR_binormal_world" type="surfaceshader">

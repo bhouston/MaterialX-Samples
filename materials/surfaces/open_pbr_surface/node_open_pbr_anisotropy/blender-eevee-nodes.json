@@ -1,16 +1,6 @@
 {
   "rendererName": "blender-eevee-nodes",
-  "status": "failed",
-  "error": {
-    "name": "Error",
-    "message": "Unsupported MaterialX node category: open_pbr_anisotropy",
-    "stack": "Error: Unsupported MaterialX node category: open_pbr_anisotropy\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:190:19)\n    at file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:408:33\n    at settle (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:387:13)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-blender/dist/index.js:408:13)\n    at ChildProcess.emit (node:events:508:28)\n    at maybeClose (node:internal/child_process:1101:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
-  },
-  "logs": [
-    {
-      "level": "error",
-      "source": "renderer",
-      "message": "{\"event\": \"blender-eevee-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/node_open_pbr_anisotropy/material.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/node_open_pbr_anisotropy/blender-eevee-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: open_pbr_anisotropy\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.455, \"find_normalized_root\": 0.011, \"load_materialx\": 111.687, \"total\": 112.166}}"
-    }
-  ]
+  "status": "success",
+  "error": null,
+  "logs": []
 }
