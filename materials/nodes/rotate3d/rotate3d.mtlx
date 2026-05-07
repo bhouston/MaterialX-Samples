@@ -18,14 +18,9 @@
       <input name="in2" type="float" nodename="separate_texcoord" output="outy" />
       <input name="in3" type="float" value="0.0" />
     </combine3>
-    <time name="time1" type="float" />
-    <multiply name="multiply1" type="float">
-      <input name="in1" type="float" nodename="time1" />
-      <input name="in2" type="float" value="10.0" />
-    </multiply>
     <rotate3d name="rotate3d_1" type="vector3">
       <input name="in" type="vector3" nodename="texcoord_3d" />
-      <input name="amount" type="float" nodename="multiply1" />
+      <input name="amount" type="float" value="30.0" />
       <input name="axis" type="vector3" value="0.0, 0.0, 1.0" />
     </rotate3d>
     <separate3 name="separate_rotated" type="multioutput">

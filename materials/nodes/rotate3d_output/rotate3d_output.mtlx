@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_rotate3d_output">
+    <texcoord name="texcoord1" type="vector2" />
+    <separate2 name="separate_texcoord" type="multioutput">
+      <input name="in" type="vector2" nodename="texcoord1" />
+    </separate2>
+    <combine3 name="texcoord_3d" type="vector3">
+      <input name="in1" type="float" nodename="separate_texcoord" output="outx" />
+      <input name="in2" type="float" nodename="separate_texcoord" output="outy" />
+      <input name="in3" type="float" value="0.0" />
+    </combine3>
+    <rotate3d name="rotate3d_1" type="vector3">
+      <input name="in" type="vector3" nodename="texcoord_3d" />
+      <input name="amount" type="float" value="30.0" />
+      <input name="axis" type="vector3" value="0.0, 0.0, 1.0" />
+    </rotate3d>
+    <convert name="output_color" type="color3" nodedef="ND_convert_vector3_color3">
+      <input name="in" type="vector3" nodename="rotate3d_1" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="output_color" />
+  </nodegraph>
+  <standard_surface name="SR_rotate3d_output" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.0, 0.0, 0.0" />
+    <input name="emission_color" type="color3" nodegraph="NG_rotate3d_output" output="out_base_color" />
+    <input name="emission" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.0" />
+  </standard_surface>
+  <surfacematerial name="M_rotate3d_output" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_rotate3d_output" />
+  </surfacematerial>
+</materialx>
