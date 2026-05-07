@@ -25,7 +25,7 @@
     {
       "level": "warning",
       "source": "renderer",
-      "message": "ERROR: 0:2046: No matching function for call to NG_standard_surface_surfaceshader_100(float, vec3, float, float, float, vec3, float, float, float, float, float, vec3, float, vec3, float, float, float, float, vec3, vec3, float, float, float, vec3, float, float, vec3, float, float, float, float, vec3, float, float, float, float, float, vec3, float, bool, vec3, vec3, surfaceshader)"
+      "message": "ERROR: 0:2037: No matching function for call to NG_standard_surface_surfaceshader_100(float, vec3, float, float, float, vec3, float, float, float, float, float, vec3, float, vec3, float, float, float, float, vec3, vec3, float, float, float, vec3, float, float, vec3, float, float, float, float, vec3, float, float, float, float, float, vec3, float, bool, vec3, vec3, surfaceshader)"
     },
     {
       "level": "warning",

@@ -6,22 +6,22 @@
     {
       "level": "info",
       "source": "renderer",
-      "message": "00:01.721  cycles           | ERROR Image file /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg failed to load."
+      "message": "00:01.249  cycles           | ERROR Image file /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg failed to load."
     },
     {
       "level": "info",
       "source": "renderer",
-      "message": "00:01.721  cycles           | ERROR Image file /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg failed to load."
+      "message": "00:01.250  cycles           | ERROR Image file /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg failed to load."
     },
     {
       "level": "info",
       "source": "renderer",
-      "message": "00:01.723  cycles           | WARNING Colorspace  can't be converted to scene_linear: ColorSpaceTransform: empty source color space name."
+      "message": "00:01.251  cycles           | WARNING Colorspace  can't be converted to scene_linear: ColorSpaceTransform: empty source color space name."
     },
     {
       "level": "info",
       "source": "renderer",
-      "message": "00:01.723  cycles           | WARNING Colorspace  not found, using scene linear instead"
+      "message": "00:01.251  cycles           | WARNING Colorspace  not found, using scene linear instead"
     },
     {
       "level": "info",

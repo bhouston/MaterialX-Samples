@@ -10,7 +10,7 @@
     {
       "level": "error",
       "source": "renderer",
-      "message": "{\"event\": \"blender-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/artistic_ior/artistic_ior.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/artistic_ior/blender-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: artistic_ior\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 14.968, \"find_normalized_root\": 0.016, \"load_materialx\": 77.8, \"total\": 92.801}}"
+      "message": "{\"event\": \"blender-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/artistic_ior/artistic_ior.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/artistic_ior/blender-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: artistic_ior\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.384, \"find_normalized_root\": 0.007, \"load_materialx\": 104.123, \"total\": 104.521}}"
     }
   ]
 }

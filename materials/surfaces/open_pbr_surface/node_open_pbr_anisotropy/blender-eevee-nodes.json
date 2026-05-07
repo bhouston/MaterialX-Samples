@@ -10,7 +10,7 @@
     {
       "level": "error",
       "source": "renderer",
-      "message": "{\"event\": \"blender-eevee-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/node_open_pbr_anisotropy/material.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/node_open_pbr_anisotropy/blender-eevee-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: open_pbr_anisotropy\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.705, \"find_normalized_root\": 0.019, \"load_materialx\": 286.989, \"total\": 287.729}}"
+      "message": "{\"event\": \"blender-eevee-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/node_open_pbr_anisotropy/material.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/open_pbr_surface/node_open_pbr_anisotropy/blender-eevee-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: open_pbr_anisotropy\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.455, \"find_normalized_root\": 0.011, \"load_materialx\": 111.687, \"total\": 112.166}}"
     }
   ]
 }

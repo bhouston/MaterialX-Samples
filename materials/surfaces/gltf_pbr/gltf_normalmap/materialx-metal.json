@@ -4,26 +4,6 @@
   "error": null,
   "logs": [
     {
-      "level": "info",
-      "source": "renderer",
-      "message": "Unrecognized command-line option: --shadows"
-    },
-    {
-      "level": "info",
-      "source": "renderer",
-      "message": "Launch the viewer with '--help' for a complete list of supported options."
-    },
-    {
-      "level": "info",
-      "source": "renderer",
-      "message": "Unrecognized command-line option: false"
-    },
-    {
-      "level": "info",
-      "source": "renderer",
-      "message": "Launch the viewer with '--help' for a complete list of supported options."
-    },
-    {
       "level": "warning",
       "source": "renderer",
       "message": "*** Validation warnings for gltf_normalmap.mtlx ***"

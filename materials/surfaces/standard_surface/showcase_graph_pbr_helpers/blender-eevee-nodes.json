@@ -10,7 +10,7 @@
     {
       "level": "error",
       "source": "renderer",
-      "message": "{\"event\": \"blender-eevee-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/showcase_graph_pbr_helpers.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/blender-eevee-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: artistic_ior\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.514, \"find_normalized_root\": 0.012, \"load_materialx\": 243.485, \"total\": 244.024}}"
+      "message": "{\"event\": \"blender-eevee-nodes-render-import-failed\", \"mtlx_path\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/showcase_graph_pbr_helpers.mtlx\", \"output\": \"/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/surfaces/standard_surface/showcase_graph_pbr_helpers/blender-eevee-nodes-temp.png\", \"error\": \"Unsupported MaterialX node category: artistic_ior\", \"warnings\": [], \"timings_ms\": {\"configure_render\": 0.438, \"find_normalized_root\": 0.012, \"load_materialx\": 106.084, \"total\": 106.547}}"
     }
   ]
 }

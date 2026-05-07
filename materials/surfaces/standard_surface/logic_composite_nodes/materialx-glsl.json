@@ -25,12 +25,12 @@
     {
       "level": "warning",
       "source": "renderer",
-      "message": "ERROR: 0:2354: No matching function for call to mix(vec3, vec3, bool)"
+      "message": "ERROR: 0:2345: No matching function for call to mix(vec3, vec3, bool)"
     },
     {
       "level": "warning",
       "source": "renderer",
-      "message": "ERROR: 0:2356: Use of undeclared identifier 'base_color_out'"
+      "message": "ERROR: 0:2347: Use of undeclared identifier 'base_color_out'"
     },
     {
       "level": "warning",
