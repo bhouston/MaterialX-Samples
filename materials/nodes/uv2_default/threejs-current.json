@@ -2,11 +2,5 @@
   "rendererName": "threejs-current",
   "status": "success",
   "error": null,
-  "logs": [
-    {
-      "level": "warning",
-      "source": "browser",
-      "message": "THREE.AttributeNode: Vertex attribute \"uv1\" not found on geometry."
-    }
-  ]
+  "logs": []
 }
