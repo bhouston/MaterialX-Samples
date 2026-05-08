@@ -1,0 +1,61 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003038 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003038 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Compilation Errors:program_source:351:13: warning: 'M_PI' macro redefined [-Wmacro-redefined]"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI 3.1415926535897932"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:205:13: note: previous definition is here"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI M_PI_F"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:1160:20: error: use of undeclared identifier 'u_numActiveLightSources'"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "return min(u_numActiveLightSources, MAX_LIGHT_SOURCES) ;"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Cannot parse for uniforms without a valid program"
+    }
+  ]
+}

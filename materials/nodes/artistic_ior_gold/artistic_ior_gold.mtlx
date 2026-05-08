@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <!-- Gold -->
+  <!-- Real conductor expectation: Warm yellow body, slightly cooler/whiter rim. -->
+  <!-- Helper visualization: false-color display of artistic_ior ior/extinction outputs for standard_surface-based importers. -->
+  <nodegraph name="NG_artistic_ior_gold">
+    <combine3 name="reflectivity" type="color3">
+      <input name="in1" type="float" value="1.000" />
+      <input name="in2" type="float" value="0.766" />
+      <input name="in3" type="float" value="0.336" />
+    </combine3>
+    <combine3 name="edge_tint" type="color3">
+      <input name="in1" type="float" value="1.000" />
+      <input name="in2" type="float" value="0.964" />
+      <input name="in3" type="float" value="0.583" />
+    </combine3>
+    <artistic_ior name="artistic_ior_values" type="multioutput">
+      <input name="reflectivity" type="color3" nodename="reflectivity" />
+      <input name="edge_color" type="color3" nodename="edge_tint" />
+    </artistic_ior>
+    <range name="ior_display" type="color3">
+      <input name="in" type="color3" nodename="artistic_ior_values" output="ior" />
+      <input name="inlow" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="inhigh" type="color3" value="5.0, 5.0, 5.0" />
+      <input name="outlow" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="outhigh" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="gamma" type="color3" value="1.0, 1.0, 1.0" />
+    </range>
+    <range name="extinction_display" type="color3">
+      <input name="in" type="color3" nodename="artistic_ior_values" output="extinction" />
+      <input name="inlow" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="inhigh" type="color3" value="8.0, 8.0, 8.0" />
+      <input name="outlow" type="color3" value="0.0, 0.0, 0.0" />
+      <input name="outhigh" type="color3" value="1.0, 1.0, 1.0" />
+      <input name="gamma" type="color3" value="1.0, 1.0, 1.0" />
+    </range>
+    <mix name="display_color" type="color3">
+      <input name="bg" type="color3" nodename="ior_display" />
+      <input name="fg" type="color3" nodename="extinction_display" />
+      <input name="mix" type="float" value="0.35" />
+    </mix>
+    <output name="out_base_color" type="color3" nodename="display_color" />
+    <output name="out_emission_color" type="color3" nodename="extinction_display" />
+  </nodegraph>
+  <standard_surface name="SR_artistic_ior_gold" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_artistic_ior_gold" output="out_base_color" />
+    <input name="specular" type="float" value="0.25" />
+    <input name="specular_roughness" type="float" value="0.25" />
+    <input name="emission_color" type="color3" nodegraph="NG_artistic_ior_gold" output="out_emission_color" />
+    <input name="emission" type="float" value="0.35" />
+  </standard_surface>
+  <surfacematerial name="M_artistic_ior_gold" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_artistic_ior_gold" />
+  </surfacematerial>
+</materialx>

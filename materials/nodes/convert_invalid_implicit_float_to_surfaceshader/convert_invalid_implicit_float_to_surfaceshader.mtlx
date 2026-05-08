@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <texcoord name="uv0" type="vector2" />
+  <separate2 name="uv_split" type="multioutput"><input name="in" type="vector2" nodename="uv0" /></separate2>
+  <add name="uv_sum" type="float"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /></add>
+  <fract name="uv_mix" type="float"><input name="in" type="float" nodename="uv_sum" /></fract>
+  <fract name="source_node" type="float"><input name="in" type="float" nodename="uv_sum" /></fract>
+  <dot name="node_under_test" type="surfaceshader">
+    <input name="in" type="surfaceshader" nodename="source_node" />
+  </dot>
+  <surfacematerial name="M_convert_invalid_implicit_float_to_surfaceshader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="node_under_test" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"source_node\" type=\"float\"><input name=\"in\" type=\"float\" nodename=\"uv_sum\"/></fract>."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "rendererName": "materialx-glsl",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003058 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003058 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for convert_invalid_implicit_integer_to_color3.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Mismatched types in port connection: <input name=\"in\" type=\"color3\" nodename=\"source_node\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Error in compiling fragment shader:"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:2030: Incompatible types in initialization (and no available implicit conversion)"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:2032: Use of undeclared identifier 'node_under_test_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable"
+    }
+  ]
+}

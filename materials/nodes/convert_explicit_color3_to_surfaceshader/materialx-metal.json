@@ -1,0 +1,52 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Compilation Errors:program_source:346:13: warning: 'M_PI' macro redefined [-Wmacro-redefined]"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI 3.1415926535897932"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:200:13: note: previous definition is here"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI M_PI_F"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:1152:20: error: use of undeclared identifier 'u_numActiveLightSources'"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "return min(u_numActiveLightSources, MAX_LIGHT_SOURCES) ;"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    }
+  ]
+}

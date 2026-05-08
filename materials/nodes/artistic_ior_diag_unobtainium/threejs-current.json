@@ -1,0 +1,17 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"extinction_display\" type=\"color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"artistic_ior_values\" output=\"extinction\"/>\n      <input name=\"inlow\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"inhigh\" type=\"color3\" value=\"25.0, 25.0, 25.0\"/>\n      <input name=\"outlow\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"outhigh\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"gamma\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n    </range>."
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"ior_display\" type=\"color3\">\n      <input name=\"in\" type=\"color3\" nodename=\"artistic_ior_values\" output=\"ior\"/>\n      <input name=\"inlow\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"inhigh\" type=\"color3\" value=\"25.0, 25.0, 25.0\"/>\n      <input name=\"outlow\" type=\"color3\" value=\"0.0, 0.0, 0.0\"/>\n      <input name=\"outhigh\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n      <input name=\"gamma\" type=\"color3\" value=\"1.0, 1.0, 1.0\"/>\n    </range>."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "rendererName": "materialx-osl",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "FAILED /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.osl",
+    "stack": "Error: FAILED /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.osl\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:77:19)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:119:20)\n    at ChildProcess.emit (node:events:508:28)\n    at maybeClose (node:internal/child_process:1101:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "OSL compilation error"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Command string: /Users/bhouston/Coding/OpenSource/material-fidelity/build/osl-dist/bin/oslc -q  -I\"/Users/bhouston/Coding/OpenSource/material-fidelity/build/osl-dist/share/OSL/shaders\" /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.osl -o /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.oso > /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.oso_compile_errors.txt 2>&1"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Command return code: 256"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Shader failed to compile:"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.osl:132: error: Cannot initialize struct surfaceshader node_under_test_out = struct vector4"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "FAILED /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_surfaceshader/.materialx-osl/M_convert_invalid_implicit_vector4_to_surfaceshader.osl"
+    }
+  ]
+}

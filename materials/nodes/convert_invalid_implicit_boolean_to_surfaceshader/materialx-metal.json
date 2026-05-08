@@ -1,0 +1,626 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003038 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003038 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for convert_invalid_implicit_boolean_to_surfaceshader.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Mismatched types in port connection: <input name=\"in\" type=\"surfaceshader\" nodename=\"source_node\">"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "Compilation Errors:program_source:356:13: warning: 'M_PI' macro redefined [-Wmacro-redefined]"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI 3.1415926535897932"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:210:13: note: previous definition is here"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "#define M_PI M_PI_F"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:1168:20: error: use of undeclared identifier 'u_numActiveLightSources'"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "return min(u_numActiveLightSources, MAX_LIGHT_SOURCES) ;"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:1196:23: error: no viable conversion from 'bool' to 'surfaceshader'"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "surfaceshader node_under_test_out = source_node_out;"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^                     ~~~~~~~~~~~~~~~"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const device surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const threadgroup surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const constant surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const threadgroup_imageblock surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const ray_data surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const constant surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const device surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const threadgroup surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const constant surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const threadgroup_imageblock surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const ray_data surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const device surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const threadgroup surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const constant surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const threadgroup_imageblock surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'bool' to 'const ray_data surfaceshader &' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'device surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'threadgroup surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'threadgroup_imageblock surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'ray_data surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'device surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'threadgroup surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'threadgroup_imageblock surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'ray_data surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'device surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'threadgroup surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'threadgroup_imageblock surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "program_source:41:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'bool' to 'ray_data surfaceshader &&' for 1st argument"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "struct surfaceshader { float3 color; float3 transparency; };"
+    },
+    {
+      "level": "info",
+      "source": "renderer",
+      "message": "^"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Cannot parse for uniforms without a valid program"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "rendererName": "materialx-glsl",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for convert_invalid_implicit_vector4_to_color4.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Mismatched types in port connection: <input name=\"in\" type=\"color4\" nodename=\"source_node\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable"
+    }
+  ]
+}

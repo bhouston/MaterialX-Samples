@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_convert_explicit_float_to_color3">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput"><input name="in" type="vector2" nodename="uv0" /></separate2>
+    <add name="uv_sum" type="float"><input name="in1" type="float" nodename="uv_split" output="outx" /><input name="in2" type="float" nodename="uv_split" output="outy" /></add>
+    <fract name="uv_mix" type="float"><input name="in" type="float" nodename="uv_sum" /></fract>
+    <fract name="source_node" type="float"><input name="in" type="float" nodename="uv_sum" /></fract>
+    <convert name="node_under_test" type="color3" nodedef="ND_convert_float_color3">
+      <input name="in" type="float" nodename="source_node" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="node_under_test" />
+  </nodegraph>
+  <standard_surface name="SR_convert_explicit_float_to_color3" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_convert_explicit_float_to_color3" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_convert_explicit_float_to_color3" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_convert_explicit_float_to_color3" />
+  </surfacematerial>
+</materialx>
