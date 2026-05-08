@@ -6,12 +6,12 @@
     {
       "level": "info",
       "source": "renderer",
-      "message": "00:01.446  image.read       | ERROR IMB_load_image_from_memory: unknown file-format (/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg)"
+      "message": "00:01.849  image.read       | ERROR IMB_load_image_from_memory: unknown file-format (/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/image_format_svg/textures/texture.svg)"
     },
     {
       "level": "info",
       "source": "renderer",
-      "message": "00:01.446  gpu.texture      | ERROR Failed to create GPU texture from Blender image"
+      "message": "00:01.849  gpu.texture      | ERROR Failed to create GPU texture from Blender image"
     }
   ]
 }

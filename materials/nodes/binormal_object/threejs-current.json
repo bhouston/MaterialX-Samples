@@ -16,7 +16,7 @@
     {
       "level": "warning",
       "source": "browser",
-      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"magnitude_b\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"mag_0\"/>\n      <input name=\"inlow\" type=\"float\" value=\"0.9\"/>\n      <input name=\"inhigh\" type=\"float\" value=\"1.1\"/>\n      <input name=\"outlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"outhigh\" type=\"float\" value=\"1.0\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"magnitude_b\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"mag_0\"/>\n      <input name=\"inlow\" type=\"float\" value=\"0.99\"/>\n      <input name=\"inhigh\" type=\"float\" value=\"1.01\"/>\n      <input name=\"outlow\" type=\"float\" value=\"0.0\"/>\n      <input name=\"outhigh\" type=\"float\" value=\"1.0\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"true\"/>\n    </range>."
     }
   ]
 }

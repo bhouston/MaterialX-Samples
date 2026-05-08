@@ -65,8 +65,8 @@
     </range>
     <range name="magnitude_b" type="float">
       <input name="in" type="float" nodename="mag_0" />
-      <input name="inlow" type="float" value="0.9" />
-      <input name="inhigh" type="float" value="1.1" />
+      <input name="inlow" type="float" value="0.99" />
+      <input name="inhigh" type="float" value="1.01" />
       <input name="outlow" type="float" value="0.0" />
       <input name="outhigh" type="float" value="1.0" />
       <input name="doclamp" type="boolean" value="true" />
