@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <gltf_normalmap name=\"node_under_test\" type=\"vector3\" nodedef=\"ND_gltf_normalmap_vector3_1_0\">\n      <input name=\"file\" type=\"filename\" value=\"../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg\" colorspace=\"none\"/>\n      <input name=\"default\" type=\"vector3\" value=\"0.5, 0.5, 1.0\"/>\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"uv0\"/>\n      <input name=\"pivot\" type=\"vector2\" value=\"0.5, 0.5\"/>\n      <input name=\"scale\" type=\"vector2\" value=\"1.2, 0.8\"/>\n      <input name=\"rotate\" type=\"float\" value=\"30.0\"/>\n      <input name=\"offset\" type=\"vector2\" value=\"0.1, 0.15\"/>\n      <input name=\"operationorder\" type=\"integer\" nodename=\"op_order\"/>\n      <input name=\"uaddressmode\" type=\"string\" value=\"periodic\"/>\n      <input name=\"vaddressmode\" type=\"string\" value=\"periodic\"/>\n      <input name=\"filtertype\" type=\"string\" value=\"linear\"/>\n    </gltf_normalmap>."
+    }
+  ]
+}

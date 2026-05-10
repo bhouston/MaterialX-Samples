@@ -1,0 +1,22 @@
+{
+  "rendererName": "materialx-glsl",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for gltf_normalmap_isolate_scale_float.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Node interface error: Input 'scale' doesn't match declaration: <gltf_normalmap name=\"node_under_test\" type=\"vector3\" nodedef=\"ND_gltf_normalmap_vector3_1_0\">"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable"
+    }
+  ]
+}

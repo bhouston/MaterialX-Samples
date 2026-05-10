@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <gltf_image name=\"normal_image\" type=\"vector3\" nodedef=\"ND_gltf_image_vector3_vector3_1_0\">\n      <input name=\"file\" type=\"filename\" value=\"../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg\" colorspace=\"none\"/>\n      <input name=\"default\" type=\"vector3\" value=\"0.5, 0.5, 1.0\"/>\n      <input name=\"texcoord\" type=\"vector2\" nodename=\"uv0\"/>\n    </gltf_image>."
+    }
+  ]
+}

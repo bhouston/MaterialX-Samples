@@ -22,7 +22,7 @@
     <combine3 name="uv_color_cool" type="color3"><input name="in1" type="float" value="0.1" /><input name="in2" type="float" nodename="uv_split" output="outy" /><input name="in3" type="float" value="0.8" /></combine3>
     <add name="temp_driver" type="float"><input name="in1" type="float" value="2500" /><input name="in2" type="float" value="4000" /></add>
     <add name="ior_driver" type="float"><input name="in1" type="float" value="1.1" /><input name="in2" type="float" nodename="uv_mul" /></add>
-    <multiply name="uv_rotate" type="float"><input name="in1" type="float" nodename="uv_mix" /><input name="in2" type="float" value="0.785398" /></multiply>
+    <multiply name="uv_rotate" type="float"><input name="in1" type="float" nodename="uv_mix" /><input name="in2" type="float" value="45.0" /></multiply>
     <gltf_normalmap name="node_under_test" type="vector3" nodedef="ND_gltf_normalmap_vector3_1_0">
       <input name="file" type="filename" value="../../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg" colorspace="none" />
       <input name="default" type="vector3" nodename="uv_vec3" />

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_gltf_normalmap_transform">
+    <texcoord name="uv0" type="vector2" />
+    <gltf_normalmap name="node_under_test" type="vector3" nodedef="ND_gltf_normalmap_vector3_1_0">
+      <input name="file" type="filename" value="../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg" colorspace="none" />
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="pivot" type="vector2" value="0.5, 0.5" />
+      <input name="scale" type="vector2" value="1.5, 0.75" />
+      <input name="rotate" type="float" value="45.0" />
+      <input name="offset" type="vector2" value="0.15, 0.1" />
+      <input name="operationorder" type="integer" value="1" />
+      <input name="uaddressmode" type="string" value="periodic" />
+      <input name="vaddressmode" type="string" value="periodic" />
+      <input name="filtertype" type="string" value="linear" />
+    </gltf_normalmap>
+    <multiply name="normal_half" type="vector3">
+      <input name="in1" type="vector3" nodename="node_under_test" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </multiply>
+    <add name="normal_01" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_half" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </add>
+    <convert name="final_color" type="color3">
+      <input name="in" type="vector3" nodename="normal_01" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_gltf_normalmap_transform" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_gltf_normalmap_transform" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_gltf_normalmap_transform" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_gltf_normalmap_transform" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_normalmap_model_frame_to_world">
+    <texcoord name="uv0" type="vector2" />
+    <image name="normal_image" type="vector3">
+      <input name="file" type="filename" value="../../showcase/standard_surface/brick_procedural/textures/brick_normal.jpg" colorspace="none" />
+      <input name="texcoord" type="vector2" nodename="uv0" />
+    </image>
+    <normal name="n_model" type="vector3" nodedef="ND_normal_vector3">
+      <input name="space" type="string" value="model" />
+    </normal>
+    <tangent name="t_model" type="vector3" nodedef="ND_tangent_vector3">
+      <input name="space" type="string" value="model" />
+      <input name="index" type="integer" value="0" />
+    </tangent>
+    <bitangent name="b_model" type="vector3" nodedef="ND_bitangent_vector3">
+      <input name="space" type="string" value="model" />
+      <input name="index" type="integer" value="0" />
+    </bitangent>
+    <transformnormal name="n_world" type="vector3" nodedef="ND_transformnormal_vector3">
+      <input name="in" type="vector3" nodename="n_model" />
+      <input name="fromspace" type="string" value="model" />
+      <input name="tospace" type="string" value="world" />
+    </transformnormal>
+    <transformvector name="t_world" type="vector3" nodedef="ND_transformvector_vector3">
+      <input name="in" type="vector3" nodename="t_model" />
+      <input name="fromspace" type="string" value="model" />
+      <input name="tospace" type="string" value="world" />
+    </transformvector>
+    <transformvector name="b_world" type="vector3" nodedef="ND_transformvector_vector3">
+      <input name="in" type="vector3" nodename="b_model" />
+      <input name="fromspace" type="string" value="model" />
+      <input name="tospace" type="string" value="world" />
+    </transformvector>
+    <normalmap name="node_under_test" type="vector3" nodedef="ND_normalmap_float">
+      <input name="in" type="vector3" nodename="normal_image" />
+      <input name="scale" type="float" value="1.0" />
+      <input name="normal" type="vector3" nodename="n_world" />
+      <input name="tangent" type="vector3" nodename="t_world" />
+      <input name="bitangent" type="vector3" nodename="b_world" />
+    </normalmap>
+    <multiply name="normal_half" type="vector3">
+      <input name="in1" type="vector3" nodename="node_under_test" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </multiply>
+    <add name="normal_01" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_half" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </add>
+    <convert name="final_color" type="color3">
+      <input name="in" type="vector3" nodename="normal_01" />
+    </convert>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_normalmap_model_frame_to_world" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_normalmap_model_frame_to_world" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_normalmap_model_frame_to_world" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_normalmap_model_frame_to_world" />
+  </surfacematerial>
+</materialx>
