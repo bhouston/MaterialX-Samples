@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_switch_float_floor_clamp">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput"><input name="in" type="vector2" nodename="uv0" /></separate2>
+    <multiply name="selector_scaled" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="7.0" />
+    </multiply>
+    <subtract name="selector_raw" type="float">
+      <input name="in1" type="float" nodename="selector_scaled" />
+      <input name="in2" type="float" value="1.0" />
+    </subtract>
+    <switch name="node_under_test" type="color3" nodedef="ND_switch_color3">
+      <input name="in1" type="color3" value="0.95, 0.15, 0.15" />
+      <input name="in2" type="color3" value="0.15, 0.95, 0.15" />
+      <input name="in3" type="color3" value="0.15, 0.15, 0.95" />
+      <input name="in4" type="color3" value="0.95, 0.95, 0.15" />
+      <input name="in5" type="color3" value="0.95, 0.15, 0.95" />
+      <input name="which" type="float" nodename="selector_raw" />
+    </switch>
+    <output name="out_base_color" type="color3" nodename="node_under_test" />
+  </nodegraph>
+  <standard_surface name="SR_switch_float_floor_clamp" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_switch_float_floor_clamp" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_switch_float_floor_clamp" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_switch_float_floor_clamp" />
+  </surfacematerial>
+</materialx>

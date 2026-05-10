@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_switch_integer_zero_based">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput"><input name="in" type="vector2" nodename="uv0" /></separate2>
+    <add name="uv_sum" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </add>
+    <fract name="uv_mix" type="float"><input name="in" type="float" nodename="uv_sum" /></fract>
+    <ifgreater name="switch_index" type="integer" nodedef="ND_ifgreater_integer">
+      <input name="value1" type="float" nodename="uv_mix" />
+      <input name="value2" type="float" value="0.5" />
+      <input name="in1" type="integer" value="4" />
+      <input name="in2" type="integer" value="0" />
+    </ifgreater>
+    <switch name="node_under_test" type="color3" nodedef="ND_switch_color3I">
+      <input name="in1" type="color3" value="0.95, 0.2, 0.2" />
+      <input name="in2" type="color3" value="0.2, 0.95, 0.2" />
+      <input name="in3" type="color3" value="0.2, 0.2, 0.95" />
+      <input name="in4" type="color3" value="0.95, 0.95, 0.2" />
+      <input name="in5" type="color3" value="0.95, 0.2, 0.95" />
+      <input name="which" type="integer" nodename="switch_index" />
+    </switch>
+    <output name="out_base_color" type="color3" nodename="node_under_test" />
+  </nodegraph>
+  <standard_surface name="SR_switch_integer_zero_based" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_switch_integer_zero_based" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_switch_integer_zero_based" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_switch_integer_zero_based" />
+  </surfacematerial>
+</materialx>
