@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <standard_surface name="SR_standard_surface_sweep_specular_roughness_0_00" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.92, 0.52, 0.22" />
+    <input name="base" type="float" value="0.85" />
+    <input name="specular" type="float" value="1.0" />
+    <input name="specular_color" type="color3" value="1.0, 1.0, 1.0" />
+    <input name="specular_roughness" type="float" value="0.00" />
+    <input name="metalness" type="float" value="0.0" />
+    <input name="coat" type="float" value="0.0" />
+    <input name="sheen" type="float" value="0.0" />
+    <input name="transmission" type="float" value="0.0" />
+    <input name="opacity" type="color3" value="1.0, 1.0, 1.0" />
+    <input name="thin_film_thickness" type="float" value="0.0" />
+  </standard_surface>
+  <surfacematerial name="standard_surface_sweep_specular_roughness_0_00" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_standard_surface_sweep_specular_roughness_0_00" />
+  </surfacematerial>
+</materialx>

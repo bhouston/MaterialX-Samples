@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_clamp_degenerate_inverted_bounds">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <subtract name="centered_u" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="0.5" />
+    </subtract>
+    <clamp name="clamp_reference" type="float" nodedef="ND_clamp_float">
+      <input name="in" type="float" nodename="centered_u" />
+      <input name="low" type="float" value="-0.25" />
+      <input name="high" type="float" value="0.25" />
+    </clamp>
+    <clamp name="clamp_inverted" type="float" nodedef="ND_clamp_float">
+      <input name="in" type="float" nodename="centered_u" />
+      <input name="low" type="float" value="0.25" />
+      <input name="high" type="float" value="-0.25" />
+    </clamp>
+    <add name="reference_display" type="float">
+      <input name="in1" type="float" nodename="clamp_reference" />
+      <input name="in2" type="float" value="0.5" />
+    </add>
+    <add name="inverted_display" type="float">
+      <input name="in1" type="float" nodename="clamp_inverted" />
+      <input name="in2" type="float" value="0.5" />
+    </add>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="reference_display" />
+      <input name="in2" type="float" nodename="inverted_display" />
+      <input name="in3" type="float" nodename="uv_split" output="outy" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_clamp_degenerate_inverted_bounds" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_clamp_degenerate_inverted_bounds" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_clamp_degenerate_inverted_bounds" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_clamp_degenerate_inverted_bounds" />
+  </surfacematerial>
+</materialx>

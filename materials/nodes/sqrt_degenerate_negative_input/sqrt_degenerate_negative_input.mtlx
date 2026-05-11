@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_sqrt_degenerate_negative_input">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <subtract name="negative_input" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="1.1" />
+    </subtract>
+    <sqrt name="node_under_test" type="float" nodedef="ND_sqrt_float">
+      <input name="in" type="float" nodename="negative_input" />
+    </sqrt>
+    <absval name="magnitude" type="float">
+      <input name="in" type="float" nodename="node_under_test" />
+    </absval>
+    <fract name="wrapped" type="float">
+      <input name="in" type="float" nodename="magnitude" />
+    </fract>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="wrapped" />
+      <input name="in2" type="float" nodename="uv_split" output="outx" />
+      <input name="in3" type="float" nodename="uv_split" output="outy" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_sqrt_degenerate_negative_input" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_sqrt_degenerate_negative_input" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_sqrt_degenerate_negative_input" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_sqrt_degenerate_negative_input" />
+  </surfacematerial>
+</materialx>

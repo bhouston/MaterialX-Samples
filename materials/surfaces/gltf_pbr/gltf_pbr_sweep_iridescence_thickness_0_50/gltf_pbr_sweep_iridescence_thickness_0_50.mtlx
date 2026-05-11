@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <gltf_pbr name="SR_gltf_pbr_sweep_iridescence_thickness_0_50" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.02, 0.02, 0.02" />
+    <input name="metallic" type="float" value="0.0" />
+    <input name="roughness" type="float" value="0.2" />
+    <input name="clearcoat" type="float" value="0.0" />
+    <input name="clearcoat_roughness" type="float" value="0.2" />
+    <input name="sheen_color" type="color3" value="0.0, 0.0, 0.0" />
+    <input name="sheen_roughness" type="float" value="0.0" />
+    <input name="transmission" type="float" value="0.0" />
+    <input name="alpha" type="float" value="1.0" />
+    <input name="alpha_mode" type="integer" value="2" />
+    <input name="iridescence" type="float" value="1.0" />
+    <input name="iridescence_ior" type="float" value="1.3" />
+    <input name="iridescence_thickness" type="float" value="0.50" />
+  </gltf_pbr>
+  <surfacematerial name="gltf_pbr_sweep_iridescence_thickness_0_50" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_gltf_pbr_sweep_iridescence_thickness_0_50" />
+  </surfacematerial>
+</materialx>

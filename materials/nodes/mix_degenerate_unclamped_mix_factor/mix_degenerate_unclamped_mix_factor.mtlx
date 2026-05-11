@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_mix_degenerate_unclamped_mix_factor">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <multiply name="mix_factor" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="2.0" />
+    </multiply>
+    <subtract name="mix_factor_unclamped" type="float">
+      <input name="in1" type="float" nodename="mix_factor" />
+      <input name="in2" type="float" value="0.5" />
+    </subtract>
+    <mix name="node_under_test" type="float" nodedef="ND_mix_float">
+      <input name="bg" type="float" value="0.0" />
+      <input name="fg" type="float" value="1.0" />
+      <input name="mix" type="float" nodename="mix_factor_unclamped" />
+    </mix>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="node_under_test" />
+      <input name="in2" type="float" nodename="mix_factor_unclamped" />
+      <input name="in3" type="float" nodename="uv_split" output="outy" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_mix_degenerate_unclamped_mix_factor" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_mix_degenerate_unclamped_mix_factor" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_mix_degenerate_unclamped_mix_factor" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_mix_degenerate_unclamped_mix_factor" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_normalize_degenerate_zero_vector">
+    <constant name="zero_vector" type="vector3" nodedef="ND_constant_vector3">
+      <input name="value" type="vector3" value="0.0, 0.0, 0.0" />
+    </constant>
+    <normalize name="node_under_test" type="vector3" nodedef="ND_normalize_vector3">
+      <input name="in" type="vector3" nodename="zero_vector" />
+    </normalize>
+    <absval name="magnitude" type="vector3">
+      <input name="in" type="vector3" nodename="node_under_test" />
+    </absval>
+    <output name="out_base_color" type="color3" nodename="magnitude" />
+  </nodegraph>
+  <standard_surface name="SR_normalize_degenerate_zero_vector" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_normalize_degenerate_zero_vector" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_normalize_degenerate_zero_vector" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_normalize_degenerate_zero_vector" />
+  </surfacematerial>
+</materialx>

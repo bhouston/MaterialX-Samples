@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_smoothstep_degenerate">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <smoothstep name="node_under_test" type="float" nodedef="ND_smoothstep_float">
+      <input name="in" type="float" nodename="uv_split" output="outx" />
+      <input name="low" type="float" value="0.5" />
+      <input name="high" type="float" value="0.5" />
+    </smoothstep>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="node_under_test" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" value="0.2" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_smoothstep_degenerate" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_smoothstep_degenerate" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_smoothstep_degenerate" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_smoothstep_degenerate" />
+  </surfacematerial>
+</materialx>

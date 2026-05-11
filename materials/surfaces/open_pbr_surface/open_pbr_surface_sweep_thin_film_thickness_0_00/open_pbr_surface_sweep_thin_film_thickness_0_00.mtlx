@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <open_pbr_surface name="SR_open_pbr_surface_sweep_thin_film_thickness_0_00" type="surfaceshader">
+    <input name="base_weight" type="float" value="1.0" />
+    <input name="base_color" type="color3" value="0.02, 0.02, 0.02" />
+    <input name="specular_weight" type="float" value="1.0" />
+    <input name="specular_roughness" type="float" value="0.12" />
+    <input name="base_metalness" type="float" value="0.0" />
+    <input name="coat_weight" type="float" value="0.0" />
+    <input name="fuzz_weight" type="float" value="0.0" />
+    <input name="transmission_weight" type="float" value="0.0" />
+    <input name="geometry_opacity" type="float" value="1.0" />
+    <input name="thin_film_weight" type="float" value="1.0" />
+    <input name="thin_film_ior" type="float" value="1.4" />
+    <input name="thin_film_thickness" type="float" value="0.00" />
+  </open_pbr_surface>
+  <surfacematerial name="open_pbr_surface_sweep_thin_film_thickness_0_00" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_open_pbr_surface_sweep_thin_film_thickness_0_00" />
+  </surfacematerial>
+</materialx>
