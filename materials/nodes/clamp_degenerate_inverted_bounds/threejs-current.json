@@ -1,0 +1,16 @@
+{
+  "rendererName": "threejs-current",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003518 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "Error while parsing WGSL: :605:103 error: clamp called with 'low' (0.25) greater than 'high' (-0.25)\n  DiffuseColor = vec4<f32>( vec3<f32>( ( clamp( ( nodeVarying8[ 0u ] - 0.5 ), -0.25, 0.25 ) + 0.5 ), ( clamp( ( nodeVarying8[ 0u ] - 0.5 ), 0.25, -0.25 ) + 0.5 ), nodeVarying8[ 1u ] ), 1.0 );\n                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_clamp_degenerate_inverted_bounds\"\"]).\n"
+    }
+  ]
+}

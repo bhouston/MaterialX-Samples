@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <fract name=\"wrapped\" type=\"float\">\n      <input name=\"in\" type=\"float\" nodename=\"magnitude\"/>\n    </fract>."
+    }
+  ]
+}

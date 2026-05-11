@@ -1,0 +1,16 @@
+{
+  "rendererName": "materialx-osl",
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Could not find a nodedef for node 'SR_standard_surface_sweep_thin_film_thickness_0_50'",
+    "stack": "Error: Could not find a nodedef for node 'SR_standard_surface_sweep_thin_film_thickness_0_50'\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:78:19)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:120:20)\n    at ChildProcess.emit (node:events:509:20)\n    at maybeClose (node:internal/child_process:1108:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
+  },
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Could not find a nodedef for node 'SR_standard_surface_sweep_thin_film_thickness_0_50'"
+    }
+  ]
+}

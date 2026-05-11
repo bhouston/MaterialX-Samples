@@ -1,0 +1,17 @@
+{
+  "rendererName": "materialx-metal",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "*** Validation warnings for normalize_degenerate_zero_vector.mtlx ***"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Mismatched types in port connection: <output name=\"out_base_color\" type=\"color3\" nodename=\"magnitude\">"
+    }
+  ]
+}

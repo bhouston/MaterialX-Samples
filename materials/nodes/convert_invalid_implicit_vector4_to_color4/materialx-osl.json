@@ -4,7 +4,7 @@
   "error": {
     "name": "Error",
     "message": "FAILED /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_color4/.materialx-osl/M_convert_invalid_implicit_vector4_to_color4.osl",
-    "stack": "Error: FAILED /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_color4/.materialx-osl/M_convert_invalid_implicit_vector4_to_color4.osl\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:78:19)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:120:20)\n    at ChildProcess.emit (node:events:509:20)\n    at maybeClose (node:internal/child_process:1108:16)\n    at Socket.<anonymous> (node:internal/child_process:480:11)\n    at Socket.emit (node:events:509:20)\n    at Pipe.<anonymous> (node:net:350:12)"
+    "stack": "Error: FAILED /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/convert_invalid_implicit_vector4_to_color4/.materialx-osl/M_convert_invalid_implicit_vector4_to_color4.osl\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:78:19)\n    at ChildProcess.<anonymous> (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-materialxview/dist/index.js:120:20)\n    at ChildProcess.emit (node:events:509:20)\n    at maybeClose (node:internal/child_process:1108:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
   },
   "logs": [
     {

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_ramptb_compare_out_of_range_clamp">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <multiply name="v_scaled" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="3.0" />
+    </multiply>
+    <subtract name="v_out_of_range" type="float">
+      <input name="in1" type="float" nodename="v_scaled" />
+      <input name="in2" type="float" value="1.5" />
+    </subtract>
+    <combine2 name="uv_out_of_range" type="vector2">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="v_out_of_range" />
+    </combine2>
+    <ramptb name="ramptb_result" type="float" nodedef="ND_ramptb_float">
+      <input name="texcoord" type="vector2" nodename="uv_out_of_range" />
+      <input name="valueb" type="float" value="0.15" />
+      <input name="valuet" type="float" value="0.85" />
+    </ramptb>
+    <clamp name="v_clamped" type="float" nodedef="ND_clamp_float">
+      <input name="in" type="float" nodename="v_out_of_range" />
+      <input name="low" type="float" value="0.0" />
+      <input name="high" type="float" value="1.0" />
+    </clamp>
+    <subtract name="range_span" type="float">
+      <input name="in1" type="float" value="0.85" />
+      <input name="in2" type="float" value="0.15" />
+    </subtract>
+    <multiply name="expected_scaled" type="float">
+      <input name="in1" type="float" nodename="v_clamped" />
+      <input name="in2" type="float" nodename="range_span" />
+    </multiply>
+    <add name="expected_result" type="float">
+      <input name="in1" type="float" nodename="expected_scaled" />
+      <input name="in2" type="float" value="0.15" />
+    </add>
+    <subtract name="delta_raw" type="float">
+      <input name="in1" type="float" nodename="ramptb_result" />
+      <input name="in2" type="float" nodename="expected_result" />
+    </subtract>
+    <absval name="delta" type="float">
+      <input name="in" type="float" nodename="delta_raw" />
+    </absval>
+    <multiply name="delta_amplified" type="float">
+      <input name="in1" type="float" nodename="delta" />
+      <input name="in2" type="float" value="16.0" />
+    </multiply>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="ramptb_result" />
+      <input name="in2" type="float" nodename="expected_result" />
+      <input name="in3" type="float" nodename="delta_amplified" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_ramptb_compare_out_of_range_clamp" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_ramptb_compare_out_of_range_clamp" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_ramptb_compare_out_of_range_clamp" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_ramptb_compare_out_of_range_clamp" />
+  </surfacematerial>
+</materialx>
