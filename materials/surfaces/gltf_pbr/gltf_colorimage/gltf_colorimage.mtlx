@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materialx version="1.39" colorspace="lin_rec709">
-  <nodegraph name="NG_gltf_colorimage">
+  <nodegraph name="NG_gltf_colorimage_sample">
     <texcoord name="uv0" type="vector2" />
     <position name="pos0" type="vector3" />
     <separate2 name="uv_split" type="multioutput"><input name="in" type="vector2" nodename="uv0" /></separate2>
@@ -46,7 +46,7 @@
     <output name="out_base_color" type="color3" nodename="final_color" />
   </nodegraph>
   <gltf_pbr name="SR_gltf_colorimage" type="surfaceshader">
-    <input name="base_color" type="color3" nodegraph="NG_gltf_colorimage" output="out_base_color" />
+    <input name="base_color" type="color3" nodegraph="NG_gltf_colorimage_sample" output="out_base_color" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.45" />
     <input name="specular" type="float" value="0.5" />

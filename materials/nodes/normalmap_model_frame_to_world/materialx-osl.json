@@ -2,5 +2,11 @@
   "rendererName": "materialx-osl",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "sh: line 1:  6221 Segmentation fault: 11  /Users/bhouston/Coding/OpenSource/material-fidelity/build/osl-dist/bin/testrender /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/normalmap_model_frame_to_world/.materialx-osl/M_normalmap_model_frame_to_world_scene_template.xml /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/normalmap_model_frame_to_world/.materialx-osl/M_normalmap_model_frame_to_world_osl.png -r 512 512 --path /Users/bhouston/Coding/OpenSource/material-fidelity/build/materialx-osl/bin/resources/Utilities:/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/normalmap_model_frame_to_world/.materialx-osl:/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/normalmap_model_frame_to_world --shadows true -aa 4 > /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/normalmap_model_frame_to_world/.materialx-osl/M_normalmap_model_frame_to_world_render_errors.txt 2>&1"
+    }
+  ]
 }

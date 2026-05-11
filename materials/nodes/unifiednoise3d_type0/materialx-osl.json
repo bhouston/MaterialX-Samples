@@ -2,5 +2,11 @@
   "rendererName": "materialx-osl",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "sh: line 1: 10925 Segmentation fault: 11  /Users/bhouston/Coding/OpenSource/material-fidelity/build/osl-dist/bin/testrender /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/unifiednoise3d_type0/.materialx-osl/M_unifiednoise3d_type0_scene_template.xml /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/unifiednoise3d_type0/.materialx-osl/M_unifiednoise3d_type0_osl.png -r 512 512 --path /Users/bhouston/Coding/OpenSource/material-fidelity/build/materialx-osl/bin/resources/Utilities:/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/unifiednoise3d_type0/.materialx-osl:/Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/unifiednoise3d_type0 --shadows true -aa 4 > /Users/bhouston/Coding/OpenSource/material-fidelity/third_party/material-samples/materials/nodes/unifiednoise3d_type0/.materialx-osl/M_unifiednoise3d_type0_render_errors.txt 2>&1"
+    }
+  ]
 }
