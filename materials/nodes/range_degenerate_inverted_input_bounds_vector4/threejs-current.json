@@ -1,0 +1,12 @@
+{
+  "rendererName": "threejs-current",
+  "status": "success",
+  "error": null,
+  "logs": [
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "THREE.MaterialXLoader: Unexpected node <range name=\"node_under_test\" type=\"vector4\" nodedef=\"ND_range_vector4\">\n      <input name=\"in\" type=\"vector4\" nodename=\"range_in\"/>\n      <input name=\"inlow\" type=\"vector4\" value=\"0.75, 0.9, 0.8, 0.7\"/>\n      <input name=\"inhigh\" type=\"vector4\" value=\"0.25, 0.1, 0.2, 0.3\"/>\n      <input name=\"gamma\" type=\"vector4\" value=\"1.0, 1.0, 1.0, 1.0\"/>\n      <input name=\"outlow\" type=\"vector4\" value=\"0.0, 0.1, 0.2, 0.3\"/>\n      <input name=\"outhigh\" type=\"vector4\" value=\"1.0, 0.9, 0.8, 0.7\"/>\n      <input name=\"doclamp\" type=\"boolean\" value=\"false\"/>\n    </range>."
+    }
+  ]
+}

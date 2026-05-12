@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_splittb_compare_default_vs_inverted">
+    <texcoord name="uv0" type="vector2" />
+    <splittb name="splittb_default" type="float" nodedef="ND_splittb_float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="float" value="0.5" />
+      <input name="valueb" type="float" value="0.0" />
+      <input name="valuet" type="float" value="1.0" />
+    </splittb>
+    <splittb name="splittb_inverted" type="float" nodedef="ND_splittb_float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="float" value="0.5" />
+      <input name="valueb" type="float" value="1.0" />
+      <input name="valuet" type="float" value="0.0" />
+    </splittb>
+    <subtract name="inverted_to_default" type="float">
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" nodename="splittb_inverted" />
+    </subtract>
+    <subtract name="delta_raw" type="float">
+      <input name="in1" type="float" nodename="splittb_default" />
+      <input name="in2" type="float" nodename="inverted_to_default" />
+    </subtract>
+    <absval name="delta" type="float">
+      <input name="in" type="float" nodename="delta_raw" />
+    </absval>
+    <multiply name="delta_amplified" type="float">
+      <input name="in1" type="float" nodename="delta" />
+      <input name="in2" type="float" value="8.0" />
+    </multiply>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="splittb_default" />
+      <input name="in2" type="float" nodename="splittb_inverted" />
+      <input name="in3" type="float" nodename="delta_amplified" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_splittb_compare_default_vs_inverted" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_splittb_compare_default_vs_inverted" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_splittb_compare_default_vs_inverted" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_splittb_compare_default_vs_inverted" />
+  </surfacematerial>
+</materialx>

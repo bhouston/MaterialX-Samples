@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_remap_degenerate_inverted_input_bounds_vector4">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <combine4 name="remap_in" type="vector4">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" value="0.25" />
+      <input name="in4" type="float" value="0.75" />
+    </combine4>
+    <remap name="node_under_test" type="vector4" nodedef="ND_remap_vector4">
+      <input name="in" type="vector4" nodename="remap_in" />
+      <input name="inlow" type="vector4" value="0.75, 0.9, 0.8, 0.7" />
+      <input name="inhigh" type="vector4" value="0.25, 0.1, 0.2, 0.3" />
+      <input name="outlow" type="vector4" value="0.0, 0.1, 0.2, 0.3" />
+      <input name="outhigh" type="vector4" value="1.0, 0.9, 0.8, 0.7" />
+    </remap>
+    <extract name="debug_r" type="float" nodedef="ND_extract_vector4">
+      <input name="in" type="vector4" nodename="node_under_test" />
+      <input name="index" type="integer" value="0" />
+    </extract>
+    <extract name="debug_g" type="float" nodedef="ND_extract_vector4">
+      <input name="in" type="vector4" nodename="node_under_test" />
+      <input name="index" type="integer" value="1" />
+    </extract>
+    <extract name="debug_b" type="float" nodedef="ND_extract_vector4">
+      <input name="in" type="vector4" nodename="node_under_test" />
+      <input name="index" type="integer" value="2" />
+    </extract>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="debug_r" />
+      <input name="in2" type="float" nodename="debug_g" />
+      <input name="in3" type="float" nodename="debug_b" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_remap_degenerate_inverted_input_bounds_vector4" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_remap_degenerate_inverted_input_bounds_vector4" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_remap_degenerate_inverted_input_bounds_vector4" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_remap_degenerate_inverted_input_bounds_vector4" />
+  </surfacematerial>
+</materialx>

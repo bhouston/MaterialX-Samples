@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_splitlr_compare_center_shift">
+    <texcoord name="uv0" type="vector2" />
+    <splitlr name="splitlr_center_low" type="float" nodedef="ND_splitlr_float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="float" value="0.25" />
+      <input name="valuel" type="float" value="0.0" />
+      <input name="valuer" type="float" value="1.0" />
+    </splitlr>
+    <splitlr name="splitlr_center_high" type="float" nodedef="ND_splitlr_float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="float" value="0.75" />
+      <input name="valuel" type="float" value="0.0" />
+      <input name="valuer" type="float" value="1.0" />
+    </splitlr>
+    <subtract name="center_delta_raw" type="float">
+      <input name="in1" type="float" nodename="splitlr_center_low" />
+      <input name="in2" type="float" nodename="splitlr_center_high" />
+    </subtract>
+    <absval name="center_delta" type="float">
+      <input name="in" type="float" nodename="center_delta_raw" />
+    </absval>
+    <multiply name="center_delta_amplified" type="float">
+      <input name="in1" type="float" nodename="center_delta" />
+      <input name="in2" type="float" value="4.0" />
+    </multiply>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="splitlr_center_low" />
+      <input name="in2" type="float" nodename="splitlr_center_high" />
+      <input name="in3" type="float" nodename="center_delta_amplified" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_splitlr_compare_center_shift" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_splitlr_compare_center_shift" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_splitlr_compare_center_shift" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_splitlr_compare_center_shift" />
+  </surfacematerial>
+</materialx>

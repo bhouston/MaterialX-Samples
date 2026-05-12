@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_ln_degenerate_nonpositive_input_vector4">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <subtract name="shifted_u" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="0.5" />
+    </subtract>
+    <combine4 name="ln_in" type="vector4">
+      <input name="in1" type="float" nodename="shifted_u" />
+      <input name="in2" type="float" value="-0.5" />
+      <input name="in3" type="float" value="0.0" />
+      <input name="in4" type="float" value="0.75" />
+    </combine4>
+    <ln name="node_under_test" type="vector4" nodedef="ND_ln_vector4">
+      <input name="in" type="vector4" nodename="ln_in" />
+    </ln>
+    <absval name="magnitude" type="vector4">
+      <input name="in" type="vector4" nodename="node_under_test" />
+    </absval>
+    <fract name="wrapped" type="vector4">
+      <input name="in" type="vector4" nodename="magnitude" />
+    </fract>
+    <extract name="debug_r" type="float" nodedef="ND_extract_vector4">
+      <input name="in" type="vector4" nodename="wrapped" />
+      <input name="index" type="integer" value="0" />
+    </extract>
+    <extract name="debug_g" type="float" nodedef="ND_extract_vector4">
+      <input name="in" type="vector4" nodename="wrapped" />
+      <input name="index" type="integer" value="2" />
+    </extract>
+    <extract name="debug_b" type="float" nodedef="ND_extract_vector4">
+      <input name="in" type="vector4" nodename="wrapped" />
+      <input name="index" type="integer" value="3" />
+    </extract>
+    <combine3 name="debug_color" type="color3">
+      <input name="in1" type="float" nodename="debug_r" />
+      <input name="in2" type="float" nodename="debug_g" />
+      <input name="in3" type="float" nodename="debug_b" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="debug_color" />
+  </nodegraph>
+  <standard_surface name="SR_ln_degenerate_nonpositive_input_vector4" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_ln_degenerate_nonpositive_input_vector4" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_ln_degenerate_nonpositive_input_vector4" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_ln_degenerate_nonpositive_input_vector4" />
+  </surfacematerial>
+</materialx>
