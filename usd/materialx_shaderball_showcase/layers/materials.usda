@@ -1,0 +1,736 @@
+#usda 1.0
+(
+    defaultPrim = "materialx_shaderball_showcase"
+    upAxis = "Z"
+)
+
+over "materialx_shaderball_showcase" (
+    variants = {
+        string material = "standard_gold"
+    }
+    prepend variantSets = "material"
+)
+{
+    variantSet "material" = {
+        "openpbr_carpaint" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_carpaint/carpaint.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Car_Paint>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Car_Paint>
+                    }
+                }
+            }
+        }
+
+        "openpbr_glass" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_glass/glass.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Glass>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Glass>
+                    }
+                }
+            }
+        }
+
+        "openpbr_honey" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_honey/honey.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Honey>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Honey>
+                    }
+                }
+            }
+        }
+
+        "openpbr_ketchup" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_ketchup/ketchup.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Ketchup>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Ketchup>
+                    }
+                }
+            }
+        }
+
+        "openpbr_lightbulb" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_lightbulb/lightbulb.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Light_Bulb>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Light_Bulb>
+                    }
+                }
+            }
+        }
+
+        "openpbr_pearl" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_pearl/pearl.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Pearl>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Pearl>
+                    }
+                }
+            }
+        }
+
+        "openpbr_soapbubble" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_soapbubble/soapbubble.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Soap_Bubble>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Soap_Bubble>
+                    }
+                }
+            }
+        }
+
+        "openpbr_velvet" {
+            def Scope "Materials" (
+                prepend references = @../materials/openpbr/openpbr_velvet/velvet.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Velvet>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Velvet>
+                    }
+                }
+            }
+        }
+
+        "standard_brick_procedural" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_brick_procedural/brick_procedural.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/M_BrickPattern>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/M_BrickPattern>
+                    }
+                }
+            }
+        }
+
+        "standard_carpaint" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_carpaint/carpaint.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Car_Paint>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Car_Paint>
+                    }
+                }
+            }
+        }
+
+        "standard_chrome" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_chrome/chrome.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Chrome>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Chrome>
+                    }
+                }
+            }
+        }
+
+        "standard_copper" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_copper/copper.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Copper>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Copper>
+                    }
+                }
+            }
+        }
+
+        "standard_glass" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_glass/glass.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Glass>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Glass>
+                    }
+                }
+            }
+        }
+
+        "standard_glass_tinted" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_glass_tinted/glass_tinted.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/GlassTinted>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/GlassTinted>
+                    }
+                }
+            }
+        }
+
+        "standard_gold" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_gold/gold.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Gold>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Gold>
+                    }
+                }
+            }
+        }
+
+        "standard_marble_solid" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_marble_solid/marble_solid.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Marble_3D>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Marble_3D>
+                    }
+                }
+            }
+        }
+
+        "standard_metal_brushed" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_metal_brushed/metal_brushed.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Metal_Brushed>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Metal_Brushed>
+                    }
+                }
+            }
+        }
+
+        "standard_onyx_hextiled" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_onyx_hextiled/onyx_hextiled.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/M_OnyxHextiled>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/M_OnyxHextiled>
+                    }
+                }
+            }
+        }
+
+        "standard_onyx_hextiled_no_scale" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_onyx_hextiled_no_scale/onyx_hextiled_no_scale.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/M_OnyxHextiledNoScale>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/M_OnyxHextiledNoScale>
+                    }
+                }
+            }
+        }
+
+        "standard_plastic" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_plastic/plastic.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Plastic>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Plastic>
+                    }
+                }
+            }
+        }
+
+        "standard_sheen" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_sheen/sheen.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/mat_sheen_test>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/mat_sheen_test>
+                    }
+                }
+            }
+        }
+
+        "standard_velvet" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_velvet/velvet.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Velvet>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Velvet>
+                    }
+                }
+            }
+        }
+
+        "standard_wood_grain" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_wood_grain/wood_grain.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Tiled_Wood>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Tiled_Wood>
+                    }
+                }
+            }
+        }
+
+        "standard_wood_tiled" {
+            def Scope "Materials" (
+                prepend references = @../materials/standard/standard_wood_tiled/wood_tiled.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+
+            over "shader_ball"
+            {
+                over "Preview_Mesh"
+                {
+                    over "Preview_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Tiled_Wood>
+                    }
+                }
+                over "Calibration_Mesh"
+                {
+                    over "Calibration_Mesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </materialx_shaderball_showcase/Materials/Tiled_Wood>
+                    }
+                }
+            }
+        }
+
+    }
+}

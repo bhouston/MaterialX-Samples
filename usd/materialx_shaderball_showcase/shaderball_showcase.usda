@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "materialx_shaderball_showcase"
+    subLayers = [
+        @./layers/materials.usda@,
+        @./layers/geometry.usda@
+    ]
+    upAxis = "Z"
+)
+
+def Xform "materialx_shaderball_showcase" (
+    kind = "component"
+)
+{
+}

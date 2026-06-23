@@ -1,3 +1,4 @@
 .DS_Store
 .materialx-osl
 metrics.json
+usd/materialx_shaderball_showcase/materials/**/textures/
