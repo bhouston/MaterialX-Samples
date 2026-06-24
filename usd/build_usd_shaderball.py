@@ -15,7 +15,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_ROOT = REPO_ROOT / "usd" / "materialx_shaderball_showcase"
 LAYERS_DIR = OUTPUT_ROOT / "layers"
 PACKAGE_MATERIALS_DIR = OUTPUT_ROOT / "materials"
+PACKAGE_ENVIRONMENT_DIR = OUTPUT_ROOT / "environment"
 SOURCE_SHADERBALL_USDC = OUTPUT_ROOT / "ShaderBall.usdc"
+SOURCE_ENVIRONMENT_HDR = REPO_ROOT / "viewer" / "san_giuseppe_bridge_2k.hdr"
 STAGE_UP_AXIS = "Z"
 TEXTURE_MODES = ("linked", "portable")
 
@@ -182,7 +184,16 @@ def _build_materials_layer(material_name_map: dict[str, str]) -> str:
     return "\n".join(lines)
 
 
-def _build_root_layer() -> str:
+def _prepare_environment_asset(texture_mode: str) -> str:
+    if texture_mode == "portable":
+        PACKAGE_ENVIRONMENT_DIR.mkdir(parents=True, exist_ok=True)
+        portable_hdr_path = PACKAGE_ENVIRONMENT_DIR / SOURCE_ENVIRONMENT_HDR.name
+        shutil.copy2(SOURCE_ENVIRONMENT_HDR, portable_hdr_path)
+        return f"./environment/{SOURCE_ENVIRONMENT_HDR.name}"
+    return f"../../viewer/{SOURCE_ENVIRONMENT_HDR.name}"
+
+
+def _build_root_layer(environment_asset_path: str) -> str:
     return "\n".join(
         [
             "#usda 1.0",
@@ -199,6 +210,11 @@ def _build_root_layer() -> str:
             '    kind = "component"',
             ")",
             "{",
+            '    def DomeLight "domelight"',
+            "    {",
+            f'        asset inputs:texture:file = @{environment_asset_path}@',
+            '        token inputs:texture:format = "latlong"',
+            "    }",
             "}",
         ]
     )
@@ -208,10 +224,12 @@ def _build_readme(material_name_map: dict[str, str], texture_mode: str) -> str:
     variant_lines = "\n".join(f"- `{spec.variant}` -> `{material_name_map[spec.variant]}`" for spec in MATERIAL_SPECS)
     if texture_mode == "portable":
         materials_line = "- `materials/`: copied `.mtlx` documents plus vendored textures for a portable package"
-        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs resolve within `usd/materialx_shaderball_showcase/`."
+        environment_line = "- `environment/`: vendored HDR used by the authored USD dome light"
+        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light HDR resolve within `usd/materialx_shaderball_showcase/`."
     else:
         materials_line = "- `materials/`: copied `.mtlx` documents with texture inputs rewritten to the original repository assets"
-        texture_mode_summary = "Built with `--texture-mode linked`. This package depends on the source repository texture paths remaining available next to the USD package."
+        environment_line = "- `environment/`: omitted in linked mode; the dome light points back to `viewer/san_giuseppe_bridge_2k.hdr`"
+        texture_mode_summary = "Built with `--texture-mode linked`. This package depends on the source repository texture paths and HDR remaining available next to the USD package."
     return textwrap.dedent(
         f"""\
 # MaterialX Shaderball Showcase
@@ -221,10 +239,11 @@ This package is a direct USD translation wrapper around the reusable GLB test ge
 ## Files
 
 - `ShaderBall.usdc`: USD-converted reusable shaderball geometry
-- `shaderball_showcase.usda`: root scene shell and sublayer stack
+- `shaderball_showcase.usda`: root scene shell, domelight, and sublayer stack
 - `layers/geometry.usda`: references `ShaderBall.usdc` under `shader_ball`
 - `layers/materials.usda`: top-level `material` variant set, `.mtlx` composition, and mesh binding
 {materials_line}
+{environment_line}
 
 ## Building
 
@@ -246,7 +265,7 @@ In practice, `linked` is the better default for version control, while `portable
 - Texture packaging: {texture_mode_summary}
 - The variant set lives on `/materialx_shaderball_showcase`, authored in `layers/materials.usda`.
 - Each variant composes one `.mtlx` document at `/materialx_shaderball_showcase/Materials` and binds `/materialx_shaderball_showcase/shader_ball/Preview_Mesh` directly to the imported MaterialX material prim.
-- This generator intentionally avoids extra camera/light/reference-scene authoring so the package stays close to the original reusable GLB test setup.
+- `/materialx_shaderball_showcase/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.
 """
     )
 
@@ -267,19 +286,24 @@ def main() -> None:
 
     if not SOURCE_SHADERBALL_USDC.exists():
         raise FileNotFoundError(f"Missing required source geometry asset: {SOURCE_SHADERBALL_USDC}")
+    if not SOURCE_ENVIRONMENT_HDR.exists():
+        raise FileNotFoundError(f"Missing required environment asset: {SOURCE_ENVIRONMENT_HDR}")
 
     if LAYERS_DIR.exists():
         shutil.rmtree(LAYERS_DIR)
     if PACKAGE_MATERIALS_DIR.exists():
         shutil.rmtree(PACKAGE_MATERIALS_DIR)
+    if PACKAGE_ENVIRONMENT_DIR.exists():
+        shutil.rmtree(PACKAGE_ENVIRONMENT_DIR)
 
     LAYERS_DIR.mkdir(parents=True, exist_ok=True)
     PACKAGE_MATERIALS_DIR.mkdir(parents=True, exist_ok=True)
 
     material_name_map = _copy_material_payloads(args.texture_mode)
+    environment_asset_path = _prepare_environment_asset(args.texture_mode)
     (LAYERS_DIR / "geometry.usda").write_text(_build_geometry_layer(), encoding="utf-8")
     (LAYERS_DIR / "materials.usda").write_text(_build_materials_layer(material_name_map), encoding="utf-8")
-    (OUTPUT_ROOT / "shaderball_showcase.usda").write_text(_build_root_layer(), encoding="utf-8")
+    (OUTPUT_ROOT / "shaderball_showcase.usda").write_text(_build_root_layer(environment_asset_path), encoding="utf-8")
     (OUTPUT_ROOT / "README.md").write_text(_build_readme(material_name_map, args.texture_mode), encoding="utf-8")
 
 

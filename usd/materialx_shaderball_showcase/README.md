@@ -5,10 +5,11 @@ This package is a direct USD translation wrapper around the reusable GLB test ge
 ## Files
 
 - `ShaderBall.usdc`: USD-converted reusable shaderball geometry
-- `shaderball_showcase.usda`: root scene shell and sublayer stack
+- `shaderball_showcase.usda`: root scene shell, domelight, and sublayer stack
 - `layers/geometry.usda`: references `ShaderBall.usdc` under `shader_ball`
 - `layers/materials.usda`: top-level `material` variant set, `.mtlx` composition, and mesh binding
 - `materials/`: copied `.mtlx` documents with texture inputs rewritten to the original repository assets
+- `environment/`: omitted in linked mode; the dome light points back to `viewer/san_giuseppe_bridge_2k.hdr`
 
 ## Building
 
@@ -50,7 +51,7 @@ In practice, `linked` is the better default for version control, while `portable
 
 ## Notes
 
-- Texture packaging: Built with `--texture-mode linked`. This package depends on the source repository texture paths remaining available next to the USD package.
+- Texture packaging: Built with `--texture-mode linked`. This package depends on the source repository texture paths and HDR remaining available next to the USD package.
 - The variant set lives on `/materialx_shaderball_showcase`, authored in `layers/materials.usda`.
 - Each variant composes one `.mtlx` document at `/materialx_shaderball_showcase/Materials` and binds `/materialx_shaderball_showcase/shader_ball/Preview_Mesh` directly to the imported MaterialX material prim.
-- This generator intentionally avoids extra camera/light/reference-scene authoring so the package stays close to the original reusable GLB test setup.
+- `/materialx_shaderball_showcase/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.

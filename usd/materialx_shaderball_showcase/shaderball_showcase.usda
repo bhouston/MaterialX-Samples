@@ -12,4 +12,9 @@ def Xform "materialx_shaderball_showcase" (
     kind = "component"
 )
 {
+    def DomeLight "domelight"
+    {
+        asset inputs:texture:file = @../../viewer/san_giuseppe_bridge_2k.hdr@
+        token inputs:texture:format = "latlong"
+    }
 }
