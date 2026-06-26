@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_input_alpha_cutoff">
+    <position name="obj_pos" type="vector3" />
+    <dotproduct name="wave_driver" type="float">
+      <input name="in1" type="vector3" nodename="obj_pos" />
+      <input name="in2" type="vector3" value="1.0, 0.0, 1.0" />
+    </dotproduct>
+    <multiply name="wave_scale" type="float">
+      <input name="in1" type="float" nodename="wave_driver" />
+      <input name="in2" type="float" value="7.0" />
+    </multiply>
+    <sin name="wave" type="float">
+      <input name="in" type="float" nodename="wave_scale" />
+    </sin>
+    <multiply name="wave_to_zero_one_scale" type="float">
+      <input name="in1" type="float" nodename="wave" />
+      <input name="in2" type="float" value="0.5" />
+    </multiply>
+    <add name="wave_to_zero_one" type="float">
+      <input name="in1" type="float" nodename="wave_to_zero_one_scale" />
+      <input name="in2" type="float" value="0.5" />
+    </add>
+    <output name="out_alpha" type="float" nodename="wave_to_zero_one" />
+  </nodegraph>
+  <gltf_pbr name="SR_default" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.0518895, 0.29606, 0.425324" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.4" />
+    <input name="alpha" type="float" nodegraph="NG_input_alpha_cutoff" output="out_alpha" />
+    <input name="alpha_mode" type="integer" value="1" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+  </gltf_pbr>
+  <surfacematerial name="input_alpha_cutoff" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_default" />
+  </surfacematerial>
+</materialx>

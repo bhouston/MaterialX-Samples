@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "materialx_shaderball"
+    subLayers = [
+        @./layers/materials.usda@
+    ]
+    upAxis = "Z"
+)
+
+def Xform "materialx_shaderball" (
+    kind = "component"
+)
+{
+    def DomeLight "domelight"
+    {
+        asset inputs:texture:file = @../../viewer/san_giuseppe_bridge_2k.hdr@
+        token inputs:texture:format = "latlong"
+    }
+}

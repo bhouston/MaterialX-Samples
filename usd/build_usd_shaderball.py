@@ -7,12 +7,13 @@ import os
 import shutil
 import textwrap
 import xml.etree.ElementTree as ET
+from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_ROOT = REPO_ROOT / "usd" / "materialx_shaderball_showcase"
+OUTPUT_ROOT = REPO_ROOT / "usd" / "materialx_shaderball"
 LAYERS_DIR = OUTPUT_ROOT / "layers"
 PACKAGE_MATERIALS_DIR = OUTPUT_ROOT / "materials"
 PACKAGE_ENVIRONMENT_DIR = OUTPUT_ROOT / "environment"
@@ -24,38 +25,47 @@ TEXTURE_MODES = ("linked", "portable")
 
 @dataclass(frozen=True)
 class MaterialSpec:
+    key: str
+    suite: str
+    family: str
     variant: str
-    family_scope: str
     source_dir: str
     source_file: str
+    package_dir: str
 
 
-MATERIAL_SPECS: list[MaterialSpec] = [
-    MaterialSpec("openpbr_carpaint", "openpbr", "materials/showcase/open_pbr_surface/carpaint", "carpaint.mtlx"),
-    MaterialSpec("openpbr_glass", "openpbr", "materials/showcase/open_pbr_surface/glass", "glass.mtlx"),
-    MaterialSpec("openpbr_honey", "openpbr", "materials/showcase/open_pbr_surface/honey", "honey.mtlx"),
-    MaterialSpec("openpbr_ketchup", "openpbr", "materials/showcase/open_pbr_surface/ketchup", "ketchup.mtlx"),
-    MaterialSpec("openpbr_lightbulb", "openpbr", "materials/showcase/open_pbr_surface/lightbulb", "lightbulb.mtlx"),
-    MaterialSpec("openpbr_pearl", "openpbr", "materials/showcase/open_pbr_surface/pearl", "pearl.mtlx"),
-    MaterialSpec("openpbr_soapbubble", "openpbr", "materials/showcase/open_pbr_surface/soapbubble", "soapbubble.mtlx"),
-    MaterialSpec("openpbr_velvet", "openpbr", "materials/showcase/open_pbr_surface/velvet", "velvet.mtlx"),
-    MaterialSpec("standard_brick_procedural", "standard", "materials/showcase/standard_surface/brick_procedural", "brick_procedural.mtlx"),
-    MaterialSpec("standard_carpaint", "standard", "materials/showcase/standard_surface/carpaint", "carpaint.mtlx"),
-    MaterialSpec("standard_chrome", "standard", "materials/showcase/standard_surface/chrome", "chrome.mtlx"),
-    MaterialSpec("standard_copper", "standard", "materials/showcase/standard_surface/copper", "copper.mtlx"),
-    MaterialSpec("standard_glass", "standard", "materials/showcase/standard_surface/glass", "glass.mtlx"),
-    MaterialSpec("standard_glass_tinted", "standard", "materials/showcase/standard_surface/glass_tinted", "glass_tinted.mtlx"),
-    MaterialSpec("standard_gold", "standard", "materials/showcase/standard_surface/gold", "gold.mtlx"),
-    MaterialSpec("standard_marble_solid", "standard", "materials/showcase/standard_surface/marble_solid", "marble_solid.mtlx"),
-    MaterialSpec("standard_metal_brushed", "standard", "materials/showcase/standard_surface/metal_brushed", "metal_brushed.mtlx"),
-    MaterialSpec("standard_onyx_hextiled", "standard", "materials/showcase/standard_surface/onyx_hextiled", "onyx_hextiled.mtlx"),
-    MaterialSpec("standard_onyx_hextiled_no_scale", "standard", "materials/showcase/standard_surface/onyx_hextiled_no_scale", "onyx_hextiled_no_scale.mtlx"),
-    MaterialSpec("standard_plastic", "standard", "materials/showcase/standard_surface/plastic", "plastic.mtlx"),
-    MaterialSpec("standard_sheen", "standard", "materials/showcase/standard_surface/sheen", "sheen.mtlx"),
-    MaterialSpec("standard_velvet", "standard", "materials/showcase/standard_surface/velvet", "velvet.mtlx"),
-    MaterialSpec("standard_wood_grain", "standard", "materials/showcase/standard_surface/wood_grain", "wood_grain.mtlx"),
-    MaterialSpec("standard_wood_tiled", "standard", "materials/showcase/standard_surface/wood_tiled", "wood_tiled.mtlx"),
-]
+def _family_sort_key(family: str) -> tuple[int, str]:
+    priority = {
+        "open_pbr_surface": 0,
+        "standard_surface": 1,
+        "gltf_pbr": 2,
+    }
+    return (priority.get(family, 99), family)
+
+
+def _discover_specs() -> list[MaterialSpec]:
+    specs: list[MaterialSpec] = []
+    for suite, source_group in (("showcase", "showcase"), ("library", "surfaces")):
+        suite_root = REPO_ROOT / "materials" / source_group
+        for family_dir in sorted((p for p in suite_root.iterdir() if p.is_dir()), key=lambda p: _family_sort_key(p.name)):
+            for material_dir in sorted((p for p in family_dir.iterdir() if p.is_dir()), key=lambda p: p.name):
+                mtlx_files = sorted(material_dir.glob("*.mtlx"))
+                if not mtlx_files:
+                    continue
+                source_file = mtlx_files[0]
+                rel_dir = material_dir.relative_to(REPO_ROOT).as_posix()
+                specs.append(
+                    MaterialSpec(
+                        key=f"{suite}/{family_dir.name}/{material_dir.name}",
+                        suite=suite,
+                        family=family_dir.name,
+                        variant=material_dir.name,
+                        source_dir=rel_dir,
+                        source_file=source_file.name,
+                        package_dir=f"{suite}/{family_dir.name}/{material_dir.name}",
+                    )
+                )
+    return specs
 
 
 def _rewrite_texture_paths(root: ET.Element, source_dir: Path, dest_dir: Path, texture_mode: str) -> None:
@@ -82,13 +92,11 @@ def _rewrite_texture_paths(root: ET.Element, source_dir: Path, dest_dir: Path, t
         input_elem.set("value", rewritten_path)
 
 
-def _copy_material_payloads(texture_mode: str) -> dict[str, str]:
+def _copy_material_payloads(specs: list[MaterialSpec], texture_mode: str) -> dict[str, str]:
     material_name_map: dict[str, str] = {}
-    for spec in MATERIAL_SPECS:
+    for spec in specs:
         source_dir = REPO_ROOT / spec.source_dir
-        dest_dir = PACKAGE_MATERIALS_DIR / spec.family_scope / spec.variant
-        if dest_dir.exists():
-            shutil.rmtree(dest_dir)
+        dest_dir = PACKAGE_MATERIALS_DIR / spec.package_dir
         dest_dir.mkdir(parents=True, exist_ok=True)
         source_file = source_dir / spec.source_file
         root = ET.parse(source_file).getroot()
@@ -99,80 +107,128 @@ def _copy_material_payloads(texture_mode: str) -> dict[str, str]:
         surfacematerial = root.find("surfacematerial")
         if surfacematerial is None:
             raise ValueError(f"No <surfacematerial> in {source_file}")
-        material_name_map[spec.variant] = surfacematerial.attrib["name"]
+        material_name_map[spec.key] = surfacematerial.attrib["name"]
     return material_name_map
 
 
-def _build_geometry_layer() -> str:
-    return "\n".join(
-        [
-            "#usda 1.0",
-            "(",
-            '    defaultPrim = "materialx_shaderball_showcase"',
-            f'    upAxis = "{STAGE_UP_AXIS}"',
-            ")",
-            "",
-            'over "materialx_shaderball_showcase"',
-            "{",
-            '    def Xform "shader_ball" (',
-            '        prepend references = @../ShaderBall.usdc@</root>',
-            "    )",
-            "    {",
-            "    }",
-            "}",
-        ]
-    )
+def _suite_material_variant_name(spec: MaterialSpec) -> str:
+    return f"{spec.family}__{spec.variant}"
 
 
-def _build_materials_layer(material_name_map: dict[str, str]) -> str:
+def _suite_material_variant_lines(
+    spec: MaterialSpec,
+    material_name: str,
+    root_prim: str,
+    suite_prim: str,
+    indent: str,
+) -> list[str]:
+    rel_path = f"../materials/{spec.package_dir}/{spec.source_file}"
+    variant_name = _suite_material_variant_name(spec)
+    return [
+        f'{indent}"{variant_name}" {{',
+        f'{indent}    def Scope "Materials" (',
+        f'{indent}        prepend references = @{rel_path}@</MaterialX/Materials>',
+        f"{indent}    )",
+        f"{indent}    {{",
+        f"{indent}    }}",
+        "",
+        f'{indent}    over "shader_ball"',
+        f"{indent}    {{",
+        f'{indent}        over "Preview_Mesh"',
+        f"{indent}        {{",
+        f'{indent}            over "Preview_Mesh" (',
+        f'{indent}                prepend apiSchemas = ["MaterialBindingAPI"]',
+        f"{indent}            )",
+        f"{indent}            {{",
+        f"{indent}                rel material:binding = </{root_prim}/{suite_prim}/Materials/{material_name}>",
+        f"{indent}            }}",
+        f"{indent}        }}",
+        f'{indent}        over "Calibration_Mesh"',
+        f"{indent}        {{",
+        f'{indent}            over "Calibration_Mesh" (',
+        f'{indent}                prepend apiSchemas = ["MaterialBindingAPI"]',
+        f"{indent}            )",
+        f"{indent}            {{",
+        f"{indent}                rel material:binding = </{root_prim}/{suite_prim}/Materials/{material_name}>",
+        f"{indent}            }}",
+        f"{indent}        }}",
+        f"{indent}    }}",
+        f"{indent}}}",
+    ]
+
+
+def _build_materials_layer(specs: list[MaterialSpec], material_name_map: dict[str, str]) -> str:
+    grouped: dict[str, dict[str, list[MaterialSpec]]] = defaultdict(lambda: defaultdict(list))
+    for spec in specs:
+        grouped[spec.suite][spec.family].append(spec)
+
+    suites = sorted(grouped.keys())
+    default_suite = "showcase" if "showcase" in grouped else suites[0]
+
+    suite_defaults: dict[str, MaterialSpec] = {}
+    for suite in suites:
+        families = sorted(grouped[suite].keys(), key=_family_sort_key)
+        default_family = "open_pbr_surface" if "open_pbr_surface" in grouped[suite] else families[0]
+        suite_defaults[suite] = sorted(grouped[suite][default_family], key=lambda spec: spec.variant)[0]
+
     lines: list[str] = [
         "#usda 1.0",
         "(",
-        '    defaultPrim = "materialx_shaderball_showcase"',
+        '    defaultPrim = "materialx_shaderball"',
         f'    upAxis = "{STAGE_UP_AXIS}"',
         ")",
         "",
-        'over "materialx_shaderball_showcase" (',
+        'over "materialx_shaderball" (',
         "    variants = {",
-        '        string material = "standard_gold"',
+        f'        string suite = "{default_suite}"',
         "    }",
-        '    prepend variantSets = "material"',
+        '    prepend variantSets = "suite"',
         ")",
         "{",
-        '    variantSet "material" = {',
+        '    variantSet "suite" = {',
     ]
 
-    for spec in MATERIAL_SPECS:
-        rel_path = f"../materials/{spec.family_scope}/{spec.variant}/{spec.source_file}"
-        material_name = material_name_map[spec.variant]
+    for suite in suites:
+        suite_specs = sorted(
+            [spec for family_specs in grouped[suite].values() for spec in family_specs],
+            key=lambda spec: (_family_sort_key(spec.family), spec.variant),
+        )
+        default_spec = suite_defaults[suite]
         lines.extend(
             [
-                f'        "{spec.variant}" {{',
-                '            def Scope "Materials" (',
-                f'                prepend references = @{rel_path}@</MaterialX/Materials>',
+                f'        "{suite}" {{',
+                f'            def Xform "{suite}" (',
+                '                kind = "component"',
+                "                variants = {",
+                f'                    string material = "{_suite_material_variant_name(default_spec)}"',
+                "                }",
+                '                prepend variantSets = "material"',
                 "            )",
                 "            {",
-                "            }",
-                "",
-                '            over "shader_ball"',
-                "            {",
-                '                over "Preview_Mesh"',
+                '                def Xform "shader_ball" (',
+                '                    prepend references = @../ShaderBall.usdc@</root>',
+                "                )",
                 "                {",
-                '                    over "Preview_Mesh" (',
-                '                        prepend apiSchemas = ["MaterialBindingAPI"]',
-                "                    )",
-                "                    {",
-                f"                        rel material:binding = </materialx_shaderball_showcase/Materials/{material_name}>",
-                "                    }",
                 "                }",
-                '                over "Calibration_Mesh"',
-                "                {",
-                '                    over "Calibration_Mesh" (',
-                '                        prepend apiSchemas = ["MaterialBindingAPI"]',
-                "                    )",
-                "                    {",
-                f"                        rel material:binding = </materialx_shaderball_showcase/Materials/{material_name}>",
-                "                    }",
+                "",
+                '                variantSet "material" = {',
+            ]
+        )
+        for spec in suite_specs:
+            lines.extend(
+                _suite_material_variant_lines(
+                    spec,
+                    material_name_map[spec.key],
+                    "materialx_shaderball",
+                    suite,
+                    "                    ",
+                )
+            )
+            lines.append("")
+        if lines[-1] == "":
+            lines.pop()
+        lines.extend(
+            [
                 "                }",
                 "            }",
                 "        }",
@@ -180,6 +236,8 @@ def _build_materials_layer(material_name_map: dict[str, str]) -> str:
             ]
         )
 
+    if lines[-1] == "":
+        lines.pop()
     lines.extend(["    }", "}"])
     return "\n".join(lines)
 
@@ -198,15 +256,14 @@ def _build_root_layer(environment_asset_path: str) -> str:
         [
             "#usda 1.0",
             "(",
-            '    defaultPrim = "materialx_shaderball_showcase"',
+            '    defaultPrim = "materialx_shaderball"',
             '    subLayers = [',
-            '        @./layers/materials.usda@,',
-            '        @./layers/geometry.usda@',
-            '    ]',
+            '        @./layers/materials.usda@',
+            "    ]",
             f'    upAxis = "{STAGE_UP_AXIS}"',
             ")",
             "",
-            'def Xform "materialx_shaderball_showcase" (',
+            'def Xform "materialx_shaderball" (',
             '    kind = "component"',
             ")",
             "{",
@@ -220,28 +277,38 @@ def _build_root_layer(environment_asset_path: str) -> str:
     )
 
 
-def _build_readme(material_name_map: dict[str, str], texture_mode: str) -> str:
-    variant_lines = "\n".join(f"- `{spec.variant}` -> `{material_name_map[spec.variant]}`" for spec in MATERIAL_SPECS)
+def _build_readme(specs: list[MaterialSpec], texture_mode: str) -> str:
+    grouped: dict[str, dict[str, list[MaterialSpec]]] = defaultdict(lambda: defaultdict(list))
+    for spec in specs:
+        grouped[spec.suite][spec.family].append(spec)
+
+    summary_lines: list[str] = []
+    for suite in sorted(grouped.keys()):
+        total = sum(len(grouped[suite][family]) for family in grouped[suite])
+        summary_lines.append(f"- `{suite}/`: `{total}` materials")
+        for family in sorted(grouped[suite].keys(), key=_family_sort_key):
+            summary_lines.append(f"- `{suite}/{family}`: `{len(grouped[suite][family])}` materials")
+
     if texture_mode == "portable":
-        materials_line = "- `materials/`: copied `.mtlx` documents plus vendored textures for a portable package"
+        materials_line = "- `materials/`: mirrored `.mtlx` tree plus vendored textures for a portable package"
         environment_line = "- `environment/`: vendored HDR used by the authored USD dome light"
-        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light HDR resolve within `usd/materialx_shaderball_showcase/`."
+        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light HDR resolve within `usd/materialx_shaderball/`."
     else:
-        materials_line = "- `materials/`: copied `.mtlx` documents with texture inputs rewritten to the original repository assets"
+        materials_line = "- `materials/`: mirrored `.mtlx` tree with texture inputs rewritten to the original repository assets"
         environment_line = "- `environment/`: omitted in linked mode; the dome light points back to `viewer/san_giuseppe_bridge_2k.hdr`"
         texture_mode_summary = "Built with `--texture-mode linked`. This package depends on the source repository texture paths and HDR remaining available next to the USD package."
+
     return textwrap.dedent(
         f"""\
-# MaterialX Shaderball Showcase
+# MaterialX Shaderball
 
-This package is a direct USD translation wrapper around the reusable GLB test geometry, using `ShaderBall.usdc` plus the curated MaterialX sample set from this repository.
+Unified USD browser for the repository's showcase and library materials, with suite on the root prim and a flat family-plus-material variant set on each suite prim.
 
 ## Files
 
 - `ShaderBall.usdc`: USD-converted reusable shaderball geometry
-- `shaderball_showcase.usda`: root scene shell, domelight, and sublayer stack
-- `layers/geometry.usda`: references `ShaderBall.usdc` under `shader_ball`
-- `layers/materials.usda`: top-level `material` variant set, `.mtlx` composition, and mesh binding
+- `shaderball.usda`: root scene shell, domelight, and sublayer stack
+- `layers/materials.usda`: root `suite` variant set plus one flat `material` variant set on each suite prim
 {materials_line}
 {environment_line}
 
@@ -250,28 +317,24 @@ This package is a direct USD translation wrapper around the reusable GLB test ge
 - Linked build: `python3 usd/build_usd_shaderball.py`
 - Portable build: `python3 usd/build_usd_shaderball.py --texture-mode portable`
 
-Use `linked` when you want the smallest generated package and are working inside this repository. In that mode, generated `.mtlx` files point back to the source textures under `materials/showcase/...`, so nothing is duplicated.
+## Mirrored Material Tree
 
-Use `portable` when you want to hand the package to another tool, machine, or web viewer as a self-contained folder. In that mode, the generator copies the referenced textures into the package so `usd/materialx_shaderball_showcase/` can be moved independently.
-
-In practice, `linked` is the better default for version control, while `portable` is better for distribution and viewer deployment artifacts.
-
-## Variants
-
-{variant_lines}
+{os.linesep.join(summary_lines)}
 
 ## Notes
 
 - Texture packaging: {texture_mode_summary}
-- The variant set lives on `/materialx_shaderball_showcase`, authored in `layers/materials.usda`.
-- Each variant composes one `.mtlx` document at `/materialx_shaderball_showcase/Materials` and binds `/materialx_shaderball_showcase/shader_ball/Preview_Mesh` directly to the imported MaterialX material prim.
-- `/materialx_shaderball_showcase/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.
+- The `suite` variant set lives on `/materialx_shaderball`, authored in `layers/materials.usda`.
+- After selecting a suite, choose that suite prim (`/materialx_shaderball/showcase` or `/materialx_shaderball/library`) and switch its `material` variant set.
+- Each suite `material` variant name uses the form `family__material`.
+- Each `material` variant composes one `.mtlx` document at `/materialx_shaderball/<suite>/Materials` and binds both shaderball meshes directly to the imported MaterialX material prim.
+- `/materialx_shaderball/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.
 """
     )
 
 
 def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build the MaterialX USD shaderball showcase package.")
+    parser = argparse.ArgumentParser(description="Build the unified MaterialX USD shaderball package.")
     parser.add_argument(
         "--texture-mode",
         choices=TEXTURE_MODES,
@@ -279,6 +342,15 @@ def _parse_args() -> argparse.Namespace:
         help="Whether generated MaterialX files should reference source repo textures or vendor them into the package.",
     )
     return parser.parse_args()
+
+
+def _clean_output_root() -> None:
+    for relative_path in ("layers", "materials", "environment", "shaderball.usda", "README.md"):
+        path = OUTPUT_ROOT / relative_path
+        if path.is_dir():
+            shutil.rmtree(path)
+        elif path.exists():
+            path.unlink()
 
 
 def main() -> None:
@@ -289,22 +361,17 @@ def main() -> None:
     if not SOURCE_ENVIRONMENT_HDR.exists():
         raise FileNotFoundError(f"Missing required environment asset: {SOURCE_ENVIRONMENT_HDR}")
 
-    if LAYERS_DIR.exists():
-        shutil.rmtree(LAYERS_DIR)
-    if PACKAGE_MATERIALS_DIR.exists():
-        shutil.rmtree(PACKAGE_MATERIALS_DIR)
-    if PACKAGE_ENVIRONMENT_DIR.exists():
-        shutil.rmtree(PACKAGE_ENVIRONMENT_DIR)
+    specs = _discover_specs()
 
+    _clean_output_root()
     LAYERS_DIR.mkdir(parents=True, exist_ok=True)
     PACKAGE_MATERIALS_DIR.mkdir(parents=True, exist_ok=True)
 
-    material_name_map = _copy_material_payloads(args.texture_mode)
+    material_name_map = _copy_material_payloads(specs, args.texture_mode)
     environment_asset_path = _prepare_environment_asset(args.texture_mode)
-    (LAYERS_DIR / "geometry.usda").write_text(_build_geometry_layer(), encoding="utf-8")
-    (LAYERS_DIR / "materials.usda").write_text(_build_materials_layer(material_name_map), encoding="utf-8")
-    (OUTPUT_ROOT / "shaderball_showcase.usda").write_text(_build_root_layer(environment_asset_path), encoding="utf-8")
-    (OUTPUT_ROOT / "README.md").write_text(_build_readme(material_name_map, args.texture_mode), encoding="utf-8")
+    (LAYERS_DIR / "materials.usda").write_text(_build_materials_layer(specs, material_name_map), encoding="utf-8")
+    (OUTPUT_ROOT / "shaderball.usda").write_text(_build_root_layer(environment_asset_path), encoding="utf-8")
+    (OUTPUT_ROOT / "README.md").write_text(_build_readme(specs, args.texture_mode), encoding="utf-8")
 
 
 if __name__ == "__main__":
