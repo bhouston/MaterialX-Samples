@@ -2,5 +2,16 @@
   "rendererName": "threejs-new",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "MaterialX error: type-mismatch [surface_shader1]: Input 'opacity' type 'float' doesn't match nodedef type 'color3' on <standard_surface name=\"surface_shader1\" type=\"surfaceshader\" nodedef=\"ND_standard_surface_surfaceshader\">"
+    },
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "MaterialX error: unknown-input [surface_shader1]: Node interface error: Input 'ior' doesn't match declaration: <standard_surface name=\"surface_shader1\" type=\"surfaceshader\" nodedef=\"ND_standard_surface_surfaceshader\">"
+    }
+  ]
 }

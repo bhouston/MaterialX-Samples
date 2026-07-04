@@ -5,8 +5,83 @@
   "logs": [
     {
       "level": "warning",
-      "source": "browser",
-      "message": "Three.js MaterialX compile warnings: standard_surface input \"diffuse_roughness\" is currently ignored in MaterialX translation. | standard_surface input \"transmission_scatter\" is currently ignored in MaterialX translation. | standard_surface input \"transmission_scatter_anisotropy\" is currently ignored in MaterialX translation. | standard_surface input \"transmission_dispersion\" is currently ignored in MaterialX translation. | standard_surface input \"transmission_extra_roughness\" is currently ignored in MaterialX translation. | standard_surface input \"subsurface\" is currently ignored in MaterialX translation. | standard_surface input \"subsurface_color\" is currently ignored in MaterialX translation. | standard_surface input \"subsurface_radius\" is currently ignored in MaterialX translation. | standard_surface input \"subsurface_scale\" is currently ignored in MaterialX translation. | standard_surface input \"subsurface_anisotropy\" is currently ignored in MaterialX translation. | standard_surface input \"thin_walled\" is currently ignored in MaterialX translation. | standard_surface input \"coat_anisotropy\" is currently ignored in MaterialX translation. | standard_surface input \"coat_rotation\" is currently ignored in MaterialX translation. | standard_surface input \"coat_IOR\" is currently ignored in MaterialX translation. | standard_surface input \"coat_affect_color\" is currently ignored in MaterialX translation. | standard_surface input \"coat_affect_roughness\" is currently ignored in MaterialX translation."
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"diffuse_roughness\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"transmission_scatter\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"transmission_scatter_anisotropy\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"transmission_dispersion\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"transmission_extra_roughness\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"subsurface\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"subsurface_color\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"subsurface_radius\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"subsurface_scale\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"subsurface_anisotropy\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"thin_walled\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"coat_anisotropy\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"coat_rotation\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"coat_IOR\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"coat_affect_color\" is currently ignored in MaterialX translation."
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "MaterialX warning: ignored-surface-input [SR_default]: standard_surface input \"coat_affect_roughness\" is currently ignored in MaterialX translation."
     }
   ]
 }

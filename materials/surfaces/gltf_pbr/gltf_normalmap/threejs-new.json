@@ -2,5 +2,11 @@
   "rendererName": "threejs-new",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "MaterialX error: type-mismatch [node_under_test]: Input 'scale' type 'float' doesn't match nodedef type 'vector2' on <gltf_normalmap name=\"node_under_test\" type=\"vector3\" nodedef=\"ND_gltf_normalmap_vector3_1_0\">"
+    }
+  ]
 }

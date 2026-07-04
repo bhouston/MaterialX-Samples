@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_colorcorrect_edge_saturation_negative">
+    <texcoord name="uv0" type="vector2" />
+    <normal name="normal_world" type="vector3">
+      <input name="space" type="string" value="world" />
+    </normal>
+    <multiply name="normal_half" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_world" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </multiply>
+    <add name="normal_01" type="vector3">
+      <input name="in1" type="vector3" nodename="normal_half" />
+      <input name="in2" type="vector3" value="0.5, 0.5, 0.5" />
+    </add>
+    <convert name="normal_color" type="color3">
+      <input name="in" type="vector3" nodename="normal_01" />
+    </convert>
+    <splitlr name="lr_mask" type="float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="float" value="0.5" />
+      <input name="valuel" type="float" value="0.0" />
+      <input name="valuer" type="float" value="1.0" />
+    </splitlr>
+    <splittb name="tb_mask" type="float">
+      <input name="texcoord" type="vector2" nodename="uv0" />
+      <input name="center" type="float" value="0.5" />
+      <input name="valuet" type="float" value="0.0" />
+      <input name="valueb" type="float" value="1.0" />
+    </splittb>
+    <colorcorrect name="base_case" type="color3" nodedef="ND_colorcorrect_color3">
+      <input name="in" type="color3" nodename="normal_color" />
+      <input name="hue" type="float" value="0.0" />
+      <input name="saturation" type="float" value="1.0" />
+      <input name="gamma" type="float" value="1.0" />
+      <input name="lift" type="float" value="0.0" />
+      <input name="gain" type="float" value="1.0" />
+      <input name="contrast" type="float" value="1.0" />
+      <input name="contrastpivot" type="float" value="0.18" />
+      <input name="exposure" type="float" value="0.0" />
+    </colorcorrect>
+    <colorcorrect name="edge_case" type="color3" nodedef="ND_colorcorrect_color3">
+      <input name="in" type="color3" nodename="normal_color" />
+      <input name="hue" type="float" value="0.0" />
+      <input name="saturation" type="float" value="-1.0" />
+      <input name="gamma" type="float" value="1.0" />
+      <input name="lift" type="float" value="0.0" />
+      <input name="gain" type="float" value="1.0" />
+      <input name="contrast" type="float" value="1.0" />
+      <input name="contrastpivot" type="float" value="0.18" />
+      <input name="exposure" type="float" value="0.0" />
+    </colorcorrect>
+    <mix name="side_by_side" type="color3">
+      <input name="bg" type="color3" nodename="base_case" />
+      <input name="fg" type="color3" nodename="edge_case" />
+      <input name="mix" type="float" nodename="lr_mask" />
+    </mix>
+    <subtract name="delta_raw" type="color3">
+      <input name="in1" type="color3" nodename="edge_case" />
+      <input name="in2" type="color3" nodename="base_case" />
+    </subtract>
+    <absval name="delta_abs" type="color3">
+      <input name="in" type="color3" nodename="delta_raw" />
+    </absval>
+    <multiply name="delta_boost" type="color3">
+      <input name="in1" type="color3" nodename="delta_abs" />
+      <input name="in2" type="color3" value="4.0, 4.0, 4.0" />
+    </multiply>
+    <mix name="final_color" type="color3">
+      <input name="bg" type="color3" nodename="side_by_side" />
+      <input name="fg" type="color3" nodename="delta_boost" />
+      <input name="mix" type="float" nodename="tb_mask" />
+    </mix>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_colorcorrect_edge_saturation_negative" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_colorcorrect_edge_saturation_negative" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_colorcorrect_edge_saturation_negative" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_colorcorrect_edge_saturation_negative" />
+  </surfacematerial>
+</materialx>

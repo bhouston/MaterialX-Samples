@@ -2,5 +2,11 @@
   "rendererName": "threejs-new",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "MaterialX error: unknown-input [SR_standard_surface_sweep_thin_film_thickness_0_25]: Node interface error: Input 'thin_film_ior' doesn't match declaration: <standard_surface name=\"SR_standard_surface_sweep_thin_film_thickness_0_25\" type=\"surfaceshader\">"
+    }
+  ]
 }

@@ -1,6 +1,31 @@
 {
   "rendererName": "threejs-new",
-  "status": "success",
-  "error": null,
-  "logs": []
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Browser console error: THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :465:12 error: cannot assign 'bool' to 'vec3<bool>'\n    nodeVar3 = ( abs( nodeVar2 ).x < 1e-8 );\n             ^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_artistic_ior_diag_red_red_edge\"\"]).\n",
+    "stack": "Error: Browser console error: THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :465:12 error: cannot assign 'bool' to 'vec3<bool>'\n    nodeVar3 = ( abs( nodeVar2 ).x < 1e-8 );\n             ^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_artistic_ior_diag_red_red_edge\"\"]).\n\n    at createRenderError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:104:19)\n    at recordBrowserError (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:257:28)\n    at Page.onConsole (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/renderer-threejs/dist/index.js:268:17)\n    at Page._callHandler (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/client/eventEmitter.js:66:29)\n    at Page.emit (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/client/eventEmitter.js:56:12)\n    at Proxy.<anonymous> (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/client/browserContext.js:99:13)\n    at Proxy._callHandler (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/client/eventEmitter.js:66:29)\n    at Proxy.emit (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/client/eventEmitter.js:56:12)\n    at Connection.dispatch (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/client/connection.js:177:21)\n    at Immediate.<anonymous> (/Users/bhouston/Coding/OpenSource/material-fidelity/node_modules/.pnpm/playwright-core@1.59.1/node_modules/playwright-core/lib/inProcessFactory.js:46:85)"
+  },
+  "logs": [
+    {
+      "level": "error",
+      "source": "browser",
+      "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: Error while parsing WGSL: :465:12 error: cannot assign 'bool' to 'vec3<bool>'\n    nodeVar3 = ( abs( nodeVar2 ).x < 1e-8 );\n             ^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_artistic_ior_diag_red_red_edge\"\"]).\n"
+    },
+    {
+      "level": "warning",
+      "source": "browser",
+      "message": "Error while parsing WGSL: :465:12 error: cannot assign 'bool' to 'vec3<bool>'\n    nodeVar3 = ( abs( nodeVar2 ).x < 1e-8 );\n             ^\n\n\n - While calling [Device].CreateShaderModule([ShaderModuleDescriptor \"\"fragment_M_artistic_ior_diag_red_red_edge\"\"]).\n"
+    },
+    {
+      "level": "error",
+      "source": "browser",
+      "message": "THREE.WebGPURenderer: Async render pipeline creation failed (renderPipeline_M_artistic_ior_diag_red_red_edge_18): [Invalid ShaderModule \"fragment_M_artistic_ior_diag_red_red_edge\"] is invalid due to a previous error.\n - While validating fragment stage ([Invalid ShaderModule \"fragment_M_artistic_ior_diag_red_red_edge\"], entryPoint: \"main\").\n - While validating fragment state.\n"
+    },
+    {
+      "level": "error",
+      "source": "browser",
+      "message": "THREE.WebGPURenderer [renderPipeline_M_artistic_ior_diag_red_red_edge_18 / fragment error] at line 465:12: cannot assign 'bool' to 'vec3<bool>'\n  \t\tnodeVar3 = ( abs( nodeVar2 ).x < 1e-8 );\n             ^"
+    }
+  ]
 }
