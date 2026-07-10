@@ -13,11 +13,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_ROOT = REPO_ROOT / "usd" / "materialx_shaderball"
-LAYERS_DIR = OUTPUT_ROOT / "layers"
-PACKAGE_MATERIALS_DIR = OUTPUT_ROOT / "materials"
-PACKAGE_ENVIRONMENT_DIR = OUTPUT_ROOT / "environment"
-SOURCE_SHADERBALL_USDC = OUTPUT_ROOT / "ShaderBall.usdc"
+SOURCE_SHADERBALL_USDC = REPO_ROOT / "usd" / "materialx_shaderball" / "ShaderBall.usdc"
 SOURCE_ENVIRONMENT_HDR = REPO_ROOT / "viewer" / "san_giuseppe_bridge_2k.hdr"
 STAGE_UP_AXIS = "Z"
 TEXTURE_MODES = ("linked", "portable")
@@ -32,6 +28,24 @@ class MaterialSpec:
     source_dir: str
     source_file: str
     package_dir: str
+
+
+@dataclass(frozen=True)
+class PackagePaths:
+    output_root: Path
+    layers_dir: Path
+    materials_dir: Path
+    environment_dir: Path
+
+
+def _package_paths(output_root: Path) -> PackagePaths:
+    resolved_output_root = output_root.resolve()
+    return PackagePaths(
+        output_root=resolved_output_root,
+        layers_dir=resolved_output_root / "layers",
+        materials_dir=resolved_output_root / "materials",
+        environment_dir=resolved_output_root / "environment",
+    )
 
 
 def _family_sort_key(family: str) -> tuple[int, str]:
@@ -92,11 +106,11 @@ def _rewrite_texture_paths(root: ET.Element, source_dir: Path, dest_dir: Path, t
         input_elem.set("value", rewritten_path)
 
 
-def _copy_material_payloads(specs: list[MaterialSpec], texture_mode: str) -> dict[str, str]:
+def _copy_material_payloads(specs: list[MaterialSpec], package_paths: PackagePaths, texture_mode: str) -> dict[str, str]:
     material_name_map: dict[str, str] = {}
     for spec in specs:
         source_dir = REPO_ROOT / spec.source_dir
-        dest_dir = PACKAGE_MATERIALS_DIR / spec.package_dir
+        dest_dir = package_paths.materials_dir / spec.package_dir
         dest_dir.mkdir(parents=True, exist_ok=True)
         source_file = source_dir / spec.source_file
         root = ET.parse(source_file).getroot()
@@ -242,13 +256,14 @@ def _build_materials_layer(specs: list[MaterialSpec], material_name_map: dict[st
     return "\n".join(lines)
 
 
-def _prepare_environment_asset(texture_mode: str) -> str:
+def _prepare_environment_asset(package_paths: PackagePaths, texture_mode: str) -> str:
     if texture_mode == "portable":
-        PACKAGE_ENVIRONMENT_DIR.mkdir(parents=True, exist_ok=True)
-        portable_hdr_path = PACKAGE_ENVIRONMENT_DIR / SOURCE_ENVIRONMENT_HDR.name
+        package_paths.environment_dir.mkdir(parents=True, exist_ok=True)
+        portable_hdr_path = package_paths.environment_dir / SOURCE_ENVIRONMENT_HDR.name
         shutil.copy2(SOURCE_ENVIRONMENT_HDR, portable_hdr_path)
         return f"./environment/{SOURCE_ENVIRONMENT_HDR.name}"
-    return f"../../viewer/{SOURCE_ENVIRONMENT_HDR.name}"
+    linked_hdr_path = os.path.relpath(SOURCE_ENVIRONMENT_HDR, start=package_paths.output_root)
+    return Path(linked_hdr_path).as_posix()
 
 
 def _build_root_layer(environment_asset_path: str) -> str:
@@ -277,7 +292,7 @@ def _build_root_layer(environment_asset_path: str) -> str:
     )
 
 
-def _build_readme(specs: list[MaterialSpec], texture_mode: str) -> str:
+def _build_readme(specs: list[MaterialSpec], package_paths: PackagePaths, texture_mode: str) -> str:
     grouped: dict[str, dict[str, list[MaterialSpec]]] = defaultdict(lambda: defaultdict(list))
     for spec in specs:
         grouped[spec.suite][spec.family].append(spec)
@@ -292,11 +307,13 @@ def _build_readme(specs: list[MaterialSpec], texture_mode: str) -> str:
     if texture_mode == "portable":
         materials_line = "- `materials/`: mirrored `.mtlx` tree plus vendored textures for a portable package"
         environment_line = "- `environment/`: vendored HDR used by the authored USD dome light"
-        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light HDR resolve within `usd/materialx_shaderball/`."
+        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light HDR resolve within the output root."
     else:
         materials_line = "- `materials/`: mirrored `.mtlx` tree with texture inputs rewritten to the original repository assets"
         environment_line = "- `environment/`: omitted in linked mode; the dome light points back to `viewer/san_giuseppe_bridge_2k.hdr`"
         texture_mode_summary = "Built with `--texture-mode linked`. This package depends on the source repository texture paths and HDR remaining available next to the USD package."
+
+    output_root_display = _display_path(package_paths.output_root)
 
     return textwrap.dedent(
         f"""\
@@ -314,8 +331,8 @@ Unified USD browser for the repository's showcase and library materials, with su
 
 ## Building
 
-- Linked build: `python3 usd/build_usd_shaderball.py`
-- Portable build: `python3 usd/build_usd_shaderball.py --texture-mode portable`
+- Linked build: `python3 usd/build_usd_shaderball.py --output-root {output_root_display}`
+- Portable build: `python3 usd/build_usd_shaderball.py --texture-mode portable --output-root /tmp/materialx_shaderball`
 
 ## Mirrored Material Tree
 
@@ -336,6 +353,12 @@ Unified USD browser for the repository's showcase and library materials, with su
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build the unified MaterialX USD shaderball package.")
     parser.add_argument(
+        "--output-root",
+        required=True,
+        type=Path,
+        help="Directory where the shaderball package should be written.",
+    )
+    parser.add_argument(
         "--texture-mode",
         choices=TEXTURE_MODES,
         default="linked",
@@ -344,17 +367,33 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def _clean_output_root() -> None:
+def _display_path(path: Path) -> str:
+    try:
+        return path.relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def _clean_output_root(package_paths: PackagePaths) -> None:
     for relative_path in ("layers", "materials", "environment", "shaderball.usda", "README.md"):
-        path = OUTPUT_ROOT / relative_path
+        path = package_paths.output_root / relative_path
         if path.is_dir():
             shutil.rmtree(path)
         elif path.exists():
             path.unlink()
 
 
+def _copy_shaderball_geometry(package_paths: PackagePaths) -> None:
+    package_paths.output_root.mkdir(parents=True, exist_ok=True)
+    dest_path = package_paths.output_root / SOURCE_SHADERBALL_USDC.name
+    if SOURCE_SHADERBALL_USDC.resolve() == dest_path.resolve():
+        return
+    shutil.copy2(SOURCE_SHADERBALL_USDC, dest_path)
+
+
 def main() -> None:
     args = _parse_args()
+    package_paths = _package_paths(args.output_root)
 
     if not SOURCE_SHADERBALL_USDC.exists():
         raise FileNotFoundError(f"Missing required source geometry asset: {SOURCE_SHADERBALL_USDC}")
@@ -363,15 +402,19 @@ def main() -> None:
 
     specs = _discover_specs()
 
-    _clean_output_root()
-    LAYERS_DIR.mkdir(parents=True, exist_ok=True)
-    PACKAGE_MATERIALS_DIR.mkdir(parents=True, exist_ok=True)
+    _clean_output_root(package_paths)
+    _copy_shaderball_geometry(package_paths)
+    package_paths.layers_dir.mkdir(parents=True, exist_ok=True)
+    package_paths.materials_dir.mkdir(parents=True, exist_ok=True)
 
-    material_name_map = _copy_material_payloads(specs, args.texture_mode)
-    environment_asset_path = _prepare_environment_asset(args.texture_mode)
-    (LAYERS_DIR / "materials.usda").write_text(_build_materials_layer(specs, material_name_map), encoding="utf-8")
-    (OUTPUT_ROOT / "shaderball.usda").write_text(_build_root_layer(environment_asset_path), encoding="utf-8")
-    (OUTPUT_ROOT / "README.md").write_text(_build_readme(specs, args.texture_mode), encoding="utf-8")
+    material_name_map = _copy_material_payloads(specs, package_paths, args.texture_mode)
+    environment_asset_path = _prepare_environment_asset(package_paths, args.texture_mode)
+    (package_paths.layers_dir / "materials.usda").write_text(
+        _build_materials_layer(specs, material_name_map),
+        encoding="utf-8",
+    )
+    (package_paths.output_root / "shaderball.usda").write_text(_build_root_layer(environment_asset_path), encoding="utf-8")
+    (package_paths.output_root / "README.md").write_text(_build_readme(specs, package_paths, args.texture_mode), encoding="utf-8")
 
 
 if __name__ == "__main__":

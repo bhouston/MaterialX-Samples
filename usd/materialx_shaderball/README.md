@@ -12,8 +12,8 @@ Unified USD browser for the repository's showcase and library materials, with su
 
 ## Building
 
-- Linked build: `python3 usd/build_usd_shaderball.py --texture-mode linked` (this is also the default)
-- Portable build: `python3 usd/build_usd_shaderball.py --texture-mode portable`
+- Linked build: `python3 usd/build_usd_shaderball.py --output-root usd/materialx_shaderball`
+- Portable build: `python3 usd/build_usd_shaderball.py --texture-mode portable --output-root /tmp/materialx_shaderball`
 
 ## Mirrored Material Tree
 
