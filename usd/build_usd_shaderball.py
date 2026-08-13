@@ -79,6 +79,25 @@ def _discover_specs() -> list[MaterialSpec]:
                         package_dir=f"{suite}/{family_dir.name}/{material_dir.name}",
                     )
                 )
+
+    nodes_root = REPO_ROOT / "materials" / "nodes"
+    for material_dir in sorted((p for p in nodes_root.iterdir() if p.is_dir()), key=lambda p: p.name):
+        mtlx_files = sorted(material_dir.glob("*.mtlx"))
+        if not mtlx_files:
+            continue
+        source_file = mtlx_files[0]
+        rel_dir = material_dir.relative_to(REPO_ROOT).as_posix()
+        specs.append(
+            MaterialSpec(
+                key=f"nodes/{material_dir.name}",
+                suite="nodes",
+                family="nodes",
+                variant=material_dir.name,
+                source_dir=rel_dir,
+                source_file=source_file.name,
+                package_dir=f"nodes/{material_dir.name}",
+            )
+        )
     return specs
 
 
@@ -126,6 +145,8 @@ def _copy_material_payloads(specs: list[MaterialSpec], package_paths: PackagePat
 
 
 def _suite_material_variant_name(spec: MaterialSpec) -> str:
+    if spec.suite == "nodes":
+        return spec.variant
     return f"{spec.family}__{spec.variant}"
 
 
@@ -301,6 +322,8 @@ def _build_readme(specs: list[MaterialSpec], package_paths: PackagePaths, textur
     for suite in sorted(grouped.keys()):
         total = sum(len(grouped[suite][family]) for family in grouped[suite])
         summary_lines.append(f"- `{suite}/`: `{total}` materials")
+        if suite == "nodes":
+            continue
         for family in sorted(grouped[suite].keys(), key=_family_sort_key):
             summary_lines.append(f"- `{suite}/{family}`: `{len(grouped[suite][family])}` materials")
 
@@ -319,7 +342,7 @@ def _build_readme(specs: list[MaterialSpec], package_paths: PackagePaths, textur
         f"""\
 # MaterialX Shaderball
 
-Unified USD browser for the repository's showcase and library materials, with suite on the root prim and a flat family-plus-material variant set on each suite prim.
+Unified USD browser for the repository's showcase, library, and node materials, with suite on the root prim and a flat material variant set on each suite prim.
 
 ## Files
 
@@ -342,8 +365,8 @@ Unified USD browser for the repository's showcase and library materials, with su
 
 - Texture packaging: {texture_mode_summary}
 - The `suite` variant set lives on `/materialx_shaderball`, authored in `layers/materials.usda`.
-- After selecting a suite, choose that suite prim (`/materialx_shaderball/showcase` or `/materialx_shaderball/library`) and switch its `material` variant set.
-- Each suite `material` variant name uses the form `family__material`.
+- After selecting a suite, choose that suite prim (`/materialx_shaderball/showcase`, `/materialx_shaderball/library`, or `/materialx_shaderball/nodes`) and switch its `material` variant set.
+- Surface suite `material` variant names use the form `family__material`; node suite variants use the node case directory name.
 - Each `material` variant composes one `.mtlx` document at `/materialx_shaderball/<suite>/Materials` and binds both shaderball meshes directly to the imported MaterialX material prim.
 - `/materialx_shaderball/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.
 """
