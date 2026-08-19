@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_matrix44_transformmatrix_isolate_vector3_vs_vector4_identity">
+    <texcoord name="uv0" type="vector2" />
+    <separate2 name="uv_split" type="multioutput">
+      <input name="in" type="vector2" nodename="uv0" />
+    </separate2>
+    <add name="uv_sum" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </add>
+    <fract name="uv_wave" type="float">
+      <input name="in" type="float" nodename="uv_sum" />
+    </fract>
+    <combine3 name="source_vec3" type="vector3">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" nodename="uv_wave" />
+    </combine3>
+    <combine4 name="source_vec4" type="vector4">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+      <input name="in3" type="float" nodename="uv_wave" />
+      <input name="in4" type="float" value="1.0" />
+    </combine4>
+    <multiply name="r1_c2" type="float">
+      <input name="in1" type="float" nodename="uv_wave" />
+      <input name="in2" type="float" value="0.25" />
+    </multiply>
+    <multiply name="r1_c4" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="0.15" />
+    </multiply>
+    <add name="r2_c2" type="float">
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" nodename="r1_c2" />
+    </add>
+    <multiply name="r2_c3" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="0.20" />
+    </multiply>
+    <multiply name="r2_c4" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="-0.10" />
+    </multiply>
+    <multiply name="r3_c1" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="0.15" />
+    </multiply>
+    <multiply name="r3_c3" type="float">
+      <input name="in1" type="float" nodename="uv_wave" />
+      <input name="in2" type="float" value="0.35" />
+    </multiply>
+    <add name="r3_c3_plus" type="float">
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" nodename="r3_c3" />
+    </add>
+    <subtract name="u_minus_v" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" nodename="uv_split" output="outy" />
+    </subtract>
+    <multiply name="r3_c4" type="float">
+      <input name="in1" type="float" nodename="u_minus_v" />
+      <input name="in2" type="float" value="0.10" />
+    </multiply>
+    <multiply name="r4_c1" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outx" />
+      <input name="in2" type="float" value="0.05" />
+    </multiply>
+    <multiply name="r4_c2" type="float">
+      <input name="in1" type="float" nodename="uv_split" output="outy" />
+      <input name="in2" type="float" value="-0.04" />
+    </multiply>
+    <multiply name="r4_c3" type="float">
+      <input name="in1" type="float" nodename="uv_wave" />
+      <input name="in2" type="float" value="0.08" />
+    </multiply>
+    <combine4 name="matrix_row1" type="vector4">
+      <input name="in1" type="float" value="1.0" />
+      <input name="in2" type="float" nodename="r1_c2" />
+      <input name="in3" type="float" value="0.0" />
+      <input name="in4" type="float" nodename="r1_c4" />
+    </combine4>
+    <combine4 name="matrix_row2" type="vector4">
+      <input name="in1" type="float" value="0.0" />
+      <input name="in2" type="float" nodename="r2_c2" />
+      <input name="in3" type="float" nodename="r2_c3" />
+      <input name="in4" type="float" nodename="r2_c4" />
+    </combine4>
+    <combine4 name="matrix_row3" type="vector4">
+      <input name="in1" type="float" nodename="r3_c1" />
+      <input name="in2" type="float" value="0.0" />
+      <input name="in3" type="float" nodename="r3_c3_plus" />
+      <input name="in4" type="float" nodename="r3_c4" />
+    </combine4>
+    <combine4 name="matrix_row4" type="vector4">
+      <input name="in1" type="float" nodename="r4_c1" />
+      <input name="in2" type="float" nodename="r4_c2" />
+      <input name="in3" type="float" nodename="r4_c3" />
+      <input name="in4" type="float" value="1.0" />
+    </combine4>
+    <creatematrix name="source_matrix" type="matrix44" nodedef="ND_creatematrix_vector4_matrix44">
+      <input name="in1" type="vector4" nodename="matrix_row1" />
+      <input name="in2" type="vector4" nodename="matrix_row2" />
+      <input name="in3" type="vector4" nodename="matrix_row3" />
+      <input name="in4" type="vector4" nodename="matrix_row4" />
+    </creatematrix>
+    <transformmatrix name="transformed_vec3" type="vector3" nodedef="ND_transformmatrix_vector3M4">
+      <input name="in" type="vector3" nodename="source_vec3" />
+      <input name="mat" type="matrix44" nodename="source_matrix" />
+    </transformmatrix>
+    <transformmatrix name="transformed_vec4" type="vector4" nodedef="ND_transformmatrix_vector4">
+      <input name="in" type="vector4" nodename="source_vec4" />
+      <input name="mat" type="matrix44" nodename="source_matrix" />
+    </transformmatrix>
+    <separate3 name="vec3_channels" type="multioutput">
+      <input name="in" type="vector3" nodename="transformed_vec3" />
+    </separate3>
+    <separate4 name="vec4_channels" type="multioutput">
+      <input name="in" type="vector4" nodename="transformed_vec4" />
+    </separate4>
+    <subtract name="diff_x" type="float">
+      <input name="in1" type="float" nodename="vec3_channels" output="outx" />
+      <input name="in2" type="float" nodename="vec4_channels" output="outx" />
+    </subtract>
+    <subtract name="diff_y" type="float">
+      <input name="in1" type="float" nodename="vec3_channels" output="outy" />
+      <input name="in2" type="float" nodename="vec4_channels" output="outy" />
+    </subtract>
+    <subtract name="diff_z" type="float">
+      <input name="in1" type="float" nodename="vec3_channels" output="outz" />
+      <input name="in2" type="float" nodename="vec4_channels" output="outz" />
+    </subtract>
+    <absval name="diff_x_abs" type="float">
+      <input name="in" type="float" nodename="diff_x" />
+    </absval>
+    <absval name="diff_y_abs" type="float">
+      <input name="in" type="float" nodename="diff_y" />
+    </absval>
+    <absval name="diff_z_abs" type="float">
+      <input name="in" type="float" nodename="diff_z" />
+    </absval>
+    <multiply name="diff_x_scaled" type="float">
+      <input name="in1" type="float" nodename="diff_x_abs" />
+      <input name="in2" type="float" value="8.0" />
+    </multiply>
+    <multiply name="diff_y_scaled" type="float">
+      <input name="in1" type="float" nodename="diff_y_abs" />
+      <input name="in2" type="float" value="8.0" />
+    </multiply>
+    <multiply name="diff_z_scaled" type="float">
+      <input name="in1" type="float" nodename="diff_z_abs" />
+      <input name="in2" type="float" value="8.0" />
+    </multiply>
+    <combine3 name="final_color" type="color3">
+      <input name="in1" type="float" nodename="diff_x_scaled" />
+      <input name="in2" type="float" nodename="diff_y_scaled" />
+      <input name="in3" type="float" nodename="diff_z_scaled" />
+    </combine3>
+    <output name="out_base_color" type="color3" nodename="final_color" />
+  </nodegraph>
+  <standard_surface name="SR_matrix44_transformmatrix_isolate_vector3_vs_vector4_identity" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_matrix44_transformmatrix_isolate_vector3_vs_vector4_identity" output="out_base_color" />
+    <input name="specular_roughness" type="float" value="0.45" />
+    <input name="specular" type="float" value="0.5" />
+  </standard_surface>
+  <surfacematerial name="M_matrix44_transformmatrix_isolate_vector3_vs_vector4_identity" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_matrix44_transformmatrix_isolate_vector3_vs_vector4_identity" />
+  </surfacematerial>
+</materialx>

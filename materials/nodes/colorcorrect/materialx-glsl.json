@@ -1,8 +1,72 @@
 {
   "rendererName": "materialx-glsl",
-  "status": "success",
-  "error": null,
+  "status": "failed",
+  "error": {
+    "name": "Error",
+    "message": "Render output is empty (similar to blank reference): rms=0.003058 threshold=0.005000.",
+    "stack": "Error: Render output is empty (similar to blank reference): rms=0.003058 threshold=0.005000.\n    at assertRenderIsNotEmpty (file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/image-empty-check.js:60:15)\n    at async file:///Users/bhouston/Coding/OpenSource/material-fidelity/packages/core/dist/references.js:267:17"
+  },
   "logs": [
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "Error in compiling fragment shader:"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1096: Types 'vec3' and 'float' in conditional operator do not match (and no applicable implicit type conversion)"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1099: Use of undeclared identifier 'N_remap1_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1100: Use of undeclared identifier 'N_remap1_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1101: Use of undeclared identifier 'N_abs_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1102: Use of undeclared identifier 'N_pow_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1102: Use of undeclared identifier 'N_sign_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1105: Use of undeclared identifier 'N_gamma_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1106: Use of undeclared identifier 'N_remap2_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1108: Use of undeclared identifier 'N_clamp_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1108: Use of undeclared identifier 'N_remap2_color3FA_out'"
+    },
+    {
+      "level": "warning",
+      "source": "renderer",
+      "message": "ERROR: 0:1109: Use of undeclared identifier 'N_switch_color3FA_out'"
+    },
     {
       "level": "warning",
       "source": "renderer",

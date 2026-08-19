@@ -2,5 +2,11 @@
   "rendererName": "threejs-new",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "MaterialX error: type-mismatch [node_under_test]: Mismatched types in port connection: <input name=\"in\" type=\"color4\" nodename=\"source_node\">"
+    }
+  ]
 }

@@ -2,5 +2,11 @@
   "rendererName": "threejs-new",
   "status": "success",
   "error": null,
-  "logs": []
+  "logs": [
+    {
+      "level": "error",
+      "source": "renderer",
+      "message": "MaterialX error: type-mismatch [surface_shader1]: Mismatched types in port connection: <input name=\"base_color\" type=\"color3\" nodegraph=\"normalmap_cm\" output=\"out\">"
+    }
+  ]
 }
