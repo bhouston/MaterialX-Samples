@@ -1,6 +1,6 @@
 # MaterialX Shaderball
 
-Unified USD browser for the repository's showcase and library materials, with suite on the root prim and a flat family-plus-material variant set on each suite prim.
+Unified USD browser for the repository's showcase, library, and node materials, with suite on the root prim and a flat material variant set on each suite prim.
 
 ## Files
 
@@ -8,7 +8,7 @@ Unified USD browser for the repository's showcase and library materials, with su
 - `shaderball.usda`: root scene shell, domelight, and sublayer stack
 - `layers/materials.usda`: root `suite` variant set plus one flat `material` variant set on each suite prim
 - `materials/`: mirrored `.mtlx` tree with texture inputs rewritten to the original repository assets
-- `environment/`: omitted in linked mode; the dome light points back to `viewer/san_giuseppe_bridge_2k.hdr`
+- `environment/`: omitted in linked mode; the dome light points back to the viewer radiance and irradiance HDRs
 
 ## Building
 
@@ -21,6 +21,7 @@ Unified USD browser for the repository's showcase and library materials, with su
 - `library/open_pbr_surface`: `78` materials
 - `library/standard_surface`: `110` materials
 - `library/gltf_pbr`: `86` materials
+- `nodes/`: `510` materials
 - `showcase/`: `29` materials
 - `showcase/open_pbr_surface`: `8` materials
 - `showcase/standard_surface`: `16` materials
@@ -28,9 +29,9 @@ Unified USD browser for the repository's showcase and library materials, with su
 
 ## Notes
 
-- Texture packaging: Built with `--texture-mode linked`. This package depends on the source repository texture paths and HDR remaining available next to the USD package.
+- Texture packaging: Built with `--texture-mode linked`. This package depends on the source repository texture paths and dome light HDRs remaining available next to the USD package.
 - The `suite` variant set lives on `/materialx_shaderball`, authored in `layers/materials.usda`.
-- After selecting a suite, choose that suite prim (`/materialx_shaderball/showcase` or `/materialx_shaderball/library`) and switch its `material` variant set.
-- Each suite `material` variant name uses the form `family__material`.
+- After selecting a suite, choose that suite prim (`/materialx_shaderball/showcase`, `/materialx_shaderball/library`, or `/materialx_shaderball/nodes`) and switch its `material` variant set.
+- Surface suite `material` variant names use the form `family__material`; node suite variants use the node case directory name.
 - Each `material` variant composes one `.mtlx` document at `/materialx_shaderball/<suite>/Materials` and binds both shaderball meshes directly to the imported MaterialX material prim.
-- `/materialx_shaderball/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.
+- `/materialx_shaderball/domelight` points at the radiance and irradiance HDRs used by the original viewer so reflective materials pick up the authored environment.

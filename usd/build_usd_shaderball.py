@@ -15,6 +15,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_SHADERBALL_USDC = REPO_ROOT / "usd" / "materialx_shaderball" / "ShaderBall.usdc"
 SOURCE_ENVIRONMENT_HDR = REPO_ROOT / "viewer" / "san_giuseppe_bridge_2k.hdr"
+SOURCE_MATERIALX_IRRADIANCE_HDR = REPO_ROOT / "viewer" / "san_giuseppe_bridge_split.hdr"
 STAGE_UP_AXIS = "Z"
 TEXTURE_MODES = ("linked", "portable")
 
@@ -277,17 +278,25 @@ def _build_materials_layer(specs: list[MaterialSpec], material_name_map: dict[st
     return "\n".join(lines)
 
 
-def _prepare_environment_asset(package_paths: PackagePaths, texture_mode: str) -> str:
+def _prepare_environment_asset(package_paths: PackagePaths, texture_mode: str) -> tuple[str, str]:
     if texture_mode == "portable":
         package_paths.environment_dir.mkdir(parents=True, exist_ok=True)
-        portable_hdr_path = package_paths.environment_dir / SOURCE_ENVIRONMENT_HDR.name
+        portable_hdr_path = package_paths.environment_dir / "radiance" / SOURCE_ENVIRONMENT_HDR.name
+        portable_irradiance_path = package_paths.environment_dir / "irradiance" / SOURCE_MATERIALX_IRRADIANCE_HDR.name
+        portable_hdr_path.parent.mkdir(parents=True, exist_ok=True)
+        portable_irradiance_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(SOURCE_ENVIRONMENT_HDR, portable_hdr_path)
-        return f"./environment/{SOURCE_ENVIRONMENT_HDR.name}"
+        shutil.copy2(SOURCE_MATERIALX_IRRADIANCE_HDR, portable_irradiance_path)
+        return (
+            f"./environment/radiance/{SOURCE_ENVIRONMENT_HDR.name}",
+            f"./environment/irradiance/{SOURCE_MATERIALX_IRRADIANCE_HDR.name}"
+        )
     linked_hdr_path = os.path.relpath(SOURCE_ENVIRONMENT_HDR, start=package_paths.output_root)
-    return Path(linked_hdr_path).as_posix()
+    linked_irradiance_path = os.path.relpath(SOURCE_MATERIALX_IRRADIANCE_HDR, start=package_paths.output_root)
+    return Path(linked_hdr_path).as_posix(), Path(linked_irradiance_path).as_posix()
 
 
-def _build_root_layer(environment_asset_path: str) -> str:
+def _build_root_layer(environment_asset_path: str, materialx_irradiance_asset_path: str) -> str:
     return "\n".join(
         [
             "#usda 1.0",
@@ -306,6 +315,7 @@ def _build_root_layer(environment_asset_path: str) -> str:
             '    def DomeLight "domelight"',
             "    {",
             f'        asset inputs:texture:file = @{environment_asset_path}@',
+            f'        asset inputs:materialx:irradiance:file = @{materialx_irradiance_asset_path}@',
             '        token inputs:texture:format = "latlong"',
             "    }",
             "}",
@@ -329,12 +339,12 @@ def _build_readme(specs: list[MaterialSpec], package_paths: PackagePaths, textur
 
     if texture_mode == "portable":
         materials_line = "- `materials/`: mirrored `.mtlx` tree plus vendored textures for a portable package"
-        environment_line = "- `environment/`: vendored HDR used by the authored USD dome light"
-        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light HDR resolve within the output root."
+        environment_line = "- `environment/`: vendored radiance and irradiance HDRs used by the authored USD dome light"
+        texture_mode_summary = "Built with `--texture-mode portable`. This package is self-contained: MaterialX texture inputs and the dome light radiance and irradiance HDRs resolve within the output root."
     else:
         materials_line = "- `materials/`: mirrored `.mtlx` tree with texture inputs rewritten to the original repository assets"
-        environment_line = "- `environment/`: omitted in linked mode; the dome light points back to `viewer/san_giuseppe_bridge_2k.hdr`"
-        texture_mode_summary = "Built with `--texture-mode linked`. This package depends on the source repository texture paths and HDR remaining available next to the USD package."
+        environment_line = "- `environment/`: omitted in linked mode; the dome light points back to the viewer radiance and irradiance HDRs"
+        texture_mode_summary = "Built with `--texture-mode linked`. This package depends on the source repository texture paths and dome light HDRs remaining available next to the USD package."
 
     output_root_display = _display_path(package_paths.output_root)
 
@@ -368,7 +378,7 @@ Unified USD browser for the repository's showcase, library, and node materials, 
 - After selecting a suite, choose that suite prim (`/materialx_shaderball/showcase`, `/materialx_shaderball/library`, or `/materialx_shaderball/nodes`) and switch its `material` variant set.
 - Surface suite `material` variant names use the form `family__material`; node suite variants use the node case directory name.
 - Each `material` variant composes one `.mtlx` document at `/materialx_shaderball/<suite>/Materials` and binds both shaderball meshes directly to the imported MaterialX material prim.
-- `/materialx_shaderball/domelight` points at the same `san_giuseppe_bridge_2k.hdr` environment used by the original viewer so reflective materials pick up the HDR.
+- `/materialx_shaderball/domelight` points at the radiance and irradiance HDRs used by the original viewer so reflective materials pick up the authored environment.
 """
     )
 
@@ -422,6 +432,8 @@ def main() -> None:
         raise FileNotFoundError(f"Missing required source geometry asset: {SOURCE_SHADERBALL_USDC}")
     if not SOURCE_ENVIRONMENT_HDR.exists():
         raise FileNotFoundError(f"Missing required environment asset: {SOURCE_ENVIRONMENT_HDR}")
+    if not SOURCE_MATERIALX_IRRADIANCE_HDR.exists():
+        raise FileNotFoundError(f"Missing required MaterialX irradiance asset: {SOURCE_MATERIALX_IRRADIANCE_HDR}")
 
     specs = _discover_specs()
 
@@ -431,12 +443,15 @@ def main() -> None:
     package_paths.materials_dir.mkdir(parents=True, exist_ok=True)
 
     material_name_map = _copy_material_payloads(specs, package_paths, args.texture_mode)
-    environment_asset_path = _prepare_environment_asset(package_paths, args.texture_mode)
+    environment_asset_path, materialx_irradiance_asset_path = _prepare_environment_asset(package_paths, args.texture_mode)
     (package_paths.layers_dir / "materials.usda").write_text(
         _build_materials_layer(specs, material_name_map),
         encoding="utf-8",
     )
-    (package_paths.output_root / "shaderball.usda").write_text(_build_root_layer(environment_asset_path), encoding="utf-8")
+    (package_paths.output_root / "shaderball.usda").write_text(
+        _build_root_layer(environment_asset_path, materialx_irradiance_asset_path),
+        encoding="utf-8"
+    )
     (package_paths.output_root / "README.md").write_text(_build_readme(specs, package_paths, args.texture_mode), encoding="utf-8")
 
 

@@ -14,6 +14,7 @@ def Xform "materialx_shaderball" (
     def DomeLight "domelight"
     {
         asset inputs:texture:file = @../../viewer/san_giuseppe_bridge_2k.hdr@
+        asset inputs:materialx:irradiance:file = @../../viewer/san_giuseppe_bridge_split.hdr@
         token inputs:texture:format = "latlong"
     }
 }

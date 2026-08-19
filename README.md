@@ -9,7 +9,8 @@ The included viewer assets are provided so contributors can replicate a consiste
 ## Repository Layout
 
 - `viewer/`
-  - `san_giuseppe_bridge_2k.hdr` 
+  - `san_giuseppe_bridge_2k.hdr` (radiance)
+  - `san_giuseppe_bridge_split.hdr` (irradiance)
   - `ShaderBall.glb`
 - `materials/`
   - `open_pbr_surface/`
@@ -28,11 +29,15 @@ The repository also includes a unified USD shaderball package under `usd/materia
 
 Use `linked` for normal development and version control. It keeps the generated package small by rewriting MaterialX texture references back to the original source textures in this repository.
 
-Use `portable` when you need a self-contained package for another machine, tool, or web viewer. It copies referenced textures and the shaderball HDR into the generated USD package so that folder can be moved independently. Choose an output root outside the repository when you do not want the export to dirty the working tree.
+Use `portable` when you need a self-contained package for another machine, tool, or web viewer. It copies referenced textures and the shaderball radiance and irradiance HDRs into the generated USD package so that folder can be moved independently. Choose an output root outside the repository when you do not want the export to dirty the working tree.
 
 ## Source Provenance
 
 Initial examples are derived from official MaterialX and Three.js sources:
+
+- `viewer/san_giuseppe_bridge_split.hdr` is copied from the MaterialX
+  irradiance resources and is distributed under Apache-2.0; see
+  `third_party/MaterialX-LICENSE`.
 
 ## License
 
