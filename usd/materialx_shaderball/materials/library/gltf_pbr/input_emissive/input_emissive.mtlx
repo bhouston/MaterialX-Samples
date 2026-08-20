@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <nodegraph name="NG_emissive_uv">
+    <texcoord name="emissive_uv" type="vector2">
+      <input name="index" type="integer" value="0" />
+    </texcoord>
+    <extract name="emissive_u" type="float">
+      <input name="in" type="vector2" nodename="emissive_uv" />
+      <input name="index" type="integer" value="0" />
+    </extract>
+    <extract name="emissive_v" type="float">
+      <input name="in" type="vector2" nodename="emissive_uv" />
+      <input name="index" type="integer" value="1" />
+    </extract>
+    <add name="emissive_r" type="float">
+      <input name="in1" type="float" value="0.1" />
+      <input name="in2" type="float" nodename="emissive_u" />
+    </add>
+    <multiply name="emissive_g" type="float">
+      <input name="in1" type="float" value="0.8" />
+      <input name="in2" type="float" nodename="emissive_v" />
+    </multiply>
+    <combine3 name="emissive_color_uv" type="color3">
+      <input name="in1" type="float" nodename="emissive_r" />
+      <input name="in2" type="float" nodename="emissive_g" />
+      <input name="in3" type="float" value="1.0" />
+    </combine3>
+    <add name="emissive_strength_uv" type="float">
+      <input name="in1" type="float" value="0.5" />
+      <input name="in2" type="float" nodename="emissive_u" />
+    </add>
+    <output name="emissive_out" type="color3" nodename="emissive_color_uv" />
+    <output name="emissive_strength_out" type="float" nodename="emissive_strength_uv" />
+  </nodegraph>
+  <gltf_pbr name="SR_default" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.0518895, 0.29606, 0.425324" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.4" />
+    <input name="emissive" type="color3" nodegraph="NG_emissive_uv" output="emissive_out" />
+    <input name="emissive_strength" type="float" nodegraph="NG_emissive_uv" output="emissive_strength_out" />
+  </gltf_pbr>
+  <surfacematerial name="input_emissive" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_default" />
+  </surfacematerial>
+</materialx>

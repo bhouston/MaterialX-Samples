@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <surfacematerial name="input_subsurface_scatter_anisotropy" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="open_pbr_surface_surfaceshader" />
+  </surfacematerial>
+  <open_pbr_surface name="open_pbr_surface_surfaceshader" type="surfaceshader">
+    <input name="subsurface_weight" type="float" value="0.8" />
+    <input name="subsurface_scatter_anisotropy" type="float" value="0.9" />
+  </open_pbr_surface>
+</materialx>
